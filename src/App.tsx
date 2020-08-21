@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import "./App.css";
+import logo from "./svgs/logo.svg";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navbar variant="dark">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/">
+            <Image
+              src={logo}
+              className="App-logo"
+              alt="logo"
+              width="80"
+              fluid
+            />
+          </Link>
+        </Navbar.Brand>
+      </Container>
+    </Navbar>
   );
-}
+};
 
 export default App;
