@@ -5,3 +5,11 @@
 .navbar {
   background: #232325;
 }
+
+.navbar-nav a:hover {
+  color: #41e0fd !important;
+}
+
+.navbar-nav .nav-link.active {
+  border-bottom: 0.5px solid #41e0fd;
+}

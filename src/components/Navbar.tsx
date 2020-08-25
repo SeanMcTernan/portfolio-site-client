@@ -1,28 +1,45 @@
 import React from "react";
-import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import logo from "../svgs/logo.svg";
+import menu from "../svgs/menu.svg";
 
 const NavbarElement: React.FC = () => {
   return (
     <div>
       <Navbar expand="lg">
-        <Navbar.Brand href="#home">
-          <img src={logo} height="30vmin"></img>
+        <Navbar.Brand className="ml-5" href="#home">
+          <img src={logo} style={{ height: "4vmin" }} alt="Site Logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <img src={menu} style={{ height: "4vmin" }} alt="Site Menu Icon" />
+        </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link className="nav-link text-white text-upper" href="#home">
-              Home
+          <Nav className="ml-auto">
+            <Nav.Link
+              className="nav-link text-white text-uppercase ml-5"
+              href="#home"
+            >
+              Projects
             </Nav.Link>
-            <Nav.Link className="nav-link text-white text-upper" href="#link">
-              Link
+            <Nav.Link
+              className="nav-link text-white text-uppercase ml-5"
+              href="#link"
+            >
+              References
+            </Nav.Link>
+            <Nav.Link
+              className="nav-link text-white text-uppercase ml-5"
+              href="#link"
+            >
+              Contact
+            </Nav.Link>
+            <Nav.Link
+              className="nav-link text-white text-uppercase mx-5"
+              href="#link"
+            >
+              Login
             </Nav.Link>
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Navbar>
     </div>
