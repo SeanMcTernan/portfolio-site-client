@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import logo from "../svgs/logo.svg";
-import menu from "../svgs/menu.svg";
+import logo from "../../svgs/logo.svg";
+import menu from "../../svgs/menu.svg";
 
 const NavbarElement: React.FC = () => {
   return (

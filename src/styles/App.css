@@ -1,3 +1,9 @@
+:root {
+  --HFGrey: #232325;
+  --mainBlue: #41e0fd;
+  --mainWhite: #ffffff;
+}
+
 .App {
   margin-top: 20px;
 }
