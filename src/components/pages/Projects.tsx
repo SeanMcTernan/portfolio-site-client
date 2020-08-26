@@ -6,7 +6,7 @@ class Projects extends React.Component {
   render() {
     return (
       <div>
-        <h2>Proects page...</h2>
+        <h2>Projects page...</h2>
       </div>
     );
   }

@@ -14,8 +14,17 @@
 
 .navbar-nav a:hover {
   color: #41e0fd !important;
+  text-decoration: none;
 }
 
 .navbar-nav .nav-link.active {
   border-bottom: 0.5px solid #41e0fd;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler {
+  border: none;
 }
