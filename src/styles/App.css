@@ -28,3 +28,20 @@
 .navbar-toggler {
   border: none;
 }
+
+.col a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 10vmin;
+  margin-left: 10vmin;
+}

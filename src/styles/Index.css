@@ -5,4 +5,5 @@ body {
   background-attachment: fixed;
   background-position: center;
   overscroll-behavior: none;
+  color: #ffffff;
 }
