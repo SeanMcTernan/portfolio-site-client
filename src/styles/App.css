@@ -8,6 +8,7 @@
   margin-top: 20px;
 }
 
+/* NavBar Elements */
 .navbar {
   background: #232325;
 }
@@ -29,16 +30,25 @@
   border: none;
 }
 
+/* Home Elements */
+
 .jumbotron {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .homeDiv {
   padding-top: 15vmin;
+  padding-bottom: 15vmin;
   position: fixed;
 }
-
+.row {
+  min-height: 50vh;
+}
 /* Media Styles */
+
+.row {
+  min-height: 50vh;
+}
 
 /* Modern Phones */
 
@@ -49,8 +59,11 @@
 }
 
 /* Older Phones */
-/* @media only screen and (max-height: 650px) {
-  .heroColumn {
-    display: none !important;
+@media only screen and (max-height: 650px) {
+  .heroImage {
+    display: none;
   }
-} */
+  .homeDiv {
+    padding-top: 20vh;
+  }
+}
