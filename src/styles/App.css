@@ -29,19 +29,28 @@
   border: none;
 }
 
-.col a {
-  color: #6c757d;
-  text-decoration: none;
+.jumbotron {
+  background-color: transparent;
 }
 
-.container-fluid,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: 10vmin;
-  margin-left: 10vmin;
+.homeDiv {
+  padding-top: 15vmin;
+  position: fixed;
 }
+
+/* Media Styles */
+
+/* Modern Phones */
+
+@media only screen and (max-width: 600px) {
+  .bottomNav {
+    display: none !important;
+  }
+}
+
+/* Older Phones */
+/* @media only screen and (max-height: 650px) {
+  .heroColumn {
+    display: none !important;
+  }
+} */
