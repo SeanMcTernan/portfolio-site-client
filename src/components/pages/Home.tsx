@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Image, Jumbotron, Row } from "react-bootstrap";
-import browser from "../../svgs/browser.svg";
+import { ReactComponent as Browser } from "../../svgs/browser.svg";
 
 class Home extends React.Component {
   render() {
@@ -26,10 +26,8 @@ class Home extends React.Component {
           </Col>
           <Col className="heroColumn" lg={5} sm={6} md={5}>
             <p>
-              <Image
+              <Browser
                 className="heroImage"
-                src={browser}
-                alt="hero"
                 style={{
                   width: "70%",
                 }}
