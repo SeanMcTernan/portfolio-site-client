@@ -44,49 +44,6 @@
   min-height: 50vh;
 }
 
-/* Animations */
-
-.st0 {
-  fill: #587890;
-}
-.st1 {
-  fill: #6b90ad;
-}
-.st2 {
-  fill: #74c0eb;
-}
-.st3 {
-  fill: #f1f1f1;
-}
-.st4 {
-  fill: #8f8f8f;
-}
-.st5 {
-  fill: #ffffff;
-}
-
-svg #logo {
-  animation-duration: 1.5s;
-  animation-name: animateLogo;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes animateLogo {
-  from {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(90px);
-    opacity: 1;
-  }
-}
-
-#logo {
-  opacity: 0;
-}
-
 /* Home Elements */
 
 /* Media Styles */

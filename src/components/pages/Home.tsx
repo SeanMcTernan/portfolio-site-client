@@ -1,13 +1,14 @@
 import React from "react";
-import { Button, Col, Container, Image, Jumbotron, Row } from "react-bootstrap";
-import { ReactComponent as Browser } from "../../svgs/browser.svg";
+import { Button, Col, Container, Jumbotron, Row } from "react-bootstrap";
+import { ReactComponent as Laptop } from "../../svgs/laptop.svg";
+import "../../styles/Animations.css";
 
 class Home extends React.Component {
   render() {
     return (
       <Container fluid className="homeDiv">
-        <Row className="align-items-center">
-          <Col lg={5} sm={6} md={7} className="d-flex offset-lg-2">
+        <Row>
+          <Col lg={5} sm={6} md={6} className="d-flex offset-lg-2">
             <p>
               <Jumbotron>
                 <h1>Welcome,</h1>
@@ -24,12 +25,12 @@ class Home extends React.Component {
               </Jumbotron>
             </p>
           </Col>
-          <Col className="heroColumn" lg={5} sm={6} md={5}>
+          <Col className="heroColumn" lg={5} sm={6} md={6}>
             <p>
-              <Browser
+              <Laptop
                 className="heroImage"
                 style={{
-                  width: "70%",
+                  width: "90%",
                 }}
               />
             </p>
