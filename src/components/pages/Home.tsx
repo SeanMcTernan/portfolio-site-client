@@ -18,7 +18,11 @@ class Home extends React.Component {
                   the chatbot provided.
                 </p>
                 <p>
-                  <Button variant="outline-info" size="lg">
+                  <Button
+                    className="landingButton"
+                    variant="outline-info"
+                    size="lg"
+                  >
                     View Projects
                   </Button>
                 </p>
@@ -30,7 +34,7 @@ class Home extends React.Component {
               <Laptop
                 className="heroImage"
                 style={{
-                  width: "90%",
+                  width: "80%",
                 }}
               />
             </p>

@@ -2,6 +2,7 @@
   --HFGrey: #232325;
   --mainBlue: #41e0fd;
   --mainWhite: #ffffff;
+  --mutedGrey: #6c757d;
 }
 
 .App {
@@ -44,7 +45,24 @@
   min-height: 50vh;
 }
 
+.btn-outline-info {
+  color: var(--mainBlue);
+  border-color: var(--mainBlue);
+}
+
 /* Home Elements */
+
+/* Footer Elements */
+.st0 {
+  fill: var(--mutedGrey);
+}
+
+.st0 {
+  fill: var(--mutedGrey);
+}
+.st0:hover {
+  fill: #41e0fd !important;
+}
 
 /* Media Styles */
 
@@ -54,12 +72,15 @@
   }
 }
 
-/* Older Phones */
+/* Small screens */
 @media only screen and (max-height: 650px) {
   .heroImage {
     display: none;
   }
   .homeDiv {
     padding-top: 20vh;
+  }
+  .socialIcons {
+    width: 10vmin !important;
   }
 }
