@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { ReactComponent as LinkedIn } from "../../svgs/linkedin.svg";
-// import { Container, Row, Col } from "react-bootstrap";
+
 import styled from "styled-components";
 import "../../styles/App.css";
 
