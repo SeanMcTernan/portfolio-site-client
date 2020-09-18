@@ -5,10 +5,7 @@ import menu from "../../svgs/menu.svg";
 import { Link } from "react-router-dom";
 
 const NavbarElement: React.FC = () => {
-  const [isAuthenticated, userHasAuthenticated] = useState(false);
-  function handleLogout() {
-    userHasAuthenticated(false);
-  }
+  const [isAuthenticated, userHasAuthenticated] = useState();
   return (
     <Navbar collapseOnSelect expand="lg" className="fixed-top">
       <Link to="home">

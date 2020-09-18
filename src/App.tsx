@@ -7,10 +7,13 @@ import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App: React.FC = () => {
+  const [isAuthenticated, userHasAuthenticated] = useState(false);
   return (
     <div>
       <NavbarElement />
-      <Routes />
+      <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+        <Routes />
+      </AppContext.Provider>
       <FooterElement />
     </div>
   );

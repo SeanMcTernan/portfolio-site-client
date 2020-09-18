@@ -15,11 +15,9 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     try {
       await Auth.signIn(email, password);
       userHasAuthenticated(true);
-      alert("You are now logged in");
     } catch (e) {
       alert(e.message);
     }
