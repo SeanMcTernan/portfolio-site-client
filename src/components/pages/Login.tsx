@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { Auth } from "aws-amplify";
+import { useAppContext } from "../../libs/contextLib";
 import "../../styles/Login.css";
 
-export default function Login() {
+const Login: React.FC = () => {
+  const { userHasAuthenticated } = useAppContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,8 +13,16 @@ export default function Login() {
     return email.length > 0 && password.length > 0;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    try {
+      await Auth.signIn(email, password);
+      userHasAuthenticated(true);
+      alert("You are now logged in");
+    } catch (e) {
+      alert(e.message);
+    }
   };
 
   return (
@@ -42,4 +53,6 @@ export default function Login() {
       </form>
     </div>
   );
-}
+};
+
+export default Login;

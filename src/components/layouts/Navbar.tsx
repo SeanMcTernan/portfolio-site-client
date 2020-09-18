@@ -1,12 +1,16 @@
-import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import React, { useState } from "react";
+import { Nav, Navbar, NavItem } from "react-bootstrap";
 import logo from "../../svgs/logo.svg";
 import menu from "../../svgs/menu.svg";
 import { Link } from "react-router-dom";
 
 const NavbarElement: React.FC = () => {
+  const [isAuthenticated, userHasAuthenticated] = useState(false);
+  function handleLogout() {
+    userHasAuthenticated(false);
+  }
   return (
-    <Navbar expand="lg" className="fixed-top">
+    <Navbar collapseOnSelect expand="lg" className="fixed-top">
       <Link to="home">
         <Navbar.Brand className="ml-5" href="#home">
           <img src={logo} style={{ width: "25%" }} alt="Site Logo" />
@@ -56,3 +60,18 @@ const NavbarElement: React.FC = () => {
 };
 
 export default NavbarElement;
+
+// {isAuthenticated ? (
+//   <NavItem onClick={handleLogout}>Logout</NavItem>
+// ) : (
+//   <>
+//     <Link to="login">
+//       <Nav.Link
+//         className="nav-link text-white text-uppercase mx-5"
+//         href="login"
+//       >
+//         Login
+//       </Nav.Link>
+//     </Link>
+//   </>
+// )}
