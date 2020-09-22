@@ -1,10 +1,13 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import { useAppContext } from "../../libs/contextLib";
 import logo from "../../svgs/logo.svg";
 import menu from "../../svgs/menu.svg";
 import { Link } from "react-router-dom";
 
 const NavbarElement: React.FC = () => {
+  const { isAuthenticated, userHasAuthenticated } = useAppContext();
+  const handleLogout = () => userHasAuthenticated(false);
   return (
     <Navbar collapseOnSelect expand="lg" className="fixed-top">
       <Link to="home">
@@ -41,14 +44,27 @@ const NavbarElement: React.FC = () => {
               Contact
             </Nav.Link>
           </Link>
-          <Link to="login">
-            <Nav.Link
-              className="nav-link text-white text-uppercase mx-5"
-              href="login"
-            >
-              Login
-            </Nav.Link>
-          </Link>
+          {isAuthenticated ? (
+            <Link to="#" onClick={handleLogout}>
+              <Nav.Link
+                className="nav-link text-white text-uppercase ml-5"
+                href="#"
+              >
+                Logout
+              </Nav.Link>
+            </Link>
+          ) : (
+            <>
+              <Link to="login">
+                <Nav.Link
+                  className="nav-link text-white text-uppercase mx-5"
+                  href="login"
+                >
+                  Login
+                </Nav.Link>
+              </Link>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
