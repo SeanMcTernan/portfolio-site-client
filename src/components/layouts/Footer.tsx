@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
+import { useAppContext } from "../../libs/contextLib";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { ReactComponent as LinkedIn } from "../../svgs/linkedin.svg";
 
@@ -8,6 +9,8 @@ import styled from "styled-components";
 import "../../styles/App.css";
 
 const FooterElement: React.FC = () => {
+  const { isAuthenticated, userHasAuthenticated } = useAppContext();
+  const handleLogout = () => userHasAuthenticated(false);
   return (
     <div style={{ position: "fixed" }}>
       <FooterContainer className="fixed-bottom">
@@ -28,11 +31,21 @@ const FooterElement: React.FC = () => {
                 Contact
               </Nav.Link>
             </Link>
-            <Link to="login">
-              <Nav.Link className="nav-link text-muted mx-5" href="login">
-                Login
-              </Nav.Link>
-            </Link>
+            {isAuthenticated ? (
+              <Link to="#" onClick={handleLogout}>
+                <Nav.Link className="nav-link text-muted mx-5" href="#">
+                  Logout
+                </Nav.Link>
+              </Link>
+            ) : (
+              <>
+                <Link to="login">
+                  <Nav.Link className="nav-link text-muted mx-5" href="login">
+                    Login
+                  </Nav.Link>
+                </Link>
+              </>
+            )}
           </Nav>
         </Navbar>
         <div className="footer-bottom">

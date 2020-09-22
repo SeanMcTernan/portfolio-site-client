@@ -75,8 +75,8 @@ const App: React.FC = () => {
       </Navbar>
       <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
         <Routes />
+        <FooterElement />
       </AppContext.Provider>
-      <FooterElement />
     </div>
   );
 };
