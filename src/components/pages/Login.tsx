@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import { Auth } from "aws-amplify";
 import { useAppContext } from "../../libs/contextLib";
@@ -8,6 +9,7 @@ const Login: React.FC = () => {
   const { userHasAuthenticated } = useAppContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const validateForm = () => {
     return email.length > 0 && password.length > 0;
@@ -18,6 +20,7 @@ const Login: React.FC = () => {
     try {
       await Auth.signIn(email, password);
       userHasAuthenticated(true);
+      history.push("/");
     } catch (e) {
       alert(e.message);
     }
