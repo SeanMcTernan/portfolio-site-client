@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import { Auth } from "aws-amplify";
 import { useAppContext } from "../../libs/contextLib";
@@ -10,10 +10,12 @@ import styled from "styled-components";
 import "../../styles/App.css";
 
 const FooterElement: React.FC = () => {
+  const history = useHistory();
   const { isAuthenticated, userHasAuthenticated } = useAppContext();
   const handleLogout = async () => {
     await Auth.signOut();
     userHasAuthenticated(false);
+    history.push("/login");
   };
   return (
     <div style={{ position: "fixed" }}>

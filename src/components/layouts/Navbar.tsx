@@ -4,13 +4,15 @@ import { Nav, Navbar } from "react-bootstrap";
 import { useAppContext } from "../../libs/contextLib";
 import logo from "../../svgs/logo.svg";
 import menu from "../../svgs/menu.svg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const NavbarElement: React.FC = () => {
+  const history = useHistory();
   const { isAuthenticated, userHasAuthenticated } = useAppContext();
   const handleLogout = async () => {
     await Auth.signOut();
     userHasAuthenticated(false);
+    history.push("/login");
   };
   return (
     <Navbar collapseOnSelect expand="lg" className="fixed-top">
