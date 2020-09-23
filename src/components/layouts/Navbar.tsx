@@ -1,4 +1,5 @@
 import React from "react";
+import { Auth } from "aws-amplify";
 import { Nav, Navbar } from "react-bootstrap";
 import { useAppContext } from "../../libs/contextLib";
 import logo from "../../svgs/logo.svg";
@@ -7,7 +8,10 @@ import { Link } from "react-router-dom";
 
 const NavbarElement: React.FC = () => {
   const { isAuthenticated, userHasAuthenticated } = useAppContext();
-  const handleLogout = () => userHasAuthenticated(false);
+  const handleLogout = async () => {
+    await Auth.signOut();
+    userHasAuthenticated(false);
+  };
   return (
     <Navbar collapseOnSelect expand="lg" className="fixed-top">
       <Link to="home">

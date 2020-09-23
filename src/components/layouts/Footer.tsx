@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
+import { Auth } from "aws-amplify";
 import { useAppContext } from "../../libs/contextLib";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { ReactComponent as LinkedIn } from "../../svgs/linkedin.svg";
@@ -10,7 +11,10 @@ import "../../styles/App.css";
 
 const FooterElement: React.FC = () => {
   const { isAuthenticated, userHasAuthenticated } = useAppContext();
-  const handleLogout = () => userHasAuthenticated(false);
+  const handleLogout = async () => {
+    await Auth.signOut();
+    userHasAuthenticated(false);
+  };
   return (
     <div style={{ position: "fixed" }}>
       <FooterContainer className="fixed-bottom">
