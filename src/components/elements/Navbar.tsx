@@ -53,7 +53,7 @@ const NavbarElement: React.FC = () => {
           {isAuthenticated ? (
             <Link to="#" onClick={handleLogout}>
               <Nav.Link
-                className="nav-link text-white text-uppercase ml-5"
+                className="nav-link text-white text-uppercase ml-5 mr-5"
                 href="#"
               >
                 Logout
