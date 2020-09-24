@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import { Auth } from "aws-amplify";
+import LoaderButton from "../elements/LoaderButton";
 import { useAppContext } from "../../libs/contextLib";
 import "../../styles/Login.css";
 
 const Login: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const { userHasAuthenticated } = useAppContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,12 +19,14 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       await Auth.signIn(email, password);
       userHasAuthenticated(true);
       history.push("/");
     } catch (e) {
       alert(e.message);
+      setIsLoading(false);
     }
   };
 
@@ -48,9 +52,16 @@ const Login: React.FC = () => {
             type="password"
           />
         </FormGroup>
-        <Button block size="lg" disabled={!validateForm()} type="submit">
+        <LoaderButton
+          className=""
+          block
+          type="submit"
+          bsSize="large"
+          isLoading={isLoading}
+          disabled={!validateForm()}
+        >
           Login
-        </Button>
+        </LoaderButton>
       </form>
     </div>
   );

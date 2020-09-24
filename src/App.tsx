@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Auth } from "aws-amplify";
 import { AppContext } from "./libs/contextLib";
 import Routes from "./libs/Routes";
-import FooterElement from "./components/layouts/Footer";
-import NavbarElement from "./components/layouts/Navbar";
+import FooterElement from "./components/elements/Footer";
+import NavbarElement from "./components/elements/Navbar";
 import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
