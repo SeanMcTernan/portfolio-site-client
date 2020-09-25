@@ -6,7 +6,7 @@ import "../../styles/LoaderButton.css";
 
 interface Props {
   isLoading: boolean;
-  className: string;
+  className?: string;
   disabled: boolean;
   block: any;
   type: string;
