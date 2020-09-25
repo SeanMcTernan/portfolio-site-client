@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const history = useHistory();
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
-  const [fields, handleFieldChange] = useFormFields({
+  const { fields, handleFieldChange } = useFormFields({
     email: "",
     password: "",
   });
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await Auth.signIn(email, password);
+      await Auth.signIn(fields.email, fields.password);
       userHasAuthenticated(true);
       history.push("/");
     } catch (e) {
@@ -43,16 +43,16 @@ const Login: React.FC = () => {
             size="lg"
             autoFocus
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={fields.email}
+            onChange={handleFieldChange}
           />
         </FormGroup>
         <FormGroup controlId="password">
           <FormLabel>PASSWORD</FormLabel>
           <FormControl
             size="lg"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={fields.password}
+            onChange={handleFieldChange}
             type="password"
           />
         </FormGroup>

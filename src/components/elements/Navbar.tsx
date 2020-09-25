@@ -53,7 +53,7 @@ const NavbarElement: React.FC = () => {
           {isAuthenticated ? (
             <Link to="#" onClick={handleLogout}>
               <Nav.Link
-                className="nav-link text-white text-uppercase ml-5 mr-5"
+                className="nav-link text-white text-uppercase mx-5"
                 href="#"
               >
                 Logout
@@ -63,10 +63,18 @@ const NavbarElement: React.FC = () => {
             <>
               <Link to="login">
                 <Nav.Link
-                  className="nav-link text-white text-uppercase mx-5"
+                  className="nav-link text-white text-uppercase ml-5"
                   href="login"
                 >
                   Login
+                </Nav.Link>
+              </Link>
+              <Link to="signup">
+                <Nav.Link
+                  className="nav-link text-white text-uppercase mx-5"
+                  href="signup"
+                >
+                  Sign Up
                 </Nav.Link>
               </Link>
             </>

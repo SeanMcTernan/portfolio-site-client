@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../components/pages/Home";
-import Projects from "../components/pages/Projects";
-import References from "../components/pages/References";
 import Contact from "../components/pages/Contact";
+import Home from "../components/pages/Home";
 import Login from "../components/pages/Login";
 import NotFound from "../components/pages/NotFound";
+import Projects from "../components/pages/Projects";
+import References from "../components/pages/References";
+import Signup from "../components/pages/Signup";
 
 const Routes: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Routes: React.FC = () => {
       <Route path="/references" component={References} />
       <Route path="/contact" component={Contact} />
       <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
       <Route component={NotFound} />
     </Switch>
   );

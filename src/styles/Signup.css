@@ -1,0 +1,17 @@
+@media all and (min-width: 480px) {
+  .Signup form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
+.Signup {
+  padding: 60px 0;
+  padding-top: 30vmin;
+  padding-bottom: 15vmin;
+}
+
+.btn-primary {
+  background-color: var(--mainBlue) !important;
+  border-color: var(--mainBlue) !important;
+}
