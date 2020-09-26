@@ -1,7 +1,10 @@
+import { Auth } from "aws-amplify";
+import { ISignUpResult } from "amazon-cognito-identity-js";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { FormGroup, FormControl, FormLabel, FormText } from "react-bootstrap";
 import LoaderButton from "../elements/LoaderButton";
+import onError from "../../libs/errorLib";
 import { useAppContext } from "../../libs/contextLib";
 import useFormFields from "../../libs/hooksLib";
 import "../../styles/Signup.css";
@@ -15,7 +18,7 @@ const Signup: React.FC = () => {
   });
 
   const history = useHistory();
-  const [newUser, setNewUser] = useState<null | string>(null);
+  const [newUser, setNewUser] = useState<ISignUpResult | null>(null);
   const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -34,13 +37,36 @@ const Signup: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setNewUser("test");
-    setIsLoading(false);
+    try {
+      const newUser = await Auth.signUp({
+        username: fields.email,
+        password: fields.password,
+      });
+      setIsLoading(false);
+      setNewUser(newUser);
+    } catch (e) {
+      onError(e);
+      setIsLoading(false);
+    }
   };
 
-  const handleConfirmationSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleConfirmationSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
+
     setIsLoading(true);
+
+    try {
+      await Auth.confirmSignUp(fields.email, fields.confirmationCode);
+      await Auth.signIn(fields.email, fields.password);
+
+      userHasAuthenticated(true);
+      history.push("/");
+    } catch (e) {
+      onError(e);
+      setIsLoading(false);
+    }
   };
   const renderConfirmationForm = () => {
     return (
