@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import LoaderButton from "../elements/LoaderButton";
 import { useAppContext } from "../../libs/contextLib";
+import { Link } from "react-router-dom";
 import useFormFields from "../../libs/hooksLib";
 import onError from "../../libs/errorLib";
 import "../../styles/Login.css";
@@ -56,6 +57,12 @@ const Login: React.FC = () => {
             type="password"
           />
         </FormGroup>
+        <Link
+          to="/reset"
+          style={{ color: "white", textDecorationLine: "underline" }}
+        >
+          Forgot password?
+        </Link>
         <LoaderButton
           block
           type="submit"

@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-// import { BiLoaderCircle } from "react-icons/bi";
 import { VscLoading } from "react-icons/vsc";
 import "../../styles/LoaderButton.css";
 

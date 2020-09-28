@@ -11,6 +11,12 @@
   padding-bottom: 15vmin;
 }
 
+.Login form a {
+  margin-bottom: 15px;
+  display: block;
+  font-size: 14px;
+}
+
 .btn-primary {
   background-color: var(--mainBlue) !important;
   border-color: var(--mainBlue) !important;
