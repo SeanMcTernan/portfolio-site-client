@@ -60,7 +60,8 @@
 .st0 {
   fill: var(--mutedGrey);
 }
-.st0:hover {
+
+.socialIcons:hover .st0 {
   fill: #41e0fd !important;
 }
 
