@@ -4,6 +4,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import { Auth } from "aws-amplify";
 import { useAppContext } from "../../libs/contextLib";
 import { ReactComponent as Github } from "../../svgs/github.svg";
+import { ReactComponent as Instagram } from "../../svgs/instagram.svg";
 import { ReactComponent as LinkedIn } from "../../svgs/linkedin.svg";
 
 import styled from "styled-components";
@@ -79,6 +80,19 @@ const FooterElement: React.FC = () => {
                 style={{
                   width: "2.5vmin",
                   marginLeft: "5px",
+                }}
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/whatsthekracken/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram
+                className="socialIcons"
+                style={{
+                  width: "2.5vmin",
+                  margin: "10px",
                 }}
               />
             </a>
