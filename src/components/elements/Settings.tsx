@@ -1,5 +1,13 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import {
+  Modal,
+  Button,
+  Container,
+  Row,
+  Col,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import "../../styles/Settings.css";
 
 interface Props {
@@ -8,6 +16,11 @@ interface Props {
 }
 
 const Settings: React.FC<Props> = (props) => {
+  const renderTooltip = (props: any) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Click to request access
+    </Tooltip>
+  );
   return (
     <Modal
       backdrop="static"
@@ -24,16 +37,60 @@ const Settings: React.FC<Props> = (props) => {
           Settings:
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="settingsContent">
-        <h4 className="settingsContent">Centered Modal</h4>
-        <p className="settingsContent">
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+      <Modal.Body className="settingsContent show-grid">
+        <Container>
+          <p className="settingsParagraph">
+            To request access to any items below, please click on the
+            corresponding buttons:
+          </p>
+          <Row className="settingsRows">
+            <Col xs={12} md={8} lg={4}>
+              View Refences:
+            </Col>
+            <Col xs={12} md={8} lg={4}>
+              <OverlayTrigger
+                placement="right"
+                delay={{ show: 150, hide: 250 }}
+                overlay={renderTooltip}
+              >
+                <Button size="sm" variant="info">
+                  Request
+                </Button>
+              </OverlayTrigger>
+            </Col>
+          </Row>
+          <Row className="settingsRows">
+            <Col xs={12} md={8} lg={4}>
+              View Hidden Repositories:
+            </Col>
+            <Col xs={12} md={8} lg={4}>
+              <OverlayTrigger
+                placement="right"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip}
+              >
+                <Button size="sm" variant="info">
+                  Request
+                </Button>
+              </OverlayTrigger>
+            </Col>
+          </Row>
+          <Row className="settingsRows">
+            <Col xs={12} md={8} lg={4}>
+              Access Downloadable Resume:
+            </Col>
+            <Col xs={12} md={8} lg={4}>
+              <Button size="sm" disabled variant="success">
+                Approved
+              </Button>
+            </Col>
+          </Row>
+        </Container>
       </Modal.Body>
       <Modal.Footer className="settingsContent">
-        <Button onClick={props.onHide}>Close</Button>
+        <Button variant="info" onClick={props.onHide}>
+          Close
+        </Button>
       </Modal.Footer>
     </Modal>
   );

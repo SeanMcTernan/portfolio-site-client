@@ -2,11 +2,6 @@
   opacity: 0.8 !important;
 }
 
-.btn-primary {
-  background-color: var(--mutedBlue) !important;
-  border-color: var(--mainBlue);
-}
-
 .settingsContent {
   color: var(--mainWhite) !important;
   background-color: #232325;
@@ -15,4 +10,17 @@
 .close {
   color: var(--mainWhite) !important;
   opacity: 1;
+}
+
+.settingsRows {
+  min-height: 5vh;
+}
+
+.settingsColums {
+  padding: 5vh;
+}
+
+.settingsParagraph {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
