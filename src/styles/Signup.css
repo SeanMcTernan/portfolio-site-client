@@ -11,7 +11,8 @@
   padding-bottom: 15vmin;
 }
 
-.btn-primary {
-  background-color: var(--mainBlue) !important;
-  border-color: var(--mainBlue) !important;
+.Signup form span.help-block {
+  font-size: 14px;
+  padding-bottom: 10px;
+  color: #999;
 }

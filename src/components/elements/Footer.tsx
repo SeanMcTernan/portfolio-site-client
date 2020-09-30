@@ -92,7 +92,7 @@ const FooterElement: React.FC = () => {
                 className="socialIcons"
                 style={{
                   width: "2.5vmin",
-                  margin: "10px",
+                  marginLeft: "9px",
                 }}
               />
             </a>

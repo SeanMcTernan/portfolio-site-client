@@ -7,6 +7,7 @@ import ResetPassword from "../components/pages/ResetPassword";
 import NotFound from "../components/pages/NotFound";
 import Projects from "../components/pages/Projects";
 import References from "../components/pages/References";
+import Settings from "../components/pages/Settings";
 import Signup from "../components/pages/Signup";
 
 const Routes: React.FC = () => {
@@ -18,6 +19,7 @@ const Routes: React.FC = () => {
       <Route path="/references" component={References} />
       <Route path="/contact" component={Contact} />
       <Route path="/login" component={Login} />
+      <Route path="/settings" component={Settings} />
       <Route path="/reset" component={ResetPassword} />
       <Route path="/signup" component={Signup} />
       <Route component={NotFound} />
