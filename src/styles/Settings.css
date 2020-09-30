@@ -4,7 +4,11 @@
 }
 
 .settingsContent {
-  border: none !important;
   color: var(--mutedGrey) !important;
   background-color: #232325;
+}
+
+.close {
+  color: #ffffff !important;
+  opacity: 1;
 }
