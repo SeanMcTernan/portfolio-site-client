@@ -15,12 +15,12 @@
 }
 
 .navbar-nav a:hover {
-  color: #41e0fd !important;
+  color: #17a2b8 !important;
   text-decoration: none;
 }
 
 .navbar-nav .nav-link.active {
-  border-bottom: 0.5px solid #41e0fd;
+  border-bottom: 0.5px solid #17a2b8;
 }
 
 .navbar-toggler:focus {
@@ -62,7 +62,7 @@
 }
 
 .socialIcons:hover .st0 {
-  fill: #41e0fd !important;
+  fill: #17a2b8 !important;
 }
 
 /* Media Styles */
