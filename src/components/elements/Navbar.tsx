@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Auth } from "aws-amplify";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { useAppContext } from "../../libs/contextLib";
-import Settings from "../pages/Settings";
+import Settings from "./Settings";
 import logo from "../../svgs/logo.svg";
 import menu from "../../svgs/menu.svg";
 import { Link, useHistory } from "react-router-dom";

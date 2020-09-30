@@ -1,0 +1,10 @@
+.btn-primary {
+  background-color: #17a2b8 !important;
+  border-color: var(--mainBlue);
+}
+
+.settingsContent {
+  border: none !important;
+  color: var(--mutedGrey) !important;
+  background-color: #232325;
+}
