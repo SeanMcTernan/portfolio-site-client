@@ -1,3 +1,7 @@
+.modal-backdrop {
+  opacity: 0.8 !important;
+}
+
 .btn-primary {
   background-color: #17a2b8 !important;
   border-color: var(--mainBlue);
