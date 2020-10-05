@@ -66,7 +66,7 @@ const Login: React.FC = () => {
         <LoaderButton
           block
           type="submit"
-          bsSize="large"
+          bsSize="small"
           isLoading={isLoading}
           disabled={!validateForm()}
         >

@@ -1,4 +1,5 @@
-import React from "react";
+import { API } from "aws-amplify";
+import React, { useState } from "react";
 import {
   Modal,
   Button,
@@ -8,11 +9,18 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
+import onError from "../../libs/errorLib";
 import "../../styles/Settings.css";
 
 interface Props {
   show: boolean;
   onHide: () => void;
+}
+interface Values {
+  references: boolean;
+  hiddenrepos: boolean;
+  resume: boolean;
+  latest: boolean;
 }
 
 const Settings: React.FC<Props> = (props) => {
@@ -21,6 +29,33 @@ const Settings: React.FC<Props> = (props) => {
       Click to request access
     </Tooltip>
   );
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleRequest = async () => {
+    setIsLoading(true);
+
+    try {
+      const values = {
+        references: false,
+        hiddenrepos: false,
+        resume: true,
+        latest: false,
+      };
+
+      await setPermissions(values);
+    } catch (e) {
+      onError(e);
+      setIsLoading(false);
+    }
+  };
+
+  const setPermissions = (values: Values) => {
+    return API.post("permissions", "/permissions", {
+      body: values,
+    });
+  };
+
   return (
     <Modal
       backdrop="static"
@@ -53,7 +88,7 @@ const Settings: React.FC<Props> = (props) => {
                 delay={{ show: 150, hide: 250 }}
                 overlay={renderTooltip}
               >
-                <Button size="sm" variant="info">
+                <Button size="sm" variant="info" onClick={handleRequest}>
                   Request
                 </Button>
               </OverlayTrigger>
