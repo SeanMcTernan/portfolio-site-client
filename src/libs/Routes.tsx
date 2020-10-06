@@ -13,7 +13,7 @@ const Routes: React.FC = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/settings" component={Home} />
+      <Route exact path="/settings/:id" component={Home} />
       <Route path="/home" component={Home} />
       <Route path="/projects" component={Projects} />
       <Route path="/references" component={References} />
