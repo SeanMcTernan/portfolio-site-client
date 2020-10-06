@@ -85,10 +85,10 @@ const NavbarElement: React.FC = () => {
             </Link>
             {isAuthenticated ? (
               <>
-                <Link to="settings" onClick={() => setModalShow(true)}>
+                <Link to="#" onClick={() => setModalShow(true)}>
                   <Nav.Link
                     className="nav-link text-white text-uppercase ml-5"
-                    href="settings"
+                    href="#"
                   >
                     Settings
                   </Nav.Link>
@@ -126,6 +126,7 @@ const NavbarElement: React.FC = () => {
         </Navbar.Collapse>
       </Navbar>
       <Settings
+        permissions
         show={modalShow}
         onHide={() => {
           setModalShow(false);

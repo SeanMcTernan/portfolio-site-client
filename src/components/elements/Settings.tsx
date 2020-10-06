@@ -14,6 +14,7 @@ import onError from "../../libs/errorLib";
 import "../../styles/Settings.css";
 
 interface Props {
+  permissions: any;
   show: boolean;
   onHide: () => void;
 }
@@ -31,22 +32,6 @@ const Settings: React.FC<Props> = (props) => {
       Click to request access
     </Tooltip>
   );
-
-  // const handleRequest = async (values: Values) => {
-  //   setIsLoading(true);
-  //   try {
-  //     await setPermissions(values);
-  //   } catch (e) {
-  //     onError(e);
-  //     setIsLoading(false);
-  //   }
-  // };
-
-  // const setPermissions = (values: Values) => {
-  //   return API.post("permissions", "/permissions", {
-  //     body: values,
-  //   });
-  // };
 
   return (
     <Modal
