@@ -1,4 +1,4 @@
-import { Auth } from "aws-amplify";
+import { Auth, API } from "aws-amplify";
 import { ISignUpResult } from "amazon-cognito-identity-js";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -8,6 +8,13 @@ import onError from "../../libs/errorLib";
 import { useAppContext } from "../../libs/contextLib";
 import useFormFields from "../../libs/hooksLib";
 import "../../styles/Signup.css";
+
+interface Values {
+  references: boolean;
+  hiddenrepos: boolean;
+  resume: boolean;
+  latest: boolean;
+}
 
 const Signup: React.FC = () => {
   const { fields, handleFieldChange } = useFormFields({
@@ -28,6 +35,12 @@ const Signup: React.FC = () => {
       fields.password.length > 0 &&
       fields.password === fields.confirmPassword
     );
+  };
+
+  const setPermissions = (values: Values) => {
+    return API.post("permissions", "/permissions", {
+      body: values,
+    });
   };
 
   const validateConfirmationForm = () => {
@@ -58,9 +71,16 @@ const Signup: React.FC = () => {
     setIsLoading(true);
 
     try {
+      const values = {
+        references: false,
+        hiddenrepos: false,
+        resume: true,
+        latest: false,
+      };
       await Auth.confirmSignUp(fields.email, fields.confirmationCode);
       await Auth.signIn(fields.email, fields.password);
-
+      console.log(values);
+      await setPermissions(values);
       userHasAuthenticated(true);
       history.push("/");
     } catch (e) {

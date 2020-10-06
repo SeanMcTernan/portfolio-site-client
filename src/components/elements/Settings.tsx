@@ -9,6 +9,7 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import onError from "../../libs/errorLib";
 import "../../styles/Settings.css";
 
@@ -24,37 +25,28 @@ interface Values {
 }
 
 const Settings: React.FC<Props> = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
   const renderTooltip = (props: any) => (
     <Tooltip id="button-tooltip" {...props}>
       Click to request access
     </Tooltip>
   );
 
-  const [isLoading, setIsLoading] = useState(false);
+  // const handleRequest = async (values: Values) => {
+  //   setIsLoading(true);
+  //   try {
+  //     await setPermissions(values);
+  //   } catch (e) {
+  //     onError(e);
+  //     setIsLoading(false);
+  //   }
+  // };
 
-  const handleRequest = async () => {
-    setIsLoading(true);
-
-    try {
-      const values = {
-        references: false,
-        hiddenrepos: false,
-        resume: true,
-        latest: false,
-      };
-
-      await setPermissions(values);
-    } catch (e) {
-      onError(e);
-      setIsLoading(false);
-    }
-  };
-
-  const setPermissions = (values: Values) => {
-    return API.post("permissions", "/permissions", {
-      body: values,
-    });
-  };
+  // const setPermissions = (values: Values) => {
+  //   return API.post("permissions", "/permissions", {
+  //     body: values,
+  //   });
+  // };
 
   return (
     <Modal
@@ -88,7 +80,7 @@ const Settings: React.FC<Props> = (props) => {
                 delay={{ show: 150, hide: 250 }}
                 overlay={renderTooltip}
               >
-                <Button size="sm" variant="info" onClick={handleRequest}>
+                <Button size="sm" variant="info">
                   Request
                 </Button>
               </OverlayTrigger>
