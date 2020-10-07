@@ -26,6 +26,9 @@ interface Values {
 }
 
 const Settings: React.FC<Props> = (props) => {
+  const logProps = (permissions: any) => {
+    console.log(permissions);
+  };
   const [isLoading, setIsLoading] = useState(false);
   const renderTooltip = (props: any) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -65,7 +68,13 @@ const Settings: React.FC<Props> = (props) => {
                 delay={{ show: 150, hide: 250 }}
                 overlay={renderTooltip}
               >
-                <Button size="sm" variant="info">
+                <Button
+                  size="sm"
+                  variant="info"
+                  onClick={() => {
+                    logProps(props.permissions.latest);
+                  }}
+                >
                   Request
                 </Button>
               </OverlayTrigger>

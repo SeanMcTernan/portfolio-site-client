@@ -126,7 +126,7 @@ const NavbarElement: React.FC = () => {
         </Navbar.Collapse>
       </Navbar>
       <Settings
-        permissions
+        permissions={permissions[0]}
         show={modalShow}
         onHide={() => {
           setModalShow(false);
