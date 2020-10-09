@@ -73,8 +73,11 @@ const Signup: React.FC = () => {
     try {
       const values = {
         references: false,
+        referencesRequested: false,
         hiddenrepos: false,
-        resume: true,
+        hiddenreposRequested: false,
+        resume: false,
+        resumeRequested: false,
         latest: false,
       };
       await Auth.confirmSignUp(fields.email, fields.confirmationCode);
