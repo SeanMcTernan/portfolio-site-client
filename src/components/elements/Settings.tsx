@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
 import "../../styles/Settings.css";
 
@@ -14,6 +14,9 @@ const Settings: React.FC<Props> = ({ ...props }) => {
     repos: false,
     resume: false,
   });
+  var referencesVarient = isRequested.references ? "outline-warning" : "info";
+  var reposVarient = isRequested.repos ? "outline-warning" : "info";
+  var resumeVarient = isRequested.resume ? "outline-warning" : "info";
   const handleClick = (item: string) => {
     switch (item) {
       case "references":
@@ -66,13 +69,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                       !props.permissions.references ? (
                         <Button
                           size="sm"
-                          variant={"info"}
+                          variant={referencesVarient}
                           disabled={isRequested.references}
                           onClick={() => {
                             handleClick("references");
                           }}
                         >
-                          {isRequested ? "Requested" : "Request"}
+                          {isRequested.references ? "Requested" : "Request"}
                         </Button>
                       ) : (
                         <Button size="sm" disabled variant="success">
@@ -97,13 +100,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                       !props.permissions.hiddenrepos ? (
                         <Button
                           size="sm"
-                          variant={"info"}
+                          variant={reposVarient}
                           disabled={isRequested.repos}
                           onClick={() => {
                             handleClick("repos");
                           }}
                         >
-                          {isRequested ? "Requested" : "Request"}
+                          {isRequested.repos ? "Requested" : "Request"}
                         </Button>
                       ) : (
                         <Button size="sm" disabled variant="success">
@@ -128,13 +131,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                       !props.permissions.resume ? (
                         <Button
                           size="sm"
-                          variant={"info"}
+                          variant={resumeVarient}
                           disabled={isRequested.resume}
                           onClick={() => {
                             handleClick("resume");
                           }}
                         >
-                          {isRequested ? "Requested" : "Request"}
+                          {isRequested.resume ? "Requested" : "Request"}
                         </Button>
                       ) : (
                         <Button size="sm" disabled variant="success">
