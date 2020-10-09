@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Modal,
-  Button,
-  Container,
-  Row,
-  Col,
-  OverlayTrigger,
-  Tooltip,
-} from "react-bootstrap";
+import { Modal, Button, Container, Row, Col } from "react-bootstrap";
 import "../../styles/Settings.css";
 
 interface Props {
@@ -17,10 +9,23 @@ interface Props {
 }
 
 const Settings: React.FC<Props> = ({ ...props }) => {
-  const [isRequested, setIsRequested] = useState(false);
-  var varient = isRequested ? "outline-warning" : "info";
-  const handleClick = () => {
-    setIsRequested(true);
+  const [isRequested, setIsRequested] = useState({
+    references: false,
+    repos: false,
+    resume: false,
+  });
+  const handleClick = (item: string) => {
+    switch (item) {
+      case "references":
+        setIsRequested({ ...isRequested, references: true });
+        break;
+      case "repos":
+        setIsRequested({ ...isRequested, repos: true });
+        break;
+      case "resume":
+        setIsRequested({ ...isRequested, resume: true });
+        break;
+    }
   };
 
   return (
@@ -52,18 +57,20 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   View Refences:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {props.permissions.resumeRequested ? (
+                  {props.permissions.referencesRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      props.permissions.resume ? (
+                      !props.permissions.references ? (
                         <Button
                           size="sm"
-                          variant={varient}
-                          disabled={isRequested}
-                          onClick={handleClick}
+                          variant={"info"}
+                          disabled={isRequested.references}
+                          onClick={() => {
+                            handleClick("references");
+                          }}
                         >
                           {isRequested ? "Requested" : "Request"}
                         </Button>
@@ -81,18 +88,20 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   View Hidden Repositories:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {props.permissions.resumeRequested ? (
+                  {props.permissions.hiddenreposRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      props.permissions.resume ? (
+                      !props.permissions.hiddenrepos ? (
                         <Button
                           size="sm"
-                          variant={varient}
-                          disabled={isRequested}
-                          onClick={handleClick}
+                          variant={"info"}
+                          disabled={isRequested.repos}
+                          onClick={() => {
+                            handleClick("repos");
+                          }}
                         >
                           {isRequested ? "Requested" : "Request"}
                         </Button>
@@ -116,12 +125,14 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                     </Button>
                   ) : (
                     [
-                      props.permissions.resume ? (
+                      !props.permissions.resume ? (
                         <Button
                           size="sm"
-                          variant={varient}
-                          disabled={isRequested}
-                          onClick={handleClick}
+                          variant={"info"}
+                          disabled={isRequested.resume}
+                          onClick={() => {
+                            handleClick("resume");
+                          }}
                         >
                           {isRequested ? "Requested" : "Request"}
                         </Button>
