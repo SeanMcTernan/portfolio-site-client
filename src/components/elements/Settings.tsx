@@ -18,12 +18,6 @@ interface Props {
 
 const Settings: React.FC<Props> = ({ ...props }) => {
   const [isRequested, setIsRequested] = useState(false);
-  const renderTooltip = (props: any) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Click to request access
-    </Tooltip>
-  );
-
   var varient = isRequested ? "outline-warning" : "info";
   const handleClick = () => {
     setIsRequested(true);
@@ -58,15 +52,28 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   View Refences:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 150, hide: 250 }}
-                    overlay={renderTooltip}
-                  >
-                    <Button size="sm" variant="info">
-                      Request
+                  {props.permissions.resumeRequested ? (
+                    <Button size="sm" disabled variant="outline-warning">
+                      Requested
                     </Button>
-                  </OverlayTrigger>
+                  ) : (
+                    [
+                      props.permissions.resume ? (
+                        <Button
+                          size="sm"
+                          variant={varient}
+                          disabled={isRequested}
+                          onClick={handleClick}
+                        >
+                          {isRequested ? "Requested" : "Request"}
+                        </Button>
+                      ) : (
+                        <Button size="sm" disabled variant="success">
+                          Approved
+                        </Button>
+                      ),
+                    ]
+                  )}
                 </Col>
               </Row>
               <Row className="settingsRows">
@@ -74,15 +81,28 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   View Hidden Repositories:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                  >
-                    <Button size="sm" variant="info">
-                      Request
+                  {props.permissions.resumeRequested ? (
+                    <Button size="sm" disabled variant="outline-warning">
+                      Requested
                     </Button>
-                  </OverlayTrigger>
+                  ) : (
+                    [
+                      props.permissions.resume ? (
+                        <Button
+                          size="sm"
+                          variant={varient}
+                          disabled={isRequested}
+                          onClick={handleClick}
+                        >
+                          {isRequested ? "Requested" : "Request"}
+                        </Button>
+                      ) : (
+                        <Button size="sm" disabled variant="success">
+                          Approved
+                        </Button>
+                      ),
+                    ]
+                  )}
                 </Col>
               </Row>
               <Row className="settingsRows">
@@ -90,13 +110,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   Access Downloadable Resume:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {props.permissions.resume.requested ? (
+                  {props.permissions.resumeRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      true ? (
+                      props.permissions.resume ? (
                         <Button
                           size="sm"
                           variant={varient}
