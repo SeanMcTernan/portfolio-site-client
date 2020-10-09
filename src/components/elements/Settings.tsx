@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Modal,
   Button,
@@ -17,14 +17,17 @@ interface Props {
 }
 
 const Settings: React.FC<Props> = ({ ...props }) => {
-  const logProps = (permissions: any) => {
-    console.log(permissions);
-  };
+  const [isRequested, setIsRequested] = useState(false);
   const renderTooltip = (props: any) => (
     <Tooltip id="button-tooltip" {...props}>
       Click to request access
     </Tooltip>
   );
+
+  var varient = isRequested ? "outline-warning" : "info";
+  const handleClick = () => {
+    setIsRequested(true);
+  };
 
   return (
     <>
@@ -60,13 +63,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                     delay={{ show: 150, hide: 250 }}
                     overlay={renderTooltip}
                   >
-                    <Button
-                      size="sm"
-                      variant="info"
-                      onClick={() => {
-                        logProps(props.permissions.resume);
-                      }}
-                    >
+                    <Button size="sm" variant="info">
                       Request
                     </Button>
                   </OverlayTrigger>
@@ -93,15 +90,20 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   Access Downloadable Resume:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {props.permissions.resume ? (
+                  {props.permissions.resume.requested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      props.permissions.latest ? (
-                        <Button size="sm" variant="info">
-                          Request
+                      true ? (
+                        <Button
+                          size="sm"
+                          variant={varient}
+                          disabled={isRequested}
+                          onClick={handleClick}
+                        >
+                          {isRequested ? "Requested" : "Request"}
                         </Button>
                       ) : (
                         <Button size="sm" disabled variant="success">
