@@ -1,5 +1,7 @@
+import { API } from "aws-amplify";
 import React, { useState } from "react";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
+import onError from "../../libs/errorLib";
 import "../../styles/Settings.css";
 
 interface Props {
@@ -9,24 +11,42 @@ interface Props {
 }
 
 const Settings: React.FC<Props> = ({ ...props }) => {
+  const updatePermissions = (values: any) => {
+    return API.put("permissions", `/permissions/${props.permissions.permissionsId}`, {
+      body: values,
+    });
+  };
+
   const [isRequested, setIsRequested] = useState({
     references: false,
     repos: false,
     resume: false,
   });
+  
   var referencesVarient = isRequested.references ? "outline-warning" : "info";
   var reposVarient = isRequested.repos ? "outline-warning" : "info";
   var resumeVarient = isRequested.resume ? "outline-warning" : "info";
-  const handleClick = (item: string) => {
+
+  const handleClick = async (item: string) => {
+    const asyncRequest = async (request: any) => {
+      try {
+        await updatePermissions(request)
+      } catch (e) {
+        onError(e);
+      }
+    }
     switch (item) {
       case "references":
         setIsRequested({ ...isRequested, references: true });
+        asyncRequest(1)
         break;
       case "repos":
         setIsRequested({ ...isRequested, repos: true });
+        asyncRequest(2);
         break;
       case "resume":
         setIsRequested({ ...isRequested, resume: true });
+        asyncRequest(3);
         break;
     }
   };

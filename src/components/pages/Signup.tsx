@@ -82,7 +82,6 @@ const Signup: React.FC = () => {
       };
       await Auth.confirmSignUp(fields.email, fields.confirmationCode);
       await Auth.signIn(fields.email, fields.password);
-      console.log(values);
       await setPermissions(values);
       userHasAuthenticated(true);
       history.push("/");
