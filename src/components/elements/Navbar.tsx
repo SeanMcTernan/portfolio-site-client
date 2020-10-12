@@ -67,14 +67,6 @@ const NavbarElement: React.FC = () => {
                 Projects
               </Nav.Link>
             </Link>
-            <Link to="references">
-              <Nav.Link
-                className="nav-link text-white text-uppercase ml-5"
-                href="references"
-              >
-                References
-              </Nav.Link>
-            </Link>
             <Link to="contact">
               <Nav.Link
                 className="nav-link text-white text-uppercase ml-5"
@@ -85,23 +77,33 @@ const NavbarElement: React.FC = () => {
             </Link>
             {isAuthenticated ? (
               <>
+              <Link to="references">
+              <Nav.Link
+                className="nav-link text-white text-uppercase ml-5"
+                href="references"
+              >
+                References
+              </Nav.Link>
+            </Link>
                 <Link to="#" onClick={() => setModalShow(true)}>
                   <Nav.Link
-                    className="nav-link text-white text-uppercase ml-5"
-                    href="#"
+                    className="nostyle nav-link text-white text-uppercase ml-5"
+                    href="#settings"
                   >
                     Settings
                   </Nav.Link>
                 </Link>
-                <Link to="#" onClick={handleLogout}>
+                <Link to="home" onClick={handleLogout}>
                   <Nav.Link
+                    data-attr="nostyle"
                     className="nav-link text-white text-uppercase mx-5"
-                    href="#"
+                    href="home"
                   >
                     Logout
                   </Nav.Link>
                 </Link>
               </>
+              
             ) : (
               <>
                 <Link to="login">

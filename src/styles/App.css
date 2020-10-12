@@ -30,6 +30,10 @@
   border: none;
 }
 
+.nostyle {
+  border-bottom: none !important;
+}
+
 /* Home Elements */
 
 .jumbotron {
