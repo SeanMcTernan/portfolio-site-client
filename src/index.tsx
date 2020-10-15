@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import config from "./config";
 import App from "./App";
+import { InfoProvider } from "./libs/contextLib";
 import "./styles/Index.css";
 import * as serviceWorker from "./serviceWorker";
 
@@ -27,9 +28,11 @@ Amplify.configure({
 });
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <InfoProvider>
+    <Router>
+      <App />
+    </Router>
+  </InfoProvider>,
   document.getElementById("root")
 );
 

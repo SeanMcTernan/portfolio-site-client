@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
+import { Button } from "react-bootstrap";
 import InfoCards from "../elements/infoCards";
 
 const Projects: React.FC = (props) => {
@@ -8,8 +9,16 @@ const Projects: React.FC = (props) => {
     <Container>
       <Row>
         <InfoConsumer>
-          {(values) => {
-            return <h2>{values}</h2>;
+          {(value) => {
+            return (
+              <Button
+                onClick={() => {
+                  console.log(value.technologies);
+                }}
+              >
+                Click me
+              </Button>
+            );
           }}
         </InfoConsumer>
       </Row>
