@@ -1,4 +1,5 @@
 import React, { useContext, createContext } from "react";
+import { projectInfo, technologies, detailInfo } from '../libs/projectData';
 
 //Context for Authentication
 interface IContextProps {
@@ -17,7 +18,9 @@ const infoContext = createContext({});
 
 export const InfoProvider: React.FC = (props: any) => {
   return (
-    <infoContext.Provider value = "Hello World!">
+    <infoContext.Provider value = {{projectInfo,
+      technologies,
+      detailInfo}}>
       {props.children}
     </infoContext.Provider>
   )

@@ -1,16 +1,20 @@
 import React from "react";
+import { Container, Row } from "react-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
+import InfoCards from "../elements/infoCards";
 
-const Projects: React.FC = () => {
+const Projects: React.FC = (props) => {
   return (
-    <div>
-      <InfoConsumer>
-        {data => {
-          return <h2>{data}</h2>
-        }}
-      </InfoConsumer>
-    </div>
+    <Container>
+      <Row>
+        <InfoConsumer>
+          {(values) => {
+            return <h2>{values}</h2>;
+          }}
+        </InfoConsumer>
+      </Row>
+    </Container>
   );
-}
+};
 
 export default Projects;
