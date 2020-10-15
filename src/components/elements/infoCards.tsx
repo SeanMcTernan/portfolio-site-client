@@ -2,21 +2,20 @@ import React from "react";
 import { Col, Button, Card } from "react-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
 
-interface Props {
-  id: string;
+interface itemTypes {
+  id: number;
   headerTitle: string;
   headerSubTitle: string;
   headerText: string;
   img: string;
 }
 
-const InfoCards: React.FC<Props> = ({
-  id,
-  headerTitle,
-  headerSubTitle,
-  headerText,
-  img,
-}) => {
+interface Props {
+  item: itemTypes;
+}
+
+const InfoCards: React.FC<Props> = ({ item }) => {
+  const { id, headerTitle, headerSubTitle, headerText, img } = item;
   return (
     <InfoConsumer>
       {(data) => (

@@ -1,24 +1,18 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
-import { Button } from "react-bootstrap";
+
 import InfoCards from "../elements/infoCards";
 
 const Projects: React.FC = (props) => {
   return (
-    <Container>
+    <Container className="homeDiv">
       <Row>
         <InfoConsumer>
           {(value) => {
-            return (
-              <Button
-                onClick={() => {
-                  console.log(value.technologies);
-                }}
-              >
-                Click me
-              </Button>
-            );
+            return value.projectInfo!.map((item) => {
+              return <InfoCards key={item.id} item={item} />;
+            });
           }}
         </InfoConsumer>
       </Row>
