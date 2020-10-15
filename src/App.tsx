@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Auth } from "aws-amplify";
-import { AppContext } from "./libs/contextLib";
+import { AppContext, InfoProvider } from "./libs/contextLib";
 import Routes from "./libs/Routes";
 import FooterElement from "./components/elements/Footer";
 import NavbarElement from "./components/elements/Navbar";
@@ -31,6 +31,7 @@ const App: React.FC = () => {
     <>
       {!isAuthenticating && (
         <div>
+          <InfoProvider>
           <AppContext.Provider
             value={{ isAuthenticated, userHasAuthenticated }}
           >
@@ -38,6 +39,7 @@ const App: React.FC = () => {
             <Routes />
             <FooterElement />
           </AppContext.Provider>
+          </InfoProvider>
         </div>
       )}
     </>

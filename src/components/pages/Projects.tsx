@@ -1,13 +1,16 @@
 import React from "react";
+import { InfoConsumer } from "../../libs/contextLib";
 
-class Projects extends React.Component {
-  render() {
-    return (
-      <div>
-        <h2>Projects page...</h2>
-      </div>
-    );
-  }
+const Projects: React.FC = () => {
+  return (
+    <div>
+      <InfoConsumer>
+        {data => {
+          return <h2>{data}</h2>
+        }}
+      </InfoConsumer>
+    </div>
+  );
 }
 
 export default Projects;

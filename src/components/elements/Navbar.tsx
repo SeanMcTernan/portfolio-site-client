@@ -13,6 +13,7 @@ const NavbarElement: React.FC = () => {
   const { isAuthenticated, userHasAuthenticated } = useAppContext();
   const [modalShow, setModalShow] = useState(false);
   const [permissions, setPermissions] = useState([]);
+  // eslint-disable-next-line
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLogout = async () => {
