@@ -24,7 +24,7 @@ const InfoCards: React.FC<Props> = ({ item }) => {
             <Card.Img variant="top" alt={headerTitle} src={img} />
             <Card.Body>
               <Card.Title>{headerTitle}</Card.Title>
-              <Card.Text>{headerSubTitle}</Card.Text>
+              <Card.Text>{headerText}</Card.Text>
               <Button variant="primary">More info</Button>
             </Card.Body>
           </Card>

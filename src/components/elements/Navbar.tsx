@@ -78,14 +78,14 @@ const NavbarElement: React.FC = () => {
             </Link>
             {isAuthenticated ? (
               <>
-              <Link to="references">
-              <Nav.Link
-                className="nav-link text-white text-uppercase ml-5"
-                href="references"
-              >
-                References
-              </Nav.Link>
-            </Link>
+                <Link to="references">
+                  <Nav.Link
+                    className="nav-link text-white text-uppercase ml-5"
+                    href="references"
+                  >
+                    References
+                  </Nav.Link>
+                </Link>
                 <Link to="#" onClick={() => setModalShow(true)}>
                   <Nav.Link
                     className="nostyle nav-link text-white text-uppercase ml-5"
@@ -104,7 +104,6 @@ const NavbarElement: React.FC = () => {
                   </Nav.Link>
                 </Link>
               </>
-              
             ) : (
               <>
                 <Link to="login">
@@ -133,7 +132,6 @@ const NavbarElement: React.FC = () => {
         show={modalShow}
         onHide={() => {
           setModalShow(false);
-          history.push("/");
         }}
       />
     </>
