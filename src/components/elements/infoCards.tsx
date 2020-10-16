@@ -20,12 +20,20 @@ const InfoCards: React.FC<Props> = ({ item }) => {
     <InfoConsumer>
       {(data) => (
         <Col lg={4} className="col-10 mx-auto mb-5">
-          <Card style={{ width: "18rem" }}>
+          <Card
+            className="cardsContent"
+            style={{
+              width: "18rem",
+              backgroundColor: "#232325",
+              color: "var(--mainWhite)",
+              border: "2px solid rgba(46,47,50)",
+            }}
+          >
             <Card.Img variant="top" alt={headerTitle} src={img} />
             <Card.Body>
               <Card.Title>{headerTitle}</Card.Title>
               <Card.Text>{headerText}</Card.Text>
-              <Button variant="primary">More info</Button>
+              <Button variant="outline-info">More info</Button>
             </Card.Body>
           </Card>
         </Col>

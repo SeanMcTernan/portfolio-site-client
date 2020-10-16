@@ -21,11 +21,7 @@ const Home: React.FC = () => {
               </p>
               <p>
                 <LinkContainer to="projects">
-                  <Button
-                    className="landingButton"
-                    variant="outline-info"
-                    size="lg"
-                  >
+                  <Button variant="outline-info" size="lg">
                     View Projects
                   </Button>
                 </LinkContainer>
