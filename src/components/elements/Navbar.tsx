@@ -9,7 +9,11 @@ import { Link, useHistory } from "react-router-dom";
 
 const NavbarElement: React.FC = () => {
   const history = useHistory();
-  const { isAuthenticated, userHasAuthenticated } = useAppContext();
+  const {
+    userPermissions,
+    isAuthenticated,
+    userHasAuthenticated,
+  } = useAppContext();
   const [modalShow, setModalShow] = useState(false);
 
   const handleLogout = async () => {
@@ -49,14 +53,30 @@ const NavbarElement: React.FC = () => {
             </Link>
             {isAuthenticated ? (
               <>
-                <Link to="references">
-                  <Nav.Link
-                    className="nav-link text-white text-uppercase ml-5"
-                    href="references"
-                  >
-                    References
-                  </Nav.Link>
-                </Link>
+                {userPermissions.resume ? (
+                  <>
+                    <Link to="#">
+                      <Nav.Link
+                        className="nostyle nav-link text-white text-uppercase ml-5"
+                        href="#settings"
+                      >
+                        Resume
+                      </Nav.Link>
+                    </Link>
+                  </>
+                ) : null}
+                {userPermissions.references ? (
+                  <>
+                    <Link to="references">
+                      <Nav.Link
+                        className="nav-link text-white text-uppercase ml-5"
+                        href="references"
+                      >
+                        References
+                      </Nav.Link>
+                    </Link>
+                  </>
+                ) : null}
                 <Link to="#" onClick={() => setModalShow(true)}>
                   <Nav.Link
                     className="nostyle nav-link text-white text-uppercase ml-5"
