@@ -8,9 +8,20 @@ import {
   technoloigiesProps,
 } from "../libs/projectData";
 
-//Context for Authentication
+//Context for User Authentication & Permissions
+
+interface permissionsProps {
+  references: boolean;
+  referencesRequested: boolean;
+  hiddenrepos: boolean;
+  hiddenreposRequested: boolean;
+  resume: boolean;
+  resumeRequested: boolean;
+  permissionsId: number;
+}
 
 interface IContextProps {
+  userPermissions: permissionsProps;
   isAuthenticated: boolean;
   userHasAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }

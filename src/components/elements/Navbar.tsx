@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Auth, API } from "aws-amplify";
+import React, { useState } from "react";
+import { Auth } from "aws-amplify";
 import { Nav, Navbar } from "react-bootstrap";
 import { useAppContext } from "../../libs/contextLib";
-import onError from "../../libs/errorLib";
 import Settings from "./Settings";
 import logo from "../../svgs/logo.svg";
 import menu from "../../svgs/menu.svg";
@@ -12,39 +11,11 @@ const NavbarElement: React.FC = () => {
   const history = useHistory();
   const { isAuthenticated, userHasAuthenticated } = useAppContext();
   const [modalShow, setModalShow] = useState(false);
-  const [permissions, setPermissions] = useState([]);
-  // eslint-disable-next-line
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleLogout = async () => {
     await Auth.signOut();
     userHasAuthenticated(false);
     history.push("/login");
-  };
-
-  //Load users permissions from DB when app loads.
-
-  useEffect(() => {
-    const onLoad = async () => {
-      if (!isAuthenticated) {
-        return;
-      }
-
-      try {
-        const permissions = await getPermissions();
-        setPermissions(permissions);
-      } catch (e) {
-        onError(e);
-      }
-
-      setIsLoading(false);
-    };
-
-    onLoad();
-  }, [isAuthenticated]);
-
-  const getPermissions = () => {
-    return API.get("permissions", "/permissions");
   };
 
   return (
@@ -128,7 +99,6 @@ const NavbarElement: React.FC = () => {
         </Navbar.Collapse>
       </Navbar>
       <Settings
-        permissions={permissions[0]}
         show={modalShow}
         onHide={() => {
           setModalShow(false);

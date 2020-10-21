@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         <Col lg={5} sm={6} md={6} className="d-flex offset-lg-2">
           <p>
             <Jumbotron>
-              <h1>Welcome Seán Mc Ternan's Portfolio</h1>
+              <h1>Welcome to Seán Mc Ternan's Portfolio</h1>
 
               <p>
                 Thank you for taking the time to visit my portfolio website. If

@@ -1,20 +1,25 @@
 import { API } from "aws-amplify";
 import React, { useState } from "react";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
+import { useAppContext } from "../../libs/contextLib";
 import onError from "../../libs/errorLib";
 import "../../styles/Settings.css";
 
 interface Props {
-  permissions: any;
   show: boolean;
   onHide: () => void;
 }
 
 const Settings: React.FC<Props> = ({ ...props }) => {
+  const { userPermissions } = useAppContext();
   const updatePermissions = (values: any) => {
-    return API.put("permissions", `/permissions/${props.permissions.permissionsId}`, {
-      body: values,
-    });
+    return API.put(
+      "permissions",
+      `/permissions/${userPermissions.permissionsId}`,
+      {
+        body: values,
+      }
+    );
   };
 
   const [isRequested, setIsRequested] = useState({
@@ -22,7 +27,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
     repos: false,
     resume: false,
   });
-  
+
   var referencesVarient = isRequested.references ? "outline-warning" : "info";
   var reposVarient = isRequested.repos ? "outline-warning" : "info";
   var resumeVarient = isRequested.resume ? "outline-warning" : "info";
@@ -30,15 +35,15 @@ const Settings: React.FC<Props> = ({ ...props }) => {
   const handleClick = async (item: string) => {
     const asyncRequest = async (request: any) => {
       try {
-        await updatePermissions(request)
+        await updatePermissions(request);
       } catch (e) {
         onError(e);
       }
-    }
+    };
     switch (item) {
       case "references":
         setIsRequested({ ...isRequested, references: true });
-        asyncRequest(1)
+        asyncRequest(1);
         break;
       case "repos":
         setIsRequested({ ...isRequested, repos: true });
@@ -53,7 +58,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
 
   return (
     <>
-      {!props.permissions ? null : (
+      {!userPermissions ? null : (
         <Modal
           backdrop="static"
           {...props}
@@ -80,13 +85,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   View Refences:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {props.permissions.referencesRequested ? (
+                  {userPermissions.referencesRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      !props.permissions.references ? (
+                      !userPermissions.references ? (
                         <Button
                           size="sm"
                           variant={referencesVarient}
@@ -111,13 +116,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   View Hidden Repositories:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {props.permissions.hiddenreposRequested ? (
+                  {userPermissions.hiddenreposRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      !props.permissions.hiddenrepos ? (
+                      !userPermissions.hiddenrepos ? (
                         <Button
                           size="sm"
                           variant={reposVarient}
@@ -142,13 +147,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   Access Downloadable Resume:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {props.permissions.resumeRequested ? (
+                  {userPermissions.resumeRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      !props.permissions.resume ? (
+                      !userPermissions.resume ? (
                         <Button
                           size="sm"
                           variant={resumeVarient}

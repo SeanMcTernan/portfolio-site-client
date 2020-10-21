@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row } from "react-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
 
-import InfoCards from "../elements/infoCards";
+import InfoCards from "../elements/InfoCard";
 
 const Projects: React.FC = (props) => {
   return (
