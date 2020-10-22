@@ -6,7 +6,7 @@ import config from "./config";
 import App from "./App";
 import { InfoProvider } from "./libs/contextLib";
 import "./styles/Index.css";
-import * as serviceWorker from "./serviceWorker";
+// import * as serviceWorker from "./serviceWorker";
 
 Amplify.configure({
   Auth: {
@@ -36,4 +36,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-serviceWorker.unregister();
+// serviceWorker.unregister();

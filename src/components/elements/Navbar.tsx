@@ -4,6 +4,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import { useAppContext } from "../../libs/contextLib";
 import Settings from "./Settings";
 import logo from "../../svgs/logo.svg";
+import PDF from "../../docs/SeanMcTernan_Resume.pdf";
 import menu from "../../svgs/menu.svg";
 import { Link, useHistory } from "react-router-dom";
 
@@ -55,13 +56,13 @@ const NavbarElement: React.FC = () => {
               <>
                 {userPermissions.resume ? (
                   <>
-                    <Link to="#">
-                      <Nav.Link
-                        className="nostyle nav-link text-white text-uppercase ml-5"
-                        href="#settings"
-                      >
-                        Resume
-                      </Nav.Link>
+                    <Link
+                      to={PDF}
+                      download
+                      target={PDF}
+                      className="nostyle nav-link text-white text-uppercase ml-5"
+                    >
+                      Resume
                     </Link>
                   </>
                 ) : null}
