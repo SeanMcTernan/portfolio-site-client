@@ -82,7 +82,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
               </p>
               <Row className="settingsRows">
                 <Col xs={12} md={8} lg={4}>
-                  View Refences:
+                  View References:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
                   {userPermissions.referencesRequested ? (
