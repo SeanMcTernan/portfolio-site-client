@@ -36,3 +36,22 @@ After working with [Ruru Software](https://github.com/ruru-software) on a Projec
   <img src="https://github.com/SeanMcTernan/SeanMcTernan/blob/main/Portfolio-App-Example_2.png?raw=true" width="738">
 </p>
 
+### Motivation & what was learned
+
+The motivation was simple, I wanted somewhere (other than GitHub of course) to showcase my projects. For this project, I decided to fully commit to a TypeScript as my language of choice going forward. It's been a challenge to say the least, but I feel I have learned so much about TypeScript and really started to understand the benefits of using it for development. Admittedly, after completing Maximilian Schwarzmüller's [Understanding TypeScript](https://www.udemy.com/course/understanding-typescript/) course I did not fully grasp the benefits of the language, it seemed to add more roadblocks over solutions. However, after speaking to many friends about my feelings the assured it would help with streamlining development. After committing to this project, I finally understand what the mean!
+
+Along with Typescript, I learned React-Bootstrap for the first time which was a huge help. I was not looking forward to toiling away with various browser elements. It was a happy accident I discovered this when I did, it's made developing the front end a lot more enjoyable. 
+
+<p align="center">
+  <img src="https://github.com/SeanMcTernan/SeanMcTernan/blob/main/PortfolioSite.gif?raw=true" width="250">
+</p>
+
+Finally, I learned a little about CSS animations and the use of SVG's. I wanted my homepage to pop, so I incorporated an infinite loop on the laptop screen you can see above. You can see a small sample (in GIF format) of the animation in action above.
+
+### Install Instructions
+
+1. Clone/Download the Repository 
+2. From the folder run `npm install`
+3. Run `npm start`
+
+### Development Time: ~ 3 Months
