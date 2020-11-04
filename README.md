@@ -54,4 +54,4 @@ Finally, I learned a little about CSS animations and the use of SVG's. I wanted 
 2. From the folder run `npm install`
 3. Run `npm start`
 
-### Development Time: ~ 3 Months
+### Development Time: Still in Development
