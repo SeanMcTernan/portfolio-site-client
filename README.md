@@ -18,3 +18,21 @@ The backend of the Portfolio site is designed to showcase my capabilities with R
 | [React-Router-Dom](https://www.npmjs.com/package/react-router-dom) | To assist with link navigation on the Frontend |
 | [React-Dom](https://www.npmjs.com/package/react-dom) | To render the App to the DOM |
 
+### The App
+
+<p align="center">
+  <img src="https://github.com/SeanMcTernan/SeanMcTernan/blob/main/portfolio_site_sample_1.png?raw=true" width="738">
+</p>
+
+To create my portfolio app, I've compiled skills I have learned from a variety of different sources which I have accumulated over the years. I wanted a fun project to work on, while showcasing my skills in both backend and frontend development. The project even forced me to learn new technologies, which I've outlined below. 
+
+<p align="center">
+  <img src="https://github.com/SeanMcTernan/SeanMcTernan/blob/main/portfolio_site_sample_2.png?raw=true" width="738">
+</p>
+
+After working with [Ruru Software](https://github.com/ruru-software) on a Project on AWS, I decided to expand my knowledge of Lambda and Dynamo DB while working on this project. I thought of some fun operations to use to allow users to sign up and request certain permissions on the site. So far it has given me a much deeper understanding of AWS and it's offering. 
+
+<p align="center">
+  <img src="https://github.com/SeanMcTernan/SeanMcTernan/blob/main/Portfolio-App-Example_2.png?raw=true" width="738">
+</p>
+
