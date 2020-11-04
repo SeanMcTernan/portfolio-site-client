@@ -5,7 +5,7 @@
      alt="Clear-Monitoring App Image By Sean Mc Ternan " width="120" height="178">
 
 
-The backend of the Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects. The frameworks used were React and Bootstrap to allow for easy responsive design. 
+The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects. The frameworks used were React and Bootstrap to allow for easy responsive design. 
 
 
 ## Technologies Used
