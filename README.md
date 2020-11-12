@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-
 # NodeJS Chat App - Frontend
-
-=======
 
 # Portfolio Site - Frontend <a href="https://github.com/SeanMcTernan" target="_blank"><img src="https://raw.githubusercontent.com/SeanMcTernan/SeanMcTernan/7c1dcc08830e2087866a9d06c1f37d7b431edf82/ReadMe_Images/ReadMe_Badge_Small.svg" alt="Site badgeBy Sean Mc Ternan" width="120"/></a>
 
 <img src="https://raw.githubusercontent.com/SeanMcTernan/SeanMcTernan/940a359ef8a199aac0fe3e5cecaaef3d01e17542/ReadMe_Images/Portfolio_App/portfolio-app-frontend.svg" align="right"
      alt="Portfolio App Frontend Image By Sean Mc Ternan " width="120" height="178">
+
+To view the backend code for my Portfolio site [Click Here](https://github.com/SeanMcTernan/portfolio-site-api)
 
 The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects. The frameworks used were React and Bootstrap to allow for easy responsive design.
 
