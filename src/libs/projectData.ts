@@ -3,7 +3,7 @@ const projectInfo = [
     id: 1,
     headerTitle: 'RiverText',
     headerSubTitle: 'soluta numquam',
-    headerText: 'River text is a system designed to help get river level updates via the delorme satelite network. Using data pulled from the government of Canada website, an accurate reading is sent directly to the satelite phone.',
+    headerText: 'RiverText is a system that allows users to receive river flow information from The Canadian Water Office by sending a message from a satellite phone or any SMS enabled device. By sending a message to a Toll Free number, the app takes the request and queries the corresponding river name for its recent flow information and sends it back to the user.',
     title: 'Molestias officia excepturi',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
