@@ -35,7 +35,7 @@ const InfoCards: React.FC<Props> = ({ item }) => {
               alt={headerTitle}
               src={img}
             />
-            <Card.Body>
+            <Card.Body className="collapse-content">
               <Card.Title>{headerTitle}</Card.Title>
               <Card.Text>{headerText}</Card.Text>
               <Button variant="outline-info">More info</Button>

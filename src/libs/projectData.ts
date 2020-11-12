@@ -39,7 +39,7 @@ const projectInfo = [
     id: 4,
     headerTitle: 'Portfolio Site - Backend',
     headerSubTitle: 'soluta numquam',
-    headerText: 'The backend of the Portfolio site serves to assist login and permissions on my portfolio site. It allows users to create accounts, login and request permissions to see restricted areas on the site that are otherwise invisible unless approved.',
+    headerText: 'The backend of the Portfolio site serves to assist login and permissions on my portfolio site. It was created entirely using Serverless',
     title: 'Molestias officia excepturi',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
@@ -61,7 +61,7 @@ const projectInfo = [
   },
   {
     id: 6,
-    headerTitle: 'Severless Note Taking App - Frontend',
+    headerTitle: 'Severless Notes',
     headerSubTitle: 'soluta numquam',
     headerText: 'The frontend of my Serverless note taking app. The App was created as part of the Servless-Stack course where I learned about AWS and the Severless.',
     title: 'Molestias officia excepturi',
