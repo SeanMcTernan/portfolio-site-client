@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import Details from "../components/pages/Details";
 import Contact from "../components/pages/Contact";
 import Home from "../components/pages/Home";
 import Login from "../components/pages/Login";
@@ -13,11 +14,12 @@ const Routes: React.FC = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/details" component={Details} />
       <Route path="/home" component={Home} />
+      <Route path="/login" component={Login} />
       <Route path="/projects" component={Projects} />
       <Route path="/references" component={References} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/login" component={Login} />
       <Route path="/reset" component={ResetPassword} />
       <Route path="/signup" component={Signup} />
       <Route component={NotFound} />

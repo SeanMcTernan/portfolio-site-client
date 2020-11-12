@@ -1,5 +1,7 @@
 import React from "react";
 import { Col, Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
 
 interface itemTypes {
@@ -38,7 +40,9 @@ const InfoCards: React.FC<Props> = ({ item }) => {
             <Card.Body className="collapse-content">
               <Card.Title>{headerTitle}</Card.Title>
               <Card.Text>{headerText}</Card.Text>
-              <Button variant="outline-info">More info</Button>
+              <LinkContainer to="projects">
+                <Button variant="outline-info">More info</Button>
+              </LinkContainer>
             </Card.Body>
           </Card>
         </Col>
