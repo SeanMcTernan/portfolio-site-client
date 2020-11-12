@@ -27,7 +27,7 @@ const projectInfo = [
     id: 3,
     headerTitle: 'Portfolio Site',
     headerSubTitle: 'soluta numquam',
-    headerText: 'My portfolio site was created to showcase my skillset in backend and frontend development. Using a serverless model through AWS, the site takes advantage of their offering through authentication, database management and more.',
+    headerText: 'The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects. The frameworks used were React and Bootstrap to allow for easy responsive design.',
     title: 'Molestias officia excepturi',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
