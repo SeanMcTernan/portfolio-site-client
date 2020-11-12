@@ -13,9 +13,9 @@ const projectInfo = [
   },
   {
     id: 2,
-    headerTitle: 'Clear Intercom Folder',
+    headerTitle: 'Clear Monitoring',
     headerSubTitle: 'soluta numquam',
-    headerText: 'River text is a system designed to help get river level updates via the delorme satelite network. Using data pulled from the government of Canada website, and accurate reading is sent directly to the satelite phone.',
+    headerText: 'Clear Monitoring is an App that was build to help support staff close thousands of emails on the Intercom platform all at once via a CLI. Through prompts the user can choose to close numerous emails associated with open tickets. The App can also release the associate message from the SimpleTexing platform which triggered the email in the first place.',
     title: 'Molestias officia excepturi',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
