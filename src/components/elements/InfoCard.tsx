@@ -40,7 +40,7 @@ const InfoCards: React.FC<Props> = ({ item }) => {
             <Card.Body className="collapse-content">
               <Card.Title>{headerTitle}</Card.Title>
               <Card.Text>{headerText}</Card.Text>
-              <LinkContainer to="projects">
+              <LinkContainer to="details">
                 <Button variant="outline-info">More info</Button>
               </LinkContainer>
             </Card.Body>
