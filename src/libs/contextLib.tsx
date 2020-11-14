@@ -2,7 +2,6 @@ import React, { useContext, createContext } from "react";
 import {
   projectInfo,
   technologies,
-  detailInfo,
   projectInfoProp,
   projectInfoProps,
   technoloigiesProps,
@@ -44,7 +43,7 @@ const infoContext = createContext<Partial<infoContextProps>>({});
 
 export const InfoProvider: React.FC = (props: any) => {
   return (
-    <infoContext.Provider value={{ projectInfo, technologies, detailInfo }}>
+    <infoContext.Provider value={{ projectInfo, technologies }}>
       {props.children}
     </infoContext.Provider>
   );
