@@ -44,9 +44,10 @@ const Details: React.FC = (props) => {
                 </Col>
               </Row>
             </Container>
+            {/* Nav Links */}
             <Container>
-              <Tabs defaultActiveKey="aboutPlace" id="details-tab">
-                <Tab eventKey="aboutPlace" title="AboutPlace">
+              <Tabs defaultActiveKey="project-breakdown" id="details-tab">
+                <Tab eventKey="project-breakdown" title="Project Breakdown">
                   <h2 className="mb-3">{title}</h2>
                   <p>{description}</p>
                   <img
@@ -55,8 +56,22 @@ const Details: React.FC = (props) => {
                     className="img-thumbnail img-fluid"
                   />
                 </Tab>
-                <Tab eventKey="profile" title="Profile"></Tab>
-                <Tab eventKey="contact" title="Contact"></Tab>
+                <Tab
+                  eventKey="project-technologies"
+                  title="Project Technologies"
+                >
+                  <h2 className="mb-3">{title}</h2>
+                  <p>{description}</p>
+                  <img
+                    src={img}
+                    alt={title}
+                    className="img-thumbnail img-fluid"
+                  />
+                </Tab>
+                <Tab eventKey="motivations" title="Project Technologies">
+                  <h2 className="mb-3">Install Instructions</h2>
+                  <p>{description}</p>
+                </Tab>
               </Tabs>
             </Container>
           </Fragment>
