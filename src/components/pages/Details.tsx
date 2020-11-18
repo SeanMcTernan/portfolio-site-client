@@ -20,32 +20,36 @@ const Details: React.FC = (props) => {
         return (
           <Fragment>
             {/* Project text details */}
-            <Container fluid className="homeDiv align-items-center">
-              <h1 className="display-1. font-weight-bold">{headerTitle}</h1>
+            <Container className="homeDiv align-items-center">
+              <h1
+                style={{ textAlign: "center" }}
+                className="display-1. font-weight-bold"
+              >
+                {headerTitle}
+              </h1>
               <h4 className="display-5">{headerSubTitle}</h4>
               <p>{headerText}</p>
             </Container>
             {/* GitHub Links */}
-            <Container className="mt 5 ">
-              <Row className="justify-content-center">
-                <Col>
-                  <a
-                    href="https://github.com/SeanMcTernan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github
-                      className="socialIcons"
-                      style={{
-                        width: "5vmin",
-                      }}
-                    />
-                  </a>
-                </Col>
-              </Row>
+            <Container
+              style={{ paddingBottom: "3vh", textAlign: "center" }}
+              className="mt 5 "
+            >
+              <a
+                href="https://github.com/SeanMcTernan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github
+                  className="socialIcons"
+                  style={{
+                    width: "5vmin",
+                  }}
+                />
+              </a>
             </Container>
             {/* Nav Links */}
-            <Container>
+            <Container style={{ paddingBottom: "20vh" }}>
               <Tabs
                 defaultActiveKey="project-breakdown"
                 id="details-tab"

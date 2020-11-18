@@ -7,7 +7,7 @@ import InfoCards from "../elements/InfoCard";
 const Projects: React.FC = (props) => {
   return (
     <Container className="homeDiv">
-      <Row>
+      <Row style={{ paddingBottom: "10vh" }}>
         <InfoConsumer>
           {(value) => {
             return value.projectInfo!.map((item) => {
