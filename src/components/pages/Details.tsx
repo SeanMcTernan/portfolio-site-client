@@ -26,7 +26,7 @@ const Details: React.FC = (props) => {
               <p>{headerText}</p>
             </Container>
             {/* GitHub Links */}
-            <Container className="mt 5">
+            <Container className="mt 5 ">
               <Row className="justify-content-center">
                 <Col>
                   <a
@@ -46,7 +46,11 @@ const Details: React.FC = (props) => {
             </Container>
             {/* Nav Links */}
             <Container>
-              <Tabs defaultActiveKey="project-breakdown" id="details-tab">
+              <Tabs
+                defaultActiveKey="project-breakdown"
+                id="details-tab"
+                className="mb 25"
+              >
                 <Tab eventKey="project-breakdown" title="Project Breakdown">
                   <h2 className="mb-3">{title}</h2>
                   <p>{description}</p>

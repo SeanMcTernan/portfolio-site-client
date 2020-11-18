@@ -8,6 +8,7 @@
 
 .App {
   margin-top: 20px;
+  min-height: 100%;
 }
 
 /* NavBar Elements */
@@ -42,7 +43,7 @@
 
 .homeDiv {
   padding-top: 20vmin;
-  padding-bottom: 15vmin;
+  padding-bottom: 3vmin;
 }
 .row {
   min-height: 50vh;
@@ -55,7 +56,14 @@
 
 /* Home Elements */
 
-/* Footer Elements */
+/* .footer-bottom {
+  padding-bottom: 0.2rem;
+  text-align: center;
+  background: #232325;
+  height: 15vh;
+  margin-top: 5px;
+  position: fixed;
+} */
 .st0 {
   fill: var(--mutedGrey);
 }
