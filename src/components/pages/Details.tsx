@@ -14,6 +14,7 @@ const Details: React.FC = (props) => {
           appDescription,
           description,
           img,
+          repoURL,
           maps,
         } = value.projectInfo![0];
         return (
@@ -34,11 +35,7 @@ const Details: React.FC = (props) => {
                 style={{ paddingBottom: "3vh", textAlign: "center" }}
                 className="mt 5 "
               >
-                <a
-                  href="https://github.com/SeanMcTernan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={repoURL} target="_blank" rel="noopener noreferrer">
                   <Github
                     className="socialIcons"
                     style={{
