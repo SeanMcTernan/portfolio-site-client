@@ -2,7 +2,6 @@ const projectInfo = [
   {
     id: 1,
     headerTitle: 'RiverText',
-    headerSubTitle: 'soluta numquam',
     headerText: 'RiverText is a system that allows users to receive river flow information from The Canadian Water Office by sending a message from a satellite phone or any SMS enabled device. By sending a message to a Toll Free number, the app takes the request and queries the corresponding river name for its recent flow information and sends it back to the user.',
     title: 'Molestias officia excepturi',
     description:
@@ -14,7 +13,6 @@ const projectInfo = [
   {
     id: 2,
     headerTitle: 'Clear Monitoring',
-    headerSubTitle: 'soluta numquam',
     headerText: 'Clear Monitoring is an App that was build to help support staff close thousands of emails on the Intercom platform all at once via a CLI. Through prompts the user can choose to close numerous emails associated with open tickets. The App can also release the associate message from the SimpleTexing platform which triggered the email in the first place.',
     title: 'Molestias officia excepturi',
     description:
@@ -26,7 +24,6 @@ const projectInfo = [
   {
     id: 3,
     headerTitle: 'Portfolio Site',
-    headerSubTitle: 'soluta numquam',
     headerText: 'The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects. The frameworks used were React and Bootstrap to allow for easy responsive design.',
     title: 'Molestias officia excepturi',
     description:
@@ -38,7 +35,6 @@ const projectInfo = [
   {
     id: 4,
     headerTitle: 'Portfolio Site - Backend',
-    headerSubTitle: 'soluta numquam',
     headerText: 'The backend of the Portfolio site serves to assist login and permissions on my portfolio site. It was created entirely using Serverless',
     title: 'Molestias officia excepturi',
     description:
@@ -50,7 +46,6 @@ const projectInfo = [
   {
     id: 5,
     headerTitle: 'NodeJS Chat App',
-    headerSubTitle: 'soluta numquam',
     headerText: 'A small NodeJS chat app designed to explore Socket.io and how it can be used to update information in real time on a users browser.',
     title: 'Molestias officia excepturi',
     description:
@@ -62,7 +57,6 @@ const projectInfo = [
   {
     id: 6,
     headerTitle: 'Severless Notes',
-    headerSubTitle: 'soluta numquam',
     headerText: 'The frontend of my Serverless note taking app. The App was created as part of the Servless-Stack course where I learned about AWS and the Severless.',
     title: 'Molestias officia excepturi',
     description:
@@ -74,7 +68,6 @@ const projectInfo = [
   {
     id: 7,
     headerTitle: 'TS Drag & Drop Project',
-    headerSubTitle: 'soluta numquam',
     headerText: 'A small Typescript project, to explore drag and drop functionality within a browser.',
     title: 'Molestias officia excepturi',
     description:
@@ -126,7 +119,6 @@ const technologies = [
 export interface projectInfoProp {
   id: number;
   headerTitle: string;
-  headerSubTitle: string;
   headerText: string;
   title: string;
   description: string;
@@ -146,3 +138,4 @@ interface technoloigiesProp {
 export interface technoloigiesProps extends Array<technoloigiesProp> { }
 
 export { projectInfo, technologies }
+

@@ -11,7 +11,6 @@ const Details: React.FC = (props) => {
         const {
           id,
           headerTitle,
-          headerSubTitle,
           headerText,
           title,
           description,
@@ -29,7 +28,6 @@ const Details: React.FC = (props) => {
                 >
                   {headerTitle}
                 </h1>
-                <h4 className="tabsContent">{headerSubTitle}</h4>
                 <p className="tabsContent">{headerText}</p>
               </Container>
               {/* GitHub Links */}

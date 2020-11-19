@@ -7,7 +7,6 @@ import { InfoConsumer } from "../../libs/contextLib";
 interface itemTypes {
   id: number;
   headerTitle: string;
-  headerSubTitle: string;
   headerText: string;
   img: string;
 }
@@ -17,7 +16,7 @@ interface Props {
 }
 
 const InfoCards: React.FC<Props> = ({ item }) => {
-  const { id, headerTitle, headerSubTitle, headerText, img } = item;
+  const { id, headerTitle, headerText, img } = item;
   return (
     <InfoConsumer>
       {(data) => (
