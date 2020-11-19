@@ -25,12 +25,12 @@ const Details: React.FC = (props) => {
               <Container className="homeDiv align-items-center">
                 <h1
                   style={{ textAlign: "center" }}
-                  className="display-1. font-weight-bold details"
+                  className="font-weight-bold"
                 >
                   {headerTitle}
                 </h1>
-                <h4 className="display-5">{headerSubTitle}</h4>
-                <p>{headerText}</p>
+                <h4 className="tabsContent">{headerSubTitle}</h4>
+                <p className="tabsContent">{headerText}</p>
               </Container>
               {/* GitHub Links */}
               <Container
@@ -53,35 +53,23 @@ const Details: React.FC = (props) => {
               </Container>
               {/* Nav Links */}
               <Container style={{ paddingBottom: "20vh" }}>
-                <Tabs
-                  defaultActiveKey="project-breakdown"
-                  id="details-tab"
-                  className="mb 25"
-                >
+                <Tabs defaultActiveKey="project-breakdown" id="details-tab">
                   <Tab eventKey="project-breakdown" title="Project Breakdown">
-                    <h2 className="mb-3">{title}</h2>
-                    <p>{description}</p>
-                    <img
-                      src={img}
-                      alt={title}
-                      className="img-thumbnail img-fluid"
-                    />
+                    <h2 className="tabsContent">{title}</h2>
+                    <p className="tabsContent">{description}</p>
+                    <img className="tabsContent" src={img} alt={title} />
                   </Tab>
                   <Tab
                     eventKey="project-technologies"
                     title="Project Technologies"
                   >
-                    <h2 className="mb-3">{title}</h2>
-                    <p>{description}</p>
-                    <img
-                      src={img}
-                      alt={title}
-                      className="img-thumbnail img-fluid"
-                    />
+                    <h2 className="tabsContent">{title}</h2>
+                    <p className="tabsContent">{description}</p>
+                    <img className="tabsContent" src={img} alt={title} />
                   </Tab>
                   <Tab eventKey="motivations" title="Project Technologies">
-                    <h2 className="mb-3">Install Instructions</h2>
-                    <p>{description}</p>
+                    <h2 className="tabsContent">Install Instructions</h2>
+                    <p className="tabsContent">{description}</p>
                   </Tab>
                 </Tabs>
               </Container>
