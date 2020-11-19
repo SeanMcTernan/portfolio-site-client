@@ -23,8 +23,8 @@ const Details: React.FC = (props) => {
               {/* Project text details */}
               <Container className="homeDiv align-items-center">
                 <h1
-                  style={{ textAlign: "center" }}
-                  className="font-weight-bold"
+                  style={{ textAlign: "center", color: "var(--mutedBlue)" }}
+                  className="font-weight-lighter"
                 >
                   {headerTitle}
                 </h1>

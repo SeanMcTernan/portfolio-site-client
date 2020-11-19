@@ -1,5 +1,5 @@
 .details {
-  color: #bdbdbd;
+  color: var(--mainWhite);
 }
 
 .tabsContent {
@@ -7,9 +7,17 @@
 }
 
 .details a {
-  color: #17a2b8;
+  color: var(--mutedBlue);
 }
 
 .details a:hover {
-  color: #bdbdbd;
+  color: var(--mainWhite);
+}
+
+.details .socialIcons:hover .st0 {
+  fill: #bdbdbd !important;
+}
+
+.details .socialIcons .st0 {
+  fill: #17a2b8;
 }
