@@ -15,9 +15,14 @@
 }
 
 .details .socialIcons:hover .st0 {
-  fill: #bdbdbd !important;
+  fill: var(--mainBlue) !important;
 }
 
 .details .socialIcons .st0 {
-  fill: #17a2b8;
+  fill: var(--mutedBlue);
+}
+
+.details a.nav-item.nav-link.active {
+  color: var(--mainBlue);
+  background: var(--mutedGrey);
 }
