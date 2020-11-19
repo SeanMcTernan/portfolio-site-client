@@ -5,3 +5,11 @@
 .tabsContent {
   padding-top: 2vh;
 }
+
+.details a {
+  color: #17a2b8;
+}
+
+.details a:hover {
+  color: #bdbdbd;
+}
