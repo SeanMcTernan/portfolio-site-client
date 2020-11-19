@@ -48,22 +48,9 @@
 .row {
   min-height: 50vh;
 }
-/* 
-.btn-outline-info {
-  color: var(--mainBlue);
-  border-color: var(--mainBlue);
-} */
 
 /* Home Elements */
 
-/* .footer-bottom {
-  padding-bottom: 0.2rem;
-  text-align: center;
-  background: #232325;
-  height: 15vh;
-  margin-top: 5px;
-  position: fixed;
-} */
 .st0 {
   fill: var(--mutedGrey);
 }
