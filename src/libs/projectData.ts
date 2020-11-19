@@ -2,6 +2,7 @@ const projectInfo = [
   {
     id: 1,
     headerTitle: 'RiverText',
+    infoCardDescription: 'RiverText is a system that allows users to receive river flow information from The Canadian Water Office by sending a message from a satellite phone or any SMS enabled device.',
     appDescription: 'RiverText is a system that allows users to receive river flow information from The Canadian Water Office by sending a message from a satellite phone or any SMS enabled device. By sending a message to a Toll Free number, the app takes the request and queries the corresponding river name for its recent flow information and sends it back to the user. At this time there is no Frontend for the app, however it is operational. You can text any of the rivers in the rivers array to 833-589-0354 and receive a message. For example, text Stikine to 833-589-0354 and ask for the level of the Stikine River in Northern BC.',
     description: 'In 2019, I was fortunate enough to successfully kayak down one of the most challenging stretches of whitewater on the planet in Northern BC. The Grand Canyon of the Stikine. Traditionally, the run takes 3 days, so within those 3 days much can change as far as the river level is concerned. Each evening I sent a message via satellite phone to a friend to ask what the current level on the river was, I would have to wait for him to check his phone, then the government website for an accurate flow reading, then reply. It was quite cumbersome. From this, the idea for this app was created. An app that would sit and listen for inbound requests for river levels on a given set of rivers and reply with the latest reading. To set myself an additional challenge I decided to write this app in TypeScript. I had not yet built a live app via Typescript, so I thought this would be a great opportunity to apply what I had learned in some courses I was taking. The app as it stands is in its raw form. Going forward I would like to have a front end to show a map of rivers that are available and add a host server for remote to send flow data from gauge projects we are also working on. ',
     img: require('../images/RiverText.jpg'),
@@ -12,6 +13,7 @@ const projectInfo = [
   {
     id: 2,
     headerTitle: 'Clear Monitoring',
+    infoCardDescription: 'Blah Blah',
     appDescription: 'Clear Monitoring is an App that was build to help support staff close thousands of emails on the Intercom platform all at once via a CLI. Through prompts the user can choose to close numerous emails associated with open tickets. The App can also release the associate message from the SimpleTexing platform which triggered the email in the first place.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
@@ -23,6 +25,7 @@ const projectInfo = [
   {
     id: 3,
     headerTitle: 'Portfolio Site',
+    infoCardDescription: 'Blah Blah',
     appDescription: 'The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects. The frameworks used were React and Bootstrap to allow for easy responsive design.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
@@ -34,6 +37,7 @@ const projectInfo = [
   {
     id: 4,
     headerTitle: 'Portfolio Site - Backend',
+    infoCardDescription: 'Blah Blah',
     appDescription: 'The backend of the Portfolio site serves to assist login and permissions on my portfolio site. It was created entirely using Serverless',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
@@ -45,6 +49,7 @@ const projectInfo = [
   {
     id: 5,
     headerTitle: 'NodeJS Chat App',
+    infoCardDescription: 'Blah Blah',
     appDescription: 'A small NodeJS chat app designed to explore Socket.io and how it can be used to update information in real time on a users browser.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
@@ -56,6 +61,7 @@ const projectInfo = [
   {
     id: 6,
     headerTitle: 'Severless Notes',
+    infoCardDescription: 'Blah Blah',
     appDescription: 'The frontend of my Serverless note taking app. The App was created as part of the Servless-Stack course where I learned about AWS and the Severless.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
@@ -67,6 +73,7 @@ const projectInfo = [
   {
     id: 7,
     headerTitle: 'TS Drag & Drop Project',
+    infoCardDescription: 'Blah Blah',
     appDescription: 'A small Typescript project, to explore drag and drop functionality within a browser.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates qui voluptate odio quod doloremque unde reprehenderit velit quaerat. Deserunt voluptatem natus suscipit aliquid, eligendi sequi dicta porro? Laudantium, libero est?',
@@ -118,6 +125,7 @@ const technologies = [
 export interface projectInfoProp {
   id: number;
   headerTitle: string;
+  infoCardDescription: string;
   appDescription: string;
   description: string;
   img: string;

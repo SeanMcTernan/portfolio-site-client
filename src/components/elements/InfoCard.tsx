@@ -7,7 +7,7 @@ import { InfoConsumer } from "../../libs/contextLib";
 interface itemTypes {
   id: number;
   headerTitle: string;
-  appDescription: string;
+  infoCardDescription: string;
   img: string;
 }
 
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const InfoCards: React.FC<Props> = ({ item }) => {
-  const { id, headerTitle, appDescription, img } = item;
+  const { id, headerTitle, infoCardDescription, img } = item;
   return (
     <InfoConsumer>
       {(data) => (
@@ -38,7 +38,7 @@ const InfoCards: React.FC<Props> = ({ item }) => {
             />
             <Card.Body className="collapse-content">
               <Card.Title>{headerTitle}</Card.Title>
-              <Card.Text>{appDescription}</Card.Text>
+              <Card.Text>{infoCardDescription}</Card.Text>
               <LinkContainer to="details">
                 <Button variant="outline-info">More info</Button>
               </LinkContainer>
