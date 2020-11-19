@@ -11,8 +11,7 @@ const Details: React.FC = (props) => {
         const {
           id,
           headerTitle,
-          headerText,
-          title,
+          appDescription,
           description,
           img,
           maps,
@@ -28,7 +27,7 @@ const Details: React.FC = (props) => {
                 >
                   {headerTitle}
                 </h1>
-                <p className="tabsContent">{headerText}</p>
+                <p className="tabsContent">{appDescription}</p>
               </Container>
               {/* GitHub Links */}
               <Container
@@ -53,17 +52,17 @@ const Details: React.FC = (props) => {
               <Container style={{ paddingBottom: "20vh" }}>
                 <Tabs defaultActiveKey="project-breakdown" id="details-tab">
                   <Tab eventKey="project-breakdown" title="Project Breakdown">
-                    <h2 className="tabsContent">{title}</h2>
+                    <h2 className="tabsContent">Motivation</h2>
                     <p className="tabsContent">{description}</p>
-                    <img className="tabsContent" src={img} alt={title} />
+                    <img className="tabsContent" src={img} alt={headerTitle} />
                   </Tab>
                   <Tab
                     eventKey="project-technologies"
                     title="Project Technologies"
                   >
-                    <h2 className="tabsContent">{title}</h2>
+                    <h2 className="tabsContent">Technologies Used</h2>
                     <p className="tabsContent">{description}</p>
-                    <img className="tabsContent" src={img} alt={title} />
+                    <img className="tabsContent" src={img} alt={headerTitle} />
                   </Tab>
                   <Tab eventKey="motivations" title="Project Technologies">
                     <h2 className="tabsContent">Install Instructions</h2>
