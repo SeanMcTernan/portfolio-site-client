@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
+import { Container, Carousel, Tabs, Tab } from "react-bootstrap";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { InfoConsumer } from "../../libs/contextLib";
 import "../../styles/Details.css";
@@ -15,7 +15,8 @@ const Details: React.FC = (props) => {
           description,
           img,
           repoURL,
-          maps,
+          install,
+          devTime,
         } = value.projectInfo![0];
         return (
           <div className="details">
@@ -51,7 +52,59 @@ const Details: React.FC = (props) => {
                   <Tab eventKey="project-breakdown" title="Project Breakdown">
                     <h2 className="tabsContent">Motivation</h2>
                     <p className="tabsContent">{description}</p>
+
+                    <p className="font-weight-bold tabsContent">
+                      Development Time: {devTime}
+                    </p>
                     <img className="tabsContent" src={img} alt={headerTitle} />
+                    {/* Carousel Images */}
+                    <Carousel>
+                      <Carousel.Item>
+                        <img
+                          className="d-block flex w-50"
+                          src={img}
+                          alt="First slide"
+                        />
+                        <Carousel.Caption>
+                          <h3>First slide label</h3>
+                          <p>
+                            Nulla vitae elit libero, a pharetra augue mollis
+                            interdum.
+                          </p>
+                        </Carousel.Caption>
+                      </Carousel.Item>
+                      <Carousel.Item>
+                        <img
+                          className="d-block flex w-50"
+                          src={img}
+                          alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                          <h3>Second slide label</h3>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit.
+                          </p>
+                        </Carousel.Caption>
+                      </Carousel.Item>
+                      <Carousel.Item>
+                        <img
+                          className="carouselImage"
+                          src={img}
+                          alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                          <h3>Third slide label</h3>
+                          <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl
+                            consectetur.
+                          </p>
+                        </Carousel.Caption>
+                      </Carousel.Item>
+                    </Carousel>
+                    {/* Carousel Images */}
                   </Tab>
                   <Tab
                     eventKey="project-technologies"
@@ -61,9 +114,14 @@ const Details: React.FC = (props) => {
                     <p className="tabsContent">{description}</p>
                     <img className="tabsContent" src={img} alt={headerTitle} />
                   </Tab>
-                  <Tab eventKey="motivations" title="Project Technologies">
+                  <Tab eventKey="install" title="Install Instructions">
                     <h2 className="tabsContent">Install Instructions</h2>
-                    <p className="tabsContent">{description}</p>
+
+                    <p className="font-weight-bold tabsContent">
+                      1. Click on the GitHub link Above.<br></br>2.
+                      Clone/Download the Repository.<br></br>
+                      {install}
+                    </p>
                   </Tab>
                 </Tabs>
               </Container>
