@@ -1,5 +1,3 @@
-import { stringify } from "querystring";
-
 const projectInfo = [
   {
     id: 1,
