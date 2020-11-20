@@ -9,7 +9,7 @@ interface itemTypes {
   id: number;
   headerTitle: string;
   infoCardDescription: string;
-  img: imgArray;
+  images: imgArray;
 }
 
 interface Props {
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const InfoCards: React.FC<Props> = ({ item }) => {
-  const { id, headerTitle, infoCardDescription, img } = item;
+  const { id, headerTitle, infoCardDescription, images } = item;
   return (
     <InfoConsumer>
       {(data) => (
@@ -35,7 +35,7 @@ const InfoCards: React.FC<Props> = ({ item }) => {
               variant="top"
               style={{ width: "100%", objectFit: "fill" }}
               alt={headerTitle}
-              src={img[0].src}
+              src={images[0].src}
             />
             <Card.Body className="collapse-content">
               <Card.Title>{headerTitle}</Card.Title>

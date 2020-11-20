@@ -5,6 +5,29 @@ import { InfoConsumer } from "../../libs/contextLib";
 import "../../styles/Details.css";
 
 const Details: React.FC = (props) => {
+  const renderCarouselItems = (imagesArray: any) => {
+    return imagesArray.map((image: any) => {
+      return (
+        <Carousel.Item>
+          <img
+            className="d-block flex w-50"
+            src={image.src}
+            alt={image.title}
+          />
+
+          <Carousel.Caption>
+            <p
+              className="font-weight-bold tabsContent"
+              style={{ textShadow: "3px 3px 2px black" }}
+            >
+              {image.title}
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      );
+    });
+  };
+
   return (
     <InfoConsumer>
       {(value) => {
@@ -13,7 +36,7 @@ const Details: React.FC = (props) => {
           headerTitle,
           appDescription,
           description,
-          img,
+          images,
           repoURL,
           install,
           devTime,
@@ -57,28 +80,7 @@ const Details: React.FC = (props) => {
                       Development Time: {devTime}
                     </p>
                     {/* Carousel Images */}
-                    <Carousel>
-                      <Carousel.Item>
-                        <img
-                          className="d-block flex w-50"
-                          src={img[0].src}
-                          alt="Third slide"
-                        />
-
-                        <Carousel.Caption>
-                          <p
-                            className="font-weight-bold tabsContent"
-                            style={{ textShadow: "3px 3px 2px black" }}
-                          >
-                            Third slide label
-                          </p>
-                          <p style={{ textShadow: "3px 3px 2px black" }}>
-                            Praesent commodo cursus magna, vel scelerisque nisl
-                            consectetur.
-                          </p>
-                        </Carousel.Caption>
-                      </Carousel.Item>
-                    </Carousel>
+                    <Carousel>{renderCarouselItems(images)}</Carousel>
                     {/* Carousel Images */}
                   </Tab>
                   <Tab
@@ -108,3 +110,26 @@ const Details: React.FC = (props) => {
 };
 
 export default Details;
+
+// {(images: any) => {
+//   return images.map((image: any) => {
+//     return (
+//       <Carousel.Item>
+//         <img
+//           className="d-block flex w-50"
+//           src={image.src}
+//           alt={image.title}
+//         />
+
+//         <Carousel.Caption>
+//           <p
+//             className="font-weight-bold tabsContent"
+//             style={{ textShadow: "3px 3px 2px black" }}
+//           >
+//             {image.title}
+//           </p>
+//         </Carousel.Caption>
+//       </Carousel.Item>
+//     );
+//   });
+// }}
