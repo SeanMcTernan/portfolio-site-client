@@ -17,7 +17,7 @@ const Details: React.FC = (props) => {
           repoURL,
           install,
           devTime,
-        } = value.projectInfo![0];
+        } = value.projectInfo![1];
         return (
           <div className="details">
             <Fragment>
@@ -56,48 +56,23 @@ const Details: React.FC = (props) => {
                     <p className="font-weight-bold tabsContent">
                       Development Time: {devTime}
                     </p>
-                    <img className="tabsContent" src={img} alt={headerTitle} />
                     {/* Carousel Images */}
                     <Carousel>
                       <Carousel.Item>
                         <img
                           className="d-block flex w-50"
-                          src={img}
-                          alt="First slide"
-                        />
-                        <Carousel.Caption>
-                          <h3>First slide label</h3>
-                          <p>
-                            Nulla vitae elit libero, a pharetra augue mollis
-                            interdum.
-                          </p>
-                        </Carousel.Caption>
-                      </Carousel.Item>
-                      <Carousel.Item>
-                        <img
-                          className="d-block flex w-50"
-                          src={img}
+                          src={img[0].src}
                           alt="Third slide"
                         />
 
                         <Carousel.Caption>
-                          <h3>Second slide label</h3>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit.
+                          <p
+                            className="font-weight-bold tabsContent"
+                            style={{ textShadow: "3px 3px 2px black" }}
+                          >
+                            Third slide label
                           </p>
-                        </Carousel.Caption>
-                      </Carousel.Item>
-                      <Carousel.Item>
-                        <img
-                          className="carouselImage"
-                          src={img}
-                          alt="Third slide"
-                        />
-
-                        <Carousel.Caption>
-                          <h3>Third slide label</h3>
-                          <p>
+                          <p style={{ textShadow: "3px 3px 2px black" }}>
                             Praesent commodo cursus magna, vel scelerisque nisl
                             consectetur.
                           </p>
@@ -112,7 +87,6 @@ const Details: React.FC = (props) => {
                   >
                     <h2 className="tabsContent">Technologies Used</h2>
                     <p className="tabsContent">{description}</p>
-                    <img className="tabsContent" src={img} alt={headerTitle} />
                   </Tab>
                   <Tab eventKey="install" title="Install Instructions">
                     <h2 className="tabsContent">Install Instructions</h2>

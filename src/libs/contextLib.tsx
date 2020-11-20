@@ -4,7 +4,7 @@ import {
   technologies,
   projectInfoProp,
   projectInfoProps,
-  technoloigiesProps,
+  technologiesProps,
 } from "../libs/projectData";
 
 //Context for User Authentication & Permissions
@@ -35,7 +35,7 @@ export const useAppContext = () => {
 
 interface infoContextProps {
   projectInfo: projectInfoProps;
-  technologies: technoloigiesProps;
+  technologies: technologiesProps;
   detailInfo: projectInfoProp;
 }
 

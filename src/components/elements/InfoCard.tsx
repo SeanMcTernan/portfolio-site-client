@@ -3,12 +3,13 @@ import { Col, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
+import { imgArray } from "../../libs/projectData";
 
 interface itemTypes {
   id: number;
   headerTitle: string;
   infoCardDescription: string;
-  img: string;
+  img: imgArray;
 }
 
 interface Props {
@@ -34,7 +35,7 @@ const InfoCards: React.FC<Props> = ({ item }) => {
               variant="top"
               style={{ width: "100%", objectFit: "fill" }}
               alt={headerTitle}
-              src={img}
+              src={img[0].src}
             />
             <Card.Body className="collapse-content">
               <Card.Title>{headerTitle}</Card.Title>
