@@ -6,7 +6,7 @@ import { imgArray } from "../../libs/projectData";
 import "../../styles/Details.css";
 
 const Details: React.FC = (props) => {
-  const renderCarouselItems = (imagesArray: any) => {
+  const renderCarouselItems = (imagesArray: imgArray) => {
     return imagesArray.map((image: any) => {
       return (
         <Carousel.Item>
@@ -29,26 +29,9 @@ const Details: React.FC = (props) => {
     });
   };
 
-  const renderInstallInstructions = (imagesArray: imgArray) => {
-    return imagesArray.map((image: any) => {
-      return (
-        <Carousel.Item>
-          <img
-            className="d-block flex w-50"
-            src={image.src}
-            alt={image.title}
-          />
-
-          <Carousel.Caption>
-            <p
-              className="font-weight-bold tabsContent"
-              style={{ textShadow: "3px 3px 2px black" }}
-            >
-              {image.title}
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      );
+  const renderInstallInstructions = (installArray: string[]) => {
+    return installArray.map((instruction: string) => {
+      return <p>{instruction}</p>;
     });
   };
 
@@ -129,12 +112,7 @@ const Details: React.FC = (props) => {
                   </Tab>
                   <Tab eventKey="install" title="Install Instructions">
                     <h2 className="tabsContent">Install Instructions</h2>
-
-                    <p className="font-weight-bold tabsContent">
-                      1. Click on the GitHub link Above.<br></br>2.
-                      Clone/Download the Repository.<br></br>
-                      {install}
-                    </p>
+                    {renderInstallInstructions(install)}
                   </Tab>
                 </Tabs>
               </Container>
