@@ -40,7 +40,7 @@ const Details: React.FC = (props) => {
           repoURL,
           install,
           devTime,
-        } = value.projectInfo![1];
+        } = value.projectInfo![0];
         return (
           <div className="details">
             <Fragment>
@@ -80,7 +80,21 @@ const Details: React.FC = (props) => {
                       Development Time: {devTime}
                     </p>
                     {/* Carousel Images */}
-                    <Carousel>{renderCarouselItems(images)}</Carousel>
+                    {images[1] ? (
+                      <>
+                        <Carousel interval={null}>
+                          {renderCarouselItems(images)}
+                        </Carousel>
+                      </>
+                    ) : (
+                      <>
+                        <img
+                          className="tabsContent"
+                          src={images[0].src}
+                          alt={headerTitle}
+                        />
+                      </>
+                    )}
                     {/* Carousel Images */}
                   </Tab>
                   <Tab
