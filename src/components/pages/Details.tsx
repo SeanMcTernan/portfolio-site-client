@@ -89,7 +89,7 @@ const Details: React.FC = (props) => {
                     ) : (
                       <>
                         <img
-                          className="tabsContent"
+                          className="soloImage"
                           src={images[0].src}
                           alt={headerTitle}
                         />

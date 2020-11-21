@@ -30,3 +30,10 @@
 .details .carousel-inner img {
   margin: auto;
 }
+
+.soloImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
