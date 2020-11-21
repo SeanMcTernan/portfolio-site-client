@@ -2,10 +2,34 @@ import React, { Fragment } from "react";
 import { Container, Carousel, Tabs, Tab } from "react-bootstrap";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { InfoConsumer } from "../../libs/contextLib";
+import { imgArray } from "../../libs/projectData";
 import "../../styles/Details.css";
 
 const Details: React.FC = (props) => {
   const renderCarouselItems = (imagesArray: any) => {
+    return imagesArray.map((image: any) => {
+      return (
+        <Carousel.Item>
+          <img
+            className="d-block flex w-50"
+            src={image.src}
+            alt={image.title}
+          />
+
+          <Carousel.Caption>
+            <p
+              className="font-weight-bold tabsContent"
+              style={{ textShadow: "3px 3px 2px black" }}
+            >
+              {image.title}
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      );
+    });
+  };
+
+  const renderInstallInstructions = (imagesArray: imgArray) => {
     return imagesArray.map((image: any) => {
       return (
         <Carousel.Item>
@@ -102,7 +126,6 @@ const Details: React.FC = (props) => {
                     title="Project Technologies"
                   >
                     <h2 className="tabsContent">Technologies Used</h2>
-                    <p className="tabsContent">{description}</p>
                   </Tab>
                   <Tab eventKey="install" title="Install Instructions">
                     <h2 className="tabsContent">Install Instructions</h2>
