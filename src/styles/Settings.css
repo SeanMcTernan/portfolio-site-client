@@ -12,10 +12,6 @@
   opacity: 1;
 }
 
-.settingsRows {
-  min-height: 5vh;
-}
-
 .settingsColums {
   padding: 5vh;
 }
@@ -23,4 +19,8 @@
 .settingsParagraph {
   padding-top: 2vh;
   padding-bottom: 2vh;
+}
+
+div .row {
+  min-height: 8vh;
 }

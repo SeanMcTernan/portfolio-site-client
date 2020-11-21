@@ -110,26 +110,3 @@ const Details: React.FC = (props) => {
 };
 
 export default Details;
-
-// {(images: any) => {
-//   return images.map((image: any) => {
-//     return (
-//       <Carousel.Item>
-//         <img
-//           className="d-block flex w-50"
-//           src={image.src}
-//           alt={image.title}
-//         />
-
-//         <Carousel.Caption>
-//           <p
-//             className="font-weight-bold tabsContent"
-//             style={{ textShadow: "3px 3px 2px black" }}
-//           >
-//             {image.title}
-//           </p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//     );
-//   });
-// }}

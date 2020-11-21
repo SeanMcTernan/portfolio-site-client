@@ -80,7 +80,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                 To request access to any items below, please click on the
                 corresponding buttons:
               </p>
-              <Row className="settingsRows">
+              <Row>
                 <Col xs={12} md={8} lg={4}>
                   View References:
                 </Col>
@@ -111,7 +111,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   )}
                 </Col>
               </Row>
-              <Row className="settingsRows">
+              <Row>
                 <Col xs={12} md={8} lg={4}>
                   View Hidden Repositories:
                 </Col>
@@ -142,7 +142,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   )}
                 </Col>
               </Row>
-              <Row className="settingsRows">
+              <Row>
                 <Col xs={12} md={8} lg={4}>
                   Access Downloadable Resume:
                 </Col>
