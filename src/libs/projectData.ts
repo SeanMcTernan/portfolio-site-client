@@ -1,3 +1,73 @@
+//Raw Technology Used Array
+const technologies = [
+  {
+    techID: 0,
+    name: 'JavaScript',
+    imgSrc: require('../images/Technologies_Icons/javascript.svg'),
+    technologiesLink: 'https://www.javascript.com/'
+  },
+  {
+    techID: 1,
+    name: 'TypeScript',
+    imgSrc: require('../images/Technologies_Icons/typescript.svg'),
+    technologiesLink: 'https://www.typescriptlang.org/'
+  },
+  {
+    techID: 2,
+    name: 'NodeJS',
+    imgSrc: require('../images/Technologies_Icons/nodejs.svg'),
+    technologiesLink: 'https://nodejs.org/en/'
+  },
+  {
+    techID: 3,
+    name: 'NPM',
+    imgSrc: require('../images/Technologies_Icons/npm.svg'),
+    technologiesLink: 'https://www.npmjs.com/'
+  },
+  {
+    techID: 4,
+    name: 'Nodemon',
+    imgSrc: require('../images/Technologies_Icons/nodemon.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/nodemon'
+  },
+  {
+    techID: 5,
+    name: 'ExpressJS',
+    imgSrc: require('../images/Technologies_Icons/env-cmd.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/env-cmd'
+  },
+  {
+    techID: 6,
+    name: 'Axios',
+    imgSrc: require('../images/Technologies_Icons/axios.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/axios'
+  },
+  {
+    techID: 7,
+    name: 'MomentJS',
+    imgSrc: require('../images/Technologies_Icons/momentjs.svg'),
+    technologiesLink: 'https://momentjs.com/'
+  },
+  {
+    techID: 8,
+    name: 'SimpleTexting API',
+    imgSrc: require('../images/Technologies_Icons/SimpleTexting.svg'),
+    technologiesLink: 'https://simpletexting.com/'
+  },
+  {
+    techID: 9,
+    name: 'Scrapi API',
+    imgSrc: require('../images/Technologies_Icons/Scrapi.svg'),
+    technologiesLink: 'https://scrap2api.web.app/'
+  },
+  {
+    techID: 10,
+    name: 'Body-Parser',
+    imgSrc: require('../images/Technologies_Icons/body-parser.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/body-parser'
+  }
+];
+
 //Raw Project Data
 const projectInfo = [
   {
@@ -9,6 +79,7 @@ const projectInfo = [
     description: 'In 2019, I was fortunate enough to successfully kayak down one of the most challenging stretches of whitewater on the planet in Northern BC. The Grand Canyon of the Stikine. Traditionally, the run takes 3 days, so within those 3 days much can change as far as the river level is concerned. Each evening I sent a message via satellite phone to a friend to ask what the current level on the river was, I would have to wait for him to check his phone, then the government website for an accurate flow reading, then reply. It was quite cumbersome. From this, the idea for this app was created. An app that would sit and listen for inbound requests for river levels on a given set of rivers and reply with the latest reading. To set myself an additional challenge I decided to write this app in TypeScript. I had not yet built a live app via Typescript, so I thought this would be a great opportunity to apply what I had learned in some courses I was taking. The app as it stands is in its raw form. Going forward I would like to have a front end to show a map of rivers that are available and add a host server for remote to send flow data from gauge projects we are also working on. ',
     images: [{ src: require('../images/RiverText.jpg'), title: 'RiverText being used on a satelite phone' }],
     repoURL: 'https://github.com/SeanMcTernan/RiverText',
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
     install: ['1. Click on the GitHub link Above', '2. Clone/Download the Repository', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '1 Week'
   },
@@ -21,6 +92,7 @@ const projectInfo = [
     description: 'The app was originally created to assist fellow support staff. The process before was rather laborious to close out open conversations in Intercom during a rush. I really felt there was a better more efficient way to close out these conversations and this is where the app was born. Along the way I learned some neat technologies like Inquirer and Chalk, though the biggest takeaway was finally getting a solid grasp of asynchronous functions. The app needed to call the intercom API continuously while it was running, so getting comfortable with asynchronous functions was vital to the successful rollout of the app.',
     images: [{ src: require('../images/Intercom.gif'), title: 'Clear Monitoring closing tickets' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/blob/master/ReadMe_Images/Clear_Monitoring/Clear_Monitoring_Sample.png?raw=true', title: 'Cli for Clear Monitoring' }],
     repoURL: 'https://github.com/SeanMcTernan/clear-monitoring',
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
     install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '3 Weeks'
   },
@@ -33,6 +105,7 @@ const projectInfo = [
     description: 'The motivation was simple, I wanted somewhere (other than GitHub of course) to showcase my projects. For this project, I decided to fully commit to a TypeScript as my language of choice going forward. Its been a challenge to say the least, but I feel I have learned so much about TypeScript and really started to understand the benefits of using it for development. Admittedly, after completing Maximilian Schwarzmüller`s Understanding TypeScript course I did not fully grasp the benefits of the language, it seemed to add more roadblocks over solutions. However, after speaking to many friends about my feelings the assured it would help with streamlining development. After committing to this project, I finally understand what the mean! Along with Typescript, I learned React-Bootstrap for the first time which was a huge help. I was not looking forward to toiling away with various browser elements. It was a happy accident I discovered this when I did, it`s made developing the front end a lot more enjoyable.',
     images: [{ src: require('../images/PortfolioSite.gif'), title: 'Homepage Main image CSS' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_1.png?raw=true', title: 'Homepage' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_1.png?raw=true', title: 'Settings page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/Portfolio-App-Example_2.png?raw=true', title: 'Login page' }],
     repoURL: 'https://github.com/SeanMcTernan/portfolio-site-client',
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
     install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: 'Still in Development'
   },
@@ -45,6 +118,7 @@ const projectInfo = [
     description: 'The backend was created to reapply what I learned during the Serverless-Stack course. I enjoyed working with AWS during this course and wanted to continue growing my knowledge with this technology. I learned quite a lot about AWS and their offerings. In particular Lambda and Cognito. I feel they are well established tools, however from the outset they seem alot more difficult to pickup compared to their competitor Google and the APIs they offer such as Firebase.',
     images: [{ src: require('../images/PortfolioSite-Backend.jpg'), title: 'Homepage Main image CSS' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/Portfolio-App-Example_2.png?raw=true', title: 'Login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_1.png?raw=true', title: 'Settings page' }],
     repoURL: 'https://github.com/SeanMcTernan/portfolio-site-api',
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
     install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '3 Weeks'
   },
@@ -58,6 +132,7 @@ const projectInfo = [
       'The app allows users to enter their name and the chat room they would like to enter. When entered, the app checks for a valid unique entry and stores the information entered. In the screenshots provided, you can see two users logged into the app (one on a regular window, the other on Incognito). As new users log in or out, messages are displayed to those in the chat room on the activity of other users. "User has joined", "User has left" etc. Should a user use bad language the Bad-Language dependency will catch the phrase and the admin will send them a message informing them that "Profanity is not allowed!". Along with sending chat messages, users can share their location with others in the room. By hitting the "Send Location" feature. The app takes their location and a link to Google Maps from the chat room.',
     images: [{ src: require('../images/NodeJS-Chat-App.jpg'), title: 'Chat login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_2.png?raw=true', title: 'Two Active Chats' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_3.png?raw=true', title: 'Chatbox and send location' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_Location.png?raw=true', title: 'Users shared location' }],
     repoURL: 'https://github.com/SeanMcTernan/nodejs-chat-app',
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
     install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '1 Week'
   },
@@ -70,6 +145,7 @@ const projectInfo = [
     description: 'Serverless applications are the most common use case for modern applications, so I wanted to get up to speed on what was being used and how to apply it to a real-world scenario. Needless to say, a note taking app is about as original as printing hello world!, but in this instance a familiar application made it easier to digest the new methods that were being applied. AWS Cognito, S3, Lambda, DynamoDB were all used, so it was a deep dive into new concepts. Likewise, it was very interesting to see committed changes being sent automatically to Netlify, a concept I was familiar with, but had yet to see it in practice.',
     images: [{ src: require('../images/NoteTaking-App.jpg'), title: 'Notes login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_2.png?raw=true', title: 'List of user notes' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_4.png?raw=true', title: 'Credit card page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_3.png?raw=true', title: 'Note editing page' }],
     repoURL: 'https://github.com/SeanMcTernan/serverless-stack-client',
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
     install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '1 Week'
   },
@@ -82,57 +158,30 @@ const projectInfo = [
     description: 'In May 2020 I started working with RURU-Software on their delivery app. The app was built using Typescript. Even though I had completed Understanding-Typescript by Maximilian Schwarzmüller in early 2019, I had never gotten an opportunity to apply my knowledge in a real-world application. When the opportunity had come up to work with RuRu, I checked back on Max`s course and was happy to see an updated version was available for 2020, this was one of the many projects I had gotten to work on this course, while at the same time working for RuRu.\n\nI learned a great deal about browser tools and type safety while working on this project. I had seen applications like Trello use the drag and drop feature to great effect, so I was happy to learn what was required while working on this project.',
     images: [{ src: require('../images/Drag&Drop.gif'), title: 'Using the note taking app' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/TypeScript-Drag-And-Drop/TS_Drag&Drop_Cap_1.png?raw=true', title: 'App main screen' }],
     repoURL: 'https://github.com/SeanMcTernan/typescript-drag-and-drop-project',
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
     install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '2 days'
   }
 ];
 
-//Raw Technology Used Array
-const technologies = [
-  {
-    id: 1,
-    name: 'John',
-    avatar: '.././avatars/avatar-1.png',
-    comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
-  },
-  {
-    id: 2,
-    name: 'Mike',
-    avatar: '.././avatars/avatar-2.png',
-    comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
-  },
-  {
-    id: 3,
-    name: 'Sofia',
-    avatar: '.././avatars/avatar-3.png',
-    comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
-  },
-  {
-    id: 4,
-    name: 'Joseph',
-    avatar: '.././avatars/avatar-4.png',
-    comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
-  },
-  {
-    id: 5,
-    name: 'Natasha',
-    avatar: '.././avatars/avatar-5.png',
-    comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
-  }
-];
 
 //Image Types
-interface imgProperties {
+export interface imgProperties {
   src: string;
   title: string;
 }
 
-export interface imgArray extends Array<imgProperties> { }
+
+//Technology Types
+interface technologiesProp {
+  techID: number;
+  name: string;
+  imgSrc: string;
+  technologiesLink: string;
+}
+
+export interface technologiesProps extends Array<technologiesProp> { }
+
 
 //Project Data Types
 export interface projectInfoProp {
@@ -141,23 +190,15 @@ export interface projectInfoProp {
   infoCardDescription: string;
   appDescription: string;
   description: string;
-  images: imgArray;
+  images: imgProperties[];
   repoURL: string;
+  technologies: technologiesProp[];
   install: string[];
   devTime: string;
 }
 
 export interface projectInfoProps extends Array<projectInfoProp> { }
 
-//Technology Types
-interface technologiesProp {
-  id: number;
-  name: string;
-  avatar: string;
-  comment: string;
-}
-
-export interface technologiesProps extends Array<technologiesProp> { }
 
 export { projectInfo, technologies }
 

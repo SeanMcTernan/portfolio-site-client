@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import { Container, Carousel, Tabs, Tab } from "react-bootstrap";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { InfoConsumer } from "../../libs/contextLib";
-import { imgArray } from "../../libs/projectData";
+import { imgProperties } from "../../libs/projectData";
 import "../../styles/Details.css";
 
 const Details: React.FC = (props) => {
-  const renderCarouselItems = (imagesArray: imgArray) => {
+  const renderCarouselItems = (imagesArray: imgProperties[]) => {
     return imagesArray.map((image: any) => {
       return (
         <Carousel.Item>

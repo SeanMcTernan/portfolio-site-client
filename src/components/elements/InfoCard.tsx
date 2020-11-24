@@ -3,13 +3,13 @@ import { Col, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
-import { imgArray } from "../../libs/projectData";
+import { imgProperties } from "../../libs/projectData";
 
 interface itemTypes {
   id: number;
   headerTitle: string;
   infoCardDescription: string;
-  images: imgArray;
+  images: imgProperties[];
 }
 
 interface Props {
