@@ -44,14 +44,26 @@ const Details: React.FC = (props) => {
         {info.map((technoloy: technologiesType) => {
           return (
             <Col sm={2} className="col-10 mx-auto mb-5">
+              <p style={{ textAlign: "center" }}>
+                <img
+                  style={{ width: "60%", marginBottom: "-1vh" }}
+                  src={technoloy.imgSrc}
+                  alt={`${technoloy.name}-Logo`}
+                />
+              </p>
               <a
+                className="technologies"
                 href={technoloy.technologiesLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={technoloy.imgSrc} alt={`${technoloy.name}-Logo`} />
+                <p
+                  style={{ textAlign: "center" }}
+                  className="font-weight-lighter tabsContent"
+                >
+                  {technoloy.name}
+                </p>
               </a>
-              <p className="font-weight-bold tabsContent">{technoloy.name}</p>
             </Col>
           );
         })}
@@ -124,6 +136,12 @@ const Details: React.FC = (props) => {
                           src={images[0].src}
                           alt={headerTitle}
                         />
+                        <p
+                          style={{ textAlign: "center" }}
+                          className="font-weight-lighter tabsContent"
+                        >
+                          {images[0].title}
+                        </p>
                       </>
                     )}
                     {/* Carousel Images */}

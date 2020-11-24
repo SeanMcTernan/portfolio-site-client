@@ -201,4 +201,3 @@ export interface projectInfoProps extends Array<projectInfoProp> { }
 
 
 export { projectInfo, technologies }
-
