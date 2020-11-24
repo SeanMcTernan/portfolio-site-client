@@ -14,14 +14,6 @@
   color: var(--mainWhite);
 }
 
-.technologies p a {
-  color: var(--mainWhite) !important;
-}
-
-.technologies a:hover {
-  color: var(--mutedBlue) !important;
-}
-
 .details .socialIcons:hover .st0 {
   fill: var(--mainBlue) !important;
 }

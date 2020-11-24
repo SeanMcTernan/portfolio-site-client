@@ -10,21 +10,18 @@ const Details: React.FC = (props) => {
   const renderCarouselItems = (imagesArray: imgProperties[]) => {
     return imagesArray.map((image: imgProperties) => {
       return (
-        <Carousel.Item>
+        <Carousel.Item style={{ padding: "3vh" }}>
           <img
             className="d-block flex w-50"
             src={image.src}
             alt={image.title}
           />
-
-          <Carousel.Caption>
-            <p
-              className="font-weight-bold tabsContent"
-              style={{ textShadow: "3px 3px 2px black" }}
-            >
-              {image.title}
-            </p>
-          </Carousel.Caption>
+          <p
+            className="font-weight-lighter tabsContent"
+            style={{ textAlign: "center" }}
+          >
+            {image.title}
+          </p>
         </Carousel.Item>
       );
     });
@@ -83,7 +80,7 @@ const Details: React.FC = (props) => {
           technologies,
           install,
           devTime,
-        } = value.projectInfo![0];
+        } = value.projectInfo![1];
         return (
           <div className="details">
             <Fragment>
