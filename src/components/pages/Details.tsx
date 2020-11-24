@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
-import { Container, Carousel, Tabs, Tab } from "react-bootstrap";
+import { Container, Carousel, Tabs, Tab, Row, Col } from "react-bootstrap";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { InfoConsumer } from "../../libs/contextLib";
-import { imgProperties } from "../../libs/projectData";
+import { imgProperties, technologiesType } from "../../libs/projectData";
 import "../../styles/Details.css";
 
 const Details: React.FC = (props) => {
+  //Render images for carousel items:
   const renderCarouselItems = (imagesArray: imgProperties[]) => {
     return imagesArray.map((image: any) => {
       return (
@@ -29,10 +30,33 @@ const Details: React.FC = (props) => {
     });
   };
 
+  //Render Inatllation instructions:
   const renderInstallInstructions = (installArray: string[]) => {
     return installArray.map((instruction: string) => {
       return <p>{instruction}</p>;
     });
+  };
+
+  // Render Project technologies
+  const renderTechnologies = (info: technologiesType[]) => {
+    return (
+      <Row style={{ paddingTop: "5vh" }}>
+        {info.map((technoloy: technologiesType) => {
+          return (
+            <Col sm={2} className="col-10 mx-auto mb-5">
+              <a
+                href={technoloy.technologiesLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={technoloy.imgSrc} alt={`${technoloy.name}-Logo`} />
+              </a>
+              <p className="font-weight-bold tabsContent">{technoloy.name}</p>
+            </Col>
+          );
+        })}
+      </Row>
+    );
   };
 
   return (
@@ -44,6 +68,7 @@ const Details: React.FC = (props) => {
           description,
           images,
           repoURL,
+          technologies,
           install,
           devTime,
         } = value.projectInfo![0];
@@ -108,6 +133,7 @@ const Details: React.FC = (props) => {
                     title="Project Technologies"
                   >
                     <h2 className="tabsContent">Technologies Used</h2>
+                    {renderTechnologies(technologies)}
                   </Tab>
                   <Tab eventKey="install" title="Install Instructions">
                     <h2 className="tabsContent">Install Instructions</h2>

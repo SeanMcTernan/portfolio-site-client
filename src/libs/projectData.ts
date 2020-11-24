@@ -173,14 +173,14 @@ export interface imgProperties {
 
 
 //Technology Types
-interface technologiesProp {
+export interface technologiesType {
   techID: number;
   name: string;
   imgSrc: string;
   technologiesLink: string;
 }
 
-export interface technologiesProps extends Array<technologiesProp> { }
+export interface technologiesProps extends Array<technologiesType> { }
 
 
 //Project Data Types
@@ -192,7 +192,7 @@ export interface projectInfoProp {
   description: string;
   images: imgProperties[];
   repoURL: string;
-  technologies: technologiesProp[];
+  technologies: technologiesType[];
   install: string[];
   devTime: string;
 }
