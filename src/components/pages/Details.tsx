@@ -80,7 +80,7 @@ const Details: React.FC = (props) => {
           technologies,
           install,
           devTime,
-        } = value.projectInfo![1];
+        } = value.projectInfo![0];
         return (
           <div className="details">
             <Fragment>

@@ -26,42 +26,54 @@ const technologies = [
   },
   {
     techID: 4,
+    name: 'React',
+    imgSrc: require('../images/Technologies_Icons/npm.svg'),
+    technologiesLink: 'https://www.npmjs.com/'
+  },
+  {
+    techID: 5,
     name: 'Nodemon',
     imgSrc: require('../images/Technologies_Icons/nodemon.svg'),
     technologiesLink: 'https://www.npmjs.com/package/nodemon'
   },
   {
-    techID: 5,
-    name: 'ExpressJS',
+    techID: 6,
+    name: 'ENV-CMD',
     imgSrc: require('../images/Technologies_Icons/env-cmd.svg'),
     technologiesLink: 'https://www.npmjs.com/package/env-cmd'
   },
   {
-    techID: 6,
+    techID: 7,
+    name: 'ExpressJS',
+    imgSrc: require('../images/Technologies_Icons/expressjs.svg'),
+    technologiesLink: 'https://expressjs.com/'
+  },
+  {
+    techID: 8,
     name: 'Axios',
     imgSrc: require('../images/Technologies_Icons/axios.svg'),
     technologiesLink: 'https://www.npmjs.com/package/axios'
   },
   {
-    techID: 7,
+    techID: 9,
     name: 'MomentJS',
     imgSrc: require('../images/Technologies_Icons/momentjs.svg'),
     technologiesLink: 'https://momentjs.com/'
   },
   {
-    techID: 8,
+    techID: 10,
     name: 'SimpleTexting API',
     imgSrc: require('../images/Technologies_Icons/SimpleTexting.svg'),
     technologiesLink: 'https://simpletexting.com/'
   },
   {
-    techID: 9,
+    techID: 11,
     name: 'Scrapi API',
     imgSrc: require('../images/Technologies_Icons/Scrapi.svg'),
     technologiesLink: 'https://scrap2api.web.app/'
   },
   {
-    techID: 10,
+    techID: 12,
     name: 'Body-Parser',
     imgSrc: require('../images/Technologies_Icons/body-parser.svg'),
     technologiesLink: 'https://www.npmjs.com/package/body-parser'
@@ -79,7 +91,7 @@ const projectInfo = [
     description: 'In 2019, I was fortunate enough to successfully kayak down one of the most challenging stretches of whitewater on the planet in Northern BC. The Grand Canyon of the Stikine. Traditionally, the run takes 3 days, so within those 3 days much can change as far as the river level is concerned. Each evening I sent a message via satellite phone to a friend to ask what the current level on the river was, I would have to wait for him to check his phone, then the government website for an accurate flow reading, then reply. It was quite cumbersome. From this, the idea for this app was created. An app that would sit and listen for inbound requests for river levels on a given set of rivers and reply with the latest reading. To set myself an additional challenge I decided to write this app in TypeScript. I had not yet built a live app via Typescript, so I thought this would be a great opportunity to apply what I had learned in some courses I was taking. The app as it stands is in its raw form. Going forward I would like to have a front end to show a map of rivers that are available and add a host server for remote to send flow data from gauge projects we are also working on. ',
     images: [{ src: require('../images/RiverText.jpg'), title: 'RiverText being used on a satelite phone' }],
     repoURL: 'https://github.com/SeanMcTernan/RiverText',
-    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10], technologies[11], technologies[12]],
     install: ['1. Click on the GitHub link Above', '2. Clone/Download the Repository', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '1 Week'
   },
