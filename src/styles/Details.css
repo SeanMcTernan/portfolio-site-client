@@ -14,7 +14,7 @@
   color: var(--mainWhite);
 }
 
-.technologies a {
+.technologies p a {
   color: var(--mainWhite) !important;
 }
 

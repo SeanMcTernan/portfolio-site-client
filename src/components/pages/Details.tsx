@@ -58,7 +58,7 @@ const Details: React.FC = (props) => {
                 rel="noopener noreferrer"
               >
                 <p
-                  style={{ textAlign: "center" }}
+                  style={{ textAlign: "center", color: "var(--mainWhite)" }}
                   className="font-weight-lighter tabsContent"
                 >
                   {technoloy.name}
