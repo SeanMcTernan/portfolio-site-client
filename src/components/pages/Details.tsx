@@ -8,7 +8,7 @@ import "../../styles/Details.css";
 const Details: React.FC = (props) => {
   //Render images for carousel items:
   const renderCarouselItems = (imagesArray: imgProperties[]) => {
-    return imagesArray.map((image: any) => {
+    return imagesArray.map((image: imgProperties) => {
       return (
         <Carousel.Item>
           <img
