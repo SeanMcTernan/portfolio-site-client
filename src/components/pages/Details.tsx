@@ -39,7 +39,6 @@ const Details: React.FC = (props) => {
     <InfoConsumer>
       {(value) => {
         const {
-          id,
           headerTitle,
           appDescription,
           description,
