@@ -40,10 +40,10 @@ const Details: React.FC = (props) => {
       <Row style={{ paddingTop: "5vh" }}>
         {info.map((technoloy: technologiesType) => {
           return (
-            <Col sm={2} className="col-10 mx-auto mb-5">
+            <Col sm={3} className="mx-auto mb-5">
               <p style={{ textAlign: "center" }}>
                 <img
-                  style={{ width: "60%", marginBottom: "-1vh" }}
+                  style={{ width: "40%", marginBottom: "-1vh" }}
                   src={technoloy.imgSrc}
                   alt={`${technoloy.name}-Logo`}
                 />
@@ -80,7 +80,7 @@ const Details: React.FC = (props) => {
           technologies,
           install,
           devTime,
-        } = value.projectInfo![0];
+        } = value.projectInfo![2];
         return (
           <div className="details">
             <Fragment>

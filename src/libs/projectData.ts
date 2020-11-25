@@ -27,8 +27,8 @@ const technologies = [
   {
     techID: 4,
     name: 'React',
-    imgSrc: require('../images/Technologies_Icons/npm.svg'),
-    technologiesLink: 'https://www.npmjs.com/'
+    imgSrc: require('../images/Technologies_Icons/react.svg'),
+    technologiesLink: 'https://reactjs.org/'
   },
   {
     techID: 5,
@@ -77,6 +77,48 @@ const technologies = [
     name: 'Body-Parser',
     imgSrc: require('../images/Technologies_Icons/body-parser.svg'),
     technologiesLink: 'https://www.npmjs.com/package/body-parser'
+  },
+  {
+    techID: 13,
+    name: 'Chalk',
+    imgSrc: require('../images/Technologies_Icons/chalk.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/chalk'
+  },
+  {
+    techID: 14,
+    name: 'Inquirer',
+    imgSrc: require('../images/Technologies_Icons/inquirer.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/inquirer'
+  },
+  {
+    techID: 15,
+    name: 'Request',
+    imgSrc: require('../images/Technologies_Icons/request.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/request'
+  },
+  {
+    techID: 16,
+    name: 'AWS-Amplify',
+    imgSrc: require('../images/Technologies_Icons/amplify.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/aws-amplify'
+  },
+  {
+    techID: 17,
+    name: 'React-Boootstrap',
+    imgSrc: require('../images/Technologies_Icons/react-bootstrap.svg'),
+    technologiesLink: 'https://react-bootstrap.github.io/'
+  },
+  {
+    techID: 18,
+    name: 'React-Router-Dom',
+    imgSrc: require('../images/Technologies_Icons/react-router-dom.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/react-router-dom'
+  },
+  {
+    techID: 19,
+    name: 'React-Dom',
+    imgSrc: require('../images/Technologies_Icons/react-dom.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/react-dom'
   }
 ];
 
@@ -92,7 +134,7 @@ const projectInfo = [
     images: [{ src: require('../images/RiverText.jpg'), title: 'RiverText being used on a satelite phone' }],
     repoURL: 'https://github.com/SeanMcTernan/RiverText',
     technologies: [technologies[1], technologies[2], technologies[3], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10], technologies[11], technologies[12]],
-    install: ['1. Click on the GitHub link Above', '2. Clone/Download the Repository', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    install: ['1. Click on the GitHub link Above', '2. Clone/Download the Repository', '3. From the folder run: npm install', '4. Run: npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '1 Week'
   },
   {
@@ -104,8 +146,8 @@ const projectInfo = [
     description: 'The app was originally created to assist fellow support staff. The process before was rather laborious to close out open conversations in Intercom during a rush. I really felt there was a better more efficient way to close out these conversations and this is where the app was born. Along the way I learned some neat technologies like Inquirer and Chalk, though the biggest takeaway was finally getting a solid grasp of asynchronous functions. The app needed to call the intercom API continuously while it was running, so getting comfortable with asynchronous functions was vital to the successful rollout of the app.',
     images: [{ src: require('../images/Intercom.gif'), title: 'Clear Monitoring closing tickets' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/blob/master/ReadMe_Images/Clear_Monitoring/Clear_Monitoring_Sample.png?raw=true', title: 'Cli for Clear Monitoring' }],
     repoURL: 'https://github.com/SeanMcTernan/clear-monitoring',
-    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    technologies: [technologies[2], technologies[3], technologies[5], technologies[6], technologies[8], technologies[13], technologies[14], technologies[15]],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run: npm install', '4. Add an intercom API in the following location credentials/credentials.js', '5. Run: node app'],
     devTime: '3 Weeks'
   },
   {
@@ -113,12 +155,12 @@ const projectInfo = [
     headerTitle: 'Portfolio Site',
     //Info card desc 175 char count max
     infoCardDescription: 'The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects.',
-    appDescription: 'The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects. The frameworks used were React and Bootstrap to allow for easy responsive design.',
+    appDescription: 'The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects. The frameworks used were React and Bootstrap to allow for easy responsive design. To create my portfolio app, I`ve compiled skills I have learned from a variety of different sources which I have accumulated over the years. I wanted a fun project to work on, while showcasing my skills in both backend and frontend development. After working with Ruru Software on a Project on AWS, I decided to expand my knowledge of Lambda and Dynamo DB while working on this project. I thought of some fun operations to use to allow users to sign up and request certain permissions on the site. So far it has given me a much deeper understanding of AWS and it`s offering.',
     description: 'The motivation was simple, I wanted somewhere (other than GitHub of course) to showcase my projects. For this project, I decided to fully commit to a TypeScript as my language of choice going forward. Its been a challenge to say the least, but I feel I have learned so much about TypeScript and really started to understand the benefits of using it for development. Admittedly, after completing Maximilian Schwarzmüller`s Understanding TypeScript course I did not fully grasp the benefits of the language, it seemed to add more roadblocks over solutions. However, after speaking to many friends about my feelings the assured it would help with streamlining development. After committing to this project, I finally understand what the mean! Along with Typescript, I learned React-Bootstrap for the first time which was a huge help. I was not looking forward to toiling away with various browser elements. It was a happy accident I discovered this when I did, it`s made developing the front end a lot more enjoyable.',
-    images: [{ src: require('../images/PortfolioSite.gif'), title: 'Homepage Main image CSS' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_1.png?raw=true', title: 'Homepage' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_1.png?raw=true', title: 'Settings page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/Portfolio-App-Example_2.png?raw=true', title: 'Login page' }],
+    images: [{ src: require('../images/PortfolioSite.gif'), title: 'Homepage Main image CSS' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_1.png?raw=true', title: 'Homepage' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_2.png?raw=true', title: 'Settings page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/Portfolio-App-Example_2.png?raw=true', title: 'Login page' }],
     repoURL: 'https://github.com/SeanMcTernan/portfolio-site-client',
-    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    technologies: [technologies[1], technologies[4], technologies[16], technologies[17], technologies[18], technologies[19]],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run: npm install', '4. Run: npm start'],
     devTime: 'Still in Development'
   },
   {
@@ -131,7 +173,7 @@ const projectInfo = [
     images: [{ src: require('../images/PortfolioSite-Backend.jpg'), title: 'Homepage Main image CSS' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/Portfolio-App-Example_2.png?raw=true', title: 'Login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_1.png?raw=true', title: 'Settings page' }],
     repoURL: 'https://github.com/SeanMcTernan/portfolio-site-api',
     technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '3 Weeks'
   },
   {
@@ -145,7 +187,7 @@ const projectInfo = [
     images: [{ src: require('../images/NodeJS-Chat-App.jpg'), title: 'Chat login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_2.png?raw=true', title: 'Two Active Chats' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_3.png?raw=true', title: 'Chatbox and send location' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_Location.png?raw=true', title: 'Users shared location' }],
     repoURL: 'https://github.com/SeanMcTernan/nodejs-chat-app',
     technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '1 Week'
   },
   {
@@ -158,7 +200,7 @@ const projectInfo = [
     images: [{ src: require('../images/NoteTaking-App.jpg'), title: 'Notes login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_2.png?raw=true', title: 'List of user notes' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_4.png?raw=true', title: 'Credit card page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_3.png?raw=true', title: 'Note editing page' }],
     repoURL: 'https://github.com/SeanMcTernan/serverless-stack-client',
     technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '1 Week'
   },
   {
@@ -171,7 +213,7 @@ const projectInfo = [
     images: [{ src: require('../images/Drag&Drop.gif'), title: 'Using the note taking app' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/TypeScript-Drag-And-Drop/TS_Drag&Drop_Cap_1.png?raw=true', title: 'App main screen' }],
     repoURL: 'https://github.com/SeanMcTernan/typescript-drag-and-drop-project',
     technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', 'Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '2 days'
   }
 ];
