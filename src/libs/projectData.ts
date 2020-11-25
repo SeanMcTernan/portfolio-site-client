@@ -116,9 +116,57 @@ const technologies = [
   },
   {
     techID: 19,
-    name: 'React-Dom',
-    imgSrc: require('../images/Technologies_Icons/react-dom.svg'),
-    technologiesLink: 'https://www.npmjs.com/package/react-dom'
+    name: 'AWS-Cognito',
+    imgSrc: require('../images/Technologies_Icons/cognito.svg'),
+    technologiesLink: 'https://aws.amazon.com/cognito/'
+  },
+  {
+    techID: 20,
+    name: 'AWS-DynamoDB',
+    imgSrc: require('../images/Technologies_Icons/dynamodb.svg'),
+    technologiesLink: 'https://aws.amazon.com/dynamodb/'
+  },
+  {
+    techID: 21,
+    name: 'AWS-Lambda',
+    imgSrc: require('../images/Technologies_Icons/lambda.svg'),
+    technologiesLink: 'https://aws.amazon.com/lambda/'
+  },
+  {
+    techID: 22,
+    name: 'AWS-SDK',
+    imgSrc: require('../images/Technologies_Icons/aws-sdk.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/aws-sdk'
+  },
+  {
+    techID: 23,
+    name: 'Serverless-Bundle',
+    imgSrc: require('../images/Technologies_Icons/severless.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/serverless-dotenv-plugin'
+  },
+  {
+    techID: 24,
+    name: 'Serverless-Offline',
+    imgSrc: require('../images/Technologies_Icons/severless-offline.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/serverless-offline'
+  },
+  {
+    techID: 25,
+    name: 'UUID',
+    imgSrc: require('../images/Technologies_Icons/uuid.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/uuid'
+  },
+  {
+    techID: 26,
+    name: 'Socket.IO',
+    imgSrc: require('../images/Technologies_Icons/socket.svg'),
+    technologiesLink: 'https://socket.io/'
+  },
+  {
+    techID: 27,
+    name: 'Bad-Words',
+    imgSrc: require('../images/Technologies_Icons/bad-word.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/bad-words'
   }
 ];
 
@@ -172,8 +220,8 @@ const projectInfo = [
     description: 'The backend was created to reapply what I learned during the Serverless-Stack course. I enjoyed working with AWS during this course and wanted to continue growing my knowledge with this technology. I learned quite a lot about AWS and their offerings. In particular Lambda and Cognito. I feel they are well established tools, however from the outset they seem alot more difficult to pickup compared to their competitor Google and the APIs they offer such as Firebase.',
     images: [{ src: require('../images/PortfolioSite-Backend.jpg'), title: 'Homepage Main image CSS' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/Portfolio-App-Example_2.png?raw=true', title: 'Login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Portfolio_App/portfolio_site_sample_1.png?raw=true', title: 'Settings page' }],
     repoURL: 'https://github.com/SeanMcTernan/portfolio-site-api',
-    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    technologies: [technologies[2], technologies[19], technologies[20], technologies[21], technologies[22], technologies[23], technologies[24], technologies[25]],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run: npm install'],
     devTime: '3 Weeks'
   },
   {
@@ -182,12 +230,11 @@ const projectInfo = [
     //Info card desc 175 char count max
     infoCardDescription: 'A small NodeJS chat app designed to explore Socket.io and how it can be used to update information in real time on a users browser.',
     appDescription: 'A small NodeJS chat app designed to explore Socket.io and how it can be used to update information in real time on a users browser.',
-    description:
-      'The app allows users to enter their name and the chat room they would like to enter. When entered, the app checks for a valid unique entry and stores the information entered. In the screenshots provided, you can see two users logged into the app (one on a regular window, the other on Incognito). As new users log in or out, messages are displayed to those in the chat room on the activity of other users. "User has joined", "User has left" etc. Should a user use bad language the Bad-Language dependency will catch the phrase and the admin will send them a message informing them that "Profanity is not allowed!". Along with sending chat messages, users can share their location with others in the room. By hitting the "Send Location" feature. The app takes their location and a link to Google Maps from the chat room.',
+    description: 'The app allows users to enter their name and the chat room they would like to enter. When entered, the app checks for a valid unique entry and stores the information entered. In the screenshots provided, you can see two users logged into the app (one on a regular window, the other on Incognito). As new users log in or out, messages are displayed to those in the chat room on the activity of other users. "User has joined", "User has left" etc. Should a user use bad language the Bad-Language dependency will catch the phrase and the admin will send them a message informing them that "Profanity is not allowed!". Along with sending chat messages, users can share their location with others in the room. By hitting the "Send Location" feature. The app takes their location and a link to Google Maps from the chat room.',
     images: [{ src: require('../images/NodeJS-Chat-App.jpg'), title: 'Chat login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_2.png?raw=true', title: 'Two Active Chats' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_3.png?raw=true', title: 'Chatbox and send location' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/NodeJS_ChatApp/nodeJS_Chat_App_ScreenShot_Location.png?raw=true', title: 'Users shared location' }],
     repoURL: 'https://github.com/SeanMcTernan/nodejs-chat-app',
-    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    technologies: [technologies[2], technologies[7], technologies[3], technologies[6], technologies[26], technologies[27]],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run: npm install'],
     devTime: '1 Week'
   },
   {
