@@ -197,7 +197,7 @@ const technologies = [
 //Raw Project Data
 const projectInfo = [
   {
-    id: 1,
+    id: 0,
     headerTitle: 'RiverText',
     //Info card desc 175 char count max
     infoCardDescription: 'RiverText is a system that allows users to receive river flow information from The Canadian Water Office by sending a message from a satellite phone or any SMS enabled device.',
@@ -210,7 +210,7 @@ const projectInfo = [
     devTime: '1 Week'
   },
   {
-    id: 2,
+    id: 1,
     headerTitle: 'Clear Monitoring',
     //Info card desc 175 char count max
     infoCardDescription: 'Clear Monitoring was built to help support staff close thousands of open tickets on the Intercom platform all at once via a CLI, rather than manually via the app interface. ',
@@ -223,7 +223,7 @@ const projectInfo = [
     devTime: '3 Weeks'
   },
   {
-    id: 3,
+    id: 2,
     headerTitle: 'Portfolio Site',
     //Info card desc 175 char count max
     infoCardDescription: 'The frontend of my Portfolio site is designed to showcase my capabilities with React, but also host and easy to navigate directory of my projects.',
@@ -236,7 +236,7 @@ const projectInfo = [
     devTime: 'Still in Development'
   },
   {
-    id: 4,
+    id: 3,
     headerTitle: 'Portfolio Site - Backend',
     //Info card desc 175 char count max
     infoCardDescription: 'The backend of the Portfolio site serves to assist login and permissions on my portfolio site. It was created entirely using Serverless',
@@ -249,7 +249,7 @@ const projectInfo = [
     devTime: '3 Weeks'
   },
   {
-    id: 5,
+    id: 4,
     headerTitle: 'NodeJS Chat App',
     //Info card desc 175 char count max
     infoCardDescription: 'A small NodeJS chat app designed to explore Socket.io and how it can be used to update information in real time on a users browser.',
@@ -262,7 +262,7 @@ const projectInfo = [
     devTime: '1 Week'
   },
   {
-    id: 6,
+    id: 5,
     headerTitle: 'Severless Notes',
     //Info card desc 175 char count max
     infoCardDescription: 'The frontend of my Serverless note taking app. The App was created as part of the Servless-Stack course where I learned about AWS and the Severless.',
@@ -276,7 +276,7 @@ const projectInfo = [
     devTime: '1 Week'
   },
   {
-    id: 7,
+    id: 6,
     headerTitle: 'TS Drag & Drop Project',
     //Info card desc 175 char count max
     infoCardDescription: 'A small Typescript project, to explore drag and drop functionality within a browser.',

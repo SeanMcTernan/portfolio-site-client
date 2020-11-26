@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { InfoConsumer } from "../../libs/contextLib";
 import { imgProperties } from "../../libs/projectData";
@@ -40,7 +39,12 @@ const InfoCards: React.FC<Props> = ({ item }) => {
             <Card.Body className="collapse-content">
               <Card.Title>{headerTitle}</Card.Title>
               <Card.Text>{infoCardDescription}</Card.Text>
-              <LinkContainer to="details">
+              <LinkContainer
+                to="details"
+                onClick={() => {
+                  data.setProjectID(id);
+                }}
+              >
                 <Button variant="outline-info">More info</Button>
               </LinkContainer>
             </Card.Body>

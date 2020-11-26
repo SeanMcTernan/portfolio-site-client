@@ -1,4 +1,4 @@
-import React, { useContext, createContext } from "react";
+import React, { useContext, useState, createContext } from "react";
 import {
   projectInfo,
   technologies,
@@ -36,14 +36,18 @@ export const useAppContext = () => {
 interface infoContextProps {
   projectInfo: projectInfoProps;
   technologies: technologiesProps;
-  detailInfo: projectInfoProp;
+  setProjectID: any;
+  projectID: number;
 }
 
 const infoContext = createContext<Partial<infoContextProps>>({});
 
-export const InfoProvider: React.FC = (props: any) => {
+export const InfoProvider: React.FC = ({ ...props }) => {
+  const [projectID, setProjectID] = useState(0);
   return (
-    <infoContext.Provider value={{ projectInfo, technologies }}>
+    <infoContext.Provider
+      value={{ projectInfo, technologies, setProjectID, projectID }}
+    >
       {props.children}
     </infoContext.Provider>
   );

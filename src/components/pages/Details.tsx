@@ -89,7 +89,7 @@ const Details: React.FC = (props) => {
           technologies,
           install,
           devTime,
-        } = value.projectInfo![6];
+        } = value.projectInfo![value.projectID!];
         return (
           <div className="details">
             <Fragment>
@@ -127,7 +127,7 @@ const Details: React.FC = (props) => {
                   {liveLink && (
                     <a
                       style={{ padding: "1vh" }}
-                      href={repoURL}
+                      href={liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
