@@ -13,7 +13,7 @@ const Details: React.FC = (props) => {
       return (
         <Carousel.Item style={{ padding: "3vh" }}>
           <img
-            className="d-block flex w-50"
+            className="d-block flex w-75"
             src={image.src}
             alt={image.title}
           />
@@ -89,7 +89,7 @@ const Details: React.FC = (props) => {
           technologies,
           install,
           devTime,
-        } = value.projectInfo![5];
+        } = value.projectInfo![6];
         return (
           <div className="details">
             <Fragment>
