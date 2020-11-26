@@ -297,6 +297,7 @@ export interface projectInfoProp {
   infoCardDescription: string;
   appDescription: string;
   description: string;
+  liveLink?: string;
   images: imgProperties[];
   repoURL: string;
   technologies: technologiesType[];
