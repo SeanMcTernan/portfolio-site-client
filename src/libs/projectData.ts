@@ -167,6 +167,12 @@ const technologies = [
     name: 'Bad-Words',
     imgSrc: require('../images/Technologies_Icons/bad-word.svg'),
     technologiesLink: 'https://www.npmjs.com/package/bad-words'
+  },
+  {
+    techID: 28,
+    name: 'Netllify',
+    imgSrc: require('../images/Technologies_Icons/netlify.svg'),
+    technologiesLink: 'https://www.netlify.com/'
   }
 ];
 
@@ -242,12 +248,12 @@ const projectInfo = [
     headerTitle: 'Severless Notes',
     //Info card desc 175 char count max
     infoCardDescription: 'The frontend of my Serverless note taking app. The App was created as part of the Servless-Stack course where I learned about AWS and the Severless.',
-    appDescription: 'The app is live! Click the link above to visit the site.\n\nThe frontend of my Serverless note taking app. The App was created as part of the Servless-Stack course where I learned about AWS and the Severless.\n\nThe frontend of the app was basic by design. The focus of this project was to seamlessly link the front and back end of a web application. Above, you can see a login and sign up option for the landing page. Using AWS amplify, users can create an account or sign into an existing account.Once logged-in users can see their existing notes and click to edit them. Alternatively, they can choose to create a new note, or edits their settings. The settings section was created using the Stripe sandbox. No charges can be processed if any details are entered. It was created as a means of understanding 3rd party payment applications. When a user clicks into a note, they can edit the existing content of a note, including its attachments, or choose to delete the note entirely from the system.',
-    description: 'Serverless applications are the most common use case for modern applications, so I wanted to get up to speed on what was being used and how to apply it to a real-world scenario. Needless to say, a note taking app is about as original as printing hello world!, but in this instance a familiar application made it easier to digest the new methods that were being applied. AWS Cognito, S3, Lambda, DynamoDB were all used, so it was a deep dive into new concepts. Likewise, it was very interesting to see committed changes being sent automatically to Netlify, a concept I was familiar with, but had yet to see it in practice.',
+    appDescription: 'The app is live! Click the link above to visit the site.\n\nThe frontend of my Serverless note taking app. The App was created as part of the Servless-Stack course where I learned about AWS and the Severless.\n\nThe frontend of the app was basic by design. The focus of this project was to seamlessly link the front and back end of a web application. Below, you can see a login and sign up option for the landing page. Using AWS amplify, users can create an account or sign into an existing account. Once logged-in users can see their existing notes and click to edit them. Alternatively, they can choose to create a new note, or edits their settings. The settings section was created using the Stripe sandbox. No charges can be processed if any details are entered. It was created as a means of understanding 3rd party payment applications. When a user clicks into a note, they can edit the existing content of a note, including its attachments, or choose to delete the note entirely from the system.',
+    description: 'Serverless applications are the most common use case for modern applications, so I wanted to get up to speed on what was being used and how to apply it to a real-world scenario. Needless to say, a note taking app is about as original as printing `hello world!`, but in this instance a familiar application made it easier to digest the new methods that were being applied. AWS Cognito, S3, Lambda, DynamoDB were all used, so it was a deep dive into new concepts. Likewise, it was very interesting to see committed changes being sent automatically to Netlify, a concept I was familiar with, but had yet to see it in practice.',
     images: [{ src: require('../images/NoteTaking-App.jpg'), title: 'Notes login page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_2.png?raw=true', title: 'List of user notes' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_4.png?raw=true', title: 'Credit card page' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/Serverless-Notes-App/Serverless-notes-app-sample_3.png?raw=true', title: 'Note editing page' }],
     repoURL: 'https://github.com/SeanMcTernan/serverless-stack-client',
-    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
-    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
+    technologies: [technologies[0], technologies[4], technologies[3], technologies[16], technologies[17], technologies[18], technologies[28]],
+    install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run: npm install'],
     devTime: '1 Week'
   },
   {
