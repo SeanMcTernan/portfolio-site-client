@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Container, Carousel, Tabs, Tab, Row, Col } from "react-bootstrap";
 import { ReactComponent as Github } from "../../svgs/github.svg";
+import { ReactComponent as WebPage } from "../../svgs/webPage.svg";
 import { InfoConsumer } from "../../libs/contextLib";
 import { imgProperties, technologiesType } from "../../libs/projectData";
 import "../../styles/Details.css";
@@ -83,6 +84,7 @@ const Details: React.FC = (props) => {
           appDescription,
           description,
           images,
+          liveLink,
           repoURL,
           technologies,
           install,
@@ -106,15 +108,39 @@ const Details: React.FC = (props) => {
                 style={{ paddingBottom: "3vh", textAlign: "center" }}
                 className="mt 5 "
               >
-                <a href={repoURL} target="_blank" rel="noopener noreferrer">
-                  <Github
-                    className="socialIcons"
-                    style={{
-                      textShadow: "2px",
-                      width: "5vmin",
-                    }}
-                  />
-                </a>
+                <p>
+                  <a
+                    style={{ padding: "1vh" }}
+                    href={repoURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github
+                      className="socialIcons"
+                      style={{
+                        textShadow: "2px",
+                        width: "5vmin",
+                      }}
+                    />
+                  </a>
+
+                  {liveLink && (
+                    <a
+                      style={{ padding: "1vh" }}
+                      href={repoURL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WebPage
+                        className="socialIcons"
+                        style={{
+                          textShadow: "2px",
+                          width: "5vmin",
+                        }}
+                      />
+                    </a>
+                  )}
+                </p>
               </Container>
               {/* Nav Links */}
               <Container style={{ paddingBottom: "20vh" }}>
