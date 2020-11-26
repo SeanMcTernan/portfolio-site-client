@@ -1,5 +1,14 @@
 import React, { Fragment } from "react";
-import { Container, Carousel, Tabs, Tab, Row, Col } from "react-bootstrap";
+import {
+  Container,
+  Carousel,
+  Tabs,
+  Tab,
+  Row,
+  Col,
+  Button,
+} from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { ReactComponent as WebPage } from "../../svgs/webPage.svg";
 import { InfoConsumer } from "../../libs/contextLib";
@@ -95,6 +104,9 @@ const Details: React.FC = (props) => {
             <Fragment>
               {/* Project text details */}
               <Container className="homeDiv align-items-center">
+                <LinkContainer to="projects">
+                  <Button variant="outline-info">Back to Projects</Button>
+                </LinkContainer>
                 <h1
                   style={{ textAlign: "center", color: "var(--mutedBlue)" }}
                   className="font-weight-lighter"
