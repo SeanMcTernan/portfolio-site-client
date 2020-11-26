@@ -42,11 +42,18 @@ const Details: React.FC = (props) => {
           return (
             <Col sm={3} className="mx-auto mb-5">
               <p style={{ textAlign: "center" }}>
-                <img
-                  style={{ width: "40%", marginBottom: "-1vh" }}
-                  src={technoloy.imgSrc}
-                  alt={`${technoloy.name}-Logo`}
-                />
+                <a
+                  className="technologies"
+                  href={technoloy.technologiesLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    style={{ width: "40%", marginBottom: "-1vh" }}
+                    src={technoloy.imgSrc}
+                    alt={`${technoloy.name}-Logo`}
+                  />
+                </a>
               </p>
               <a
                 className="technologies"
@@ -80,7 +87,7 @@ const Details: React.FC = (props) => {
           technologies,
           install,
           devTime,
-        } = value.projectInfo![4];
+        } = value.projectInfo![5];
         return (
           <div className="details">
             <Fragment>
