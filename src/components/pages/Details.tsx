@@ -123,7 +123,7 @@ const Details: React.FC = (props) => {
                       }}
                     />
                   </a>
-
+                  {/* Conditionally Render live link from site */}
                   {liveLink && (
                     <a
                       style={{ padding: "1vh" }}

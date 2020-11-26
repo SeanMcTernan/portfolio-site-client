@@ -173,6 +173,24 @@ const technologies = [
     name: 'Netllify',
     imgSrc: require('../images/Technologies_Icons/netlify.svg'),
     technologiesLink: 'https://www.netlify.com/'
+  },
+  {
+    techID: 29,
+    name: 'WebPack',
+    imgSrc: require('../images/Technologies_Icons/webpack.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/webpack'
+  },
+  {
+    techID: 30,
+    name: 'Lite-Server',
+    imgSrc: require('../images/Technologies_Icons/light-server.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/lite-server'
+  },
+  {
+    techID: 31,
+    name: 'TS-Loader',
+    imgSrc: require('../images/Technologies_Icons/ts-loader.svg'),
+    technologiesLink: 'https://www.npmjs.com/package/ts-loader'
   }
 ];
 
@@ -266,7 +284,7 @@ const projectInfo = [
     description: 'In May 2020 I started working with RURU-Software on their delivery app. The app was built using Typescript. Even though I had completed Understanding-Typescript by Maximilian Schwarzmüller in early 2019, I had never gotten an opportunity to apply my knowledge in a real-world application. When the opportunity had come up to work with RuRu, I checked back on Max`s course and was happy to see an updated version was available for 2020, this was one of the many projects I had gotten to work on this course, while at the same time working for RuRu.\n\nI learned a great deal about browser tools and type safety while working on this project. I had seen applications like Trello use the drag and drop feature to great effect, so I was happy to learn what was required while working on this project.',
     images: [{ src: require('../images/Drag&Drop.gif'), title: 'Using the note taking app' }, { src: 'https://github.com/SeanMcTernan/SeanMcTernan/raw/master/ReadMe_Images/TypeScript-Drag-And-Drop/TS_Drag&Drop_Cap_1.png?raw=true', title: 'App main screen' }],
     repoURL: 'https://github.com/SeanMcTernan/typescript-drag-and-drop-project',
-    technologies: [technologies[1], technologies[2], technologies[3], technologies[4], technologies[5], technologies[6], technologies[7], technologies[8], technologies[9], technologies[10]],
+    technologies: [technologies[1], technologies[2], technologies[3], technologies[29], technologies[30], technologies[31]],
     install: ['1. Click on the GitHub link Above.', '2. Clone/Download the Repository.', '3. From the folder run npm install', '4. Run npm run dev', '5. Make a request to the sever via Postman, or whatever your preferred app is, be sure to enter your cellphone so the app texts you: http://localhost:3000/riverdata/webhooks?from= ENTER YOUR CELLPHONE HERE &to=8335890354&subject&text=Elk'],
     devTime: '2 days'
   }
