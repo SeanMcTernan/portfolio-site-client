@@ -20,9 +20,12 @@ const Details: React.FC = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  //Use Location and History to determine the current project being loaded.
   const history = useHistory();
   const location = useLocation<number>();
   const currentProject = location.state;
+
   //Render images for carousel items:
   const renderCarouselItems = (imagesArray: imgProperties[]) => {
     return imagesArray.map((image: imgProperties) => {
@@ -213,8 +216,9 @@ const Details: React.FC = (props) => {
                   </Tab>
                 </Tabs>
                 <p style={{ textAlign: "center", paddingTop: "3vh" }}>
-                  {true && (
+                  {currentProject != 0 && (
                     <Button
+                      style={{ marginRight: "2vw" }}
                       onClick={() => {
                         history.push({
                           pathname: "/details",
@@ -227,8 +231,9 @@ const Details: React.FC = (props) => {
                       Prev
                     </Button>
                   )}
-                  {true && (
+                  {currentProject + 1 != value.projectInfo?.length && (
                     <Button
+                      style={{ paddingLeft: "1vh" }}
                       onClick={() => {
                         history.push({
                           pathname: "/details",
