@@ -36,21 +36,16 @@ export const useAppContext = () => {
 interface infoContextProps {
   projectInfo: projectInfoProps;
   technologies: technologiesProps;
-  setProjectID: any;
-  projectID: number;
 }
 
 const infoContext = createContext<Partial<infoContextProps>>({});
 
 export const InfoProvider: React.FC = ({ ...props }) => {
-  var [projectID, setProjectID] = useState(0);
   return (
     <infoContext.Provider
       value={{
         projectInfo,
         technologies,
-        setProjectID,
-        projectID,
       }}
     >
       {props.children}

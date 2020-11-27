@@ -43,7 +43,6 @@ const InfoCards: React.FC<Props> = ({ item }) => {
               <Button
                 variant="outline-info"
                 onClick={() => {
-                  data.setProjectID(id);
                   history.push({
                     pathname: "/details",
                     state: id,

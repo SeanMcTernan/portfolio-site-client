@@ -216,14 +216,31 @@ const Details: React.FC = (props) => {
                   {true && (
                     <Button
                       onClick={() => {
-                        console.log(currentProject);
+                        history.push({
+                          pathname: "/details",
+                          state: currentProject - 1,
+                        });
+                        window.scrollTo(0, 0);
                       }}
                       variant="outline-info"
                     >
                       Prev
                     </Button>
                   )}
-                  {true && <Button variant="outline-info">Next</Button>}
+                  {true && (
+                    <Button
+                      onClick={() => {
+                        history.push({
+                          pathname: "/details",
+                          state: currentProject + 1,
+                        });
+                        window.scrollTo(0, 0);
+                      }}
+                      variant="outline-info"
+                    >
+                      Next
+                    </Button>
+                  )}
                 </p>
               </Container>
             </Fragment>
