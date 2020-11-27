@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Button, Card } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import { useHistory } from "react-router-dom";
 import { InfoConsumer } from "../../libs/contextLib";
 import { imgProperties } from "../../libs/projectData";
 
@@ -16,6 +16,7 @@ interface Props {
 }
 
 const InfoCards: React.FC<Props> = ({ item }) => {
+  const history = useHistory();
   const { id, headerTitle, infoCardDescription, images } = item;
   return (
     <InfoConsumer>
@@ -39,14 +40,18 @@ const InfoCards: React.FC<Props> = ({ item }) => {
             <Card.Body className="collapse-content">
               <Card.Title>{headerTitle}</Card.Title>
               <Card.Text>{infoCardDescription}</Card.Text>
-              <LinkContainer
-                to="details"
+              <Button
+                variant="outline-info"
                 onClick={() => {
                   data.setProjectID(id);
+                  history.push({
+                    pathname: "/details",
+                    state: id,
+                  });
                 }}
               >
-                <Button variant="outline-info">More info</Button>
-              </LinkContainer>
+                More info
+              </Button>
             </Card.Body>
           </Card>
         </Col>

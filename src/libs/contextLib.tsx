@@ -43,10 +43,15 @@ interface infoContextProps {
 const infoContext = createContext<Partial<infoContextProps>>({});
 
 export const InfoProvider: React.FC = ({ ...props }) => {
-  const [projectID, setProjectID] = useState(0);
+  var [projectID, setProjectID] = useState(0);
   return (
     <infoContext.Provider
-      value={{ projectInfo, technologies, setProjectID, projectID }}
+      value={{
+        projectInfo,
+        technologies,
+        setProjectID,
+        projectID,
+      }}
     >
       {props.children}
     </infoContext.Provider>

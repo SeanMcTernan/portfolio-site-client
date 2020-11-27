@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import {
   Container,
   Carousel,
@@ -8,7 +8,7 @@ import {
   Col,
   Button,
 } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import { useHistory, useLocation } from "react-router-dom";
 import { ReactComponent as Github } from "../../svgs/github.svg";
 import { ReactComponent as WebPage } from "../../svgs/webPage.svg";
 import { InfoConsumer } from "../../libs/contextLib";
@@ -16,6 +16,13 @@ import { imgProperties, technologiesType } from "../../libs/projectData";
 import "../../styles/Details.css";
 
 const Details: React.FC = (props) => {
+  //Start at the top of the rendered component
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  const history = useHistory();
+  const location = useLocation<number>();
+  const currentProject = location.state;
   //Render images for carousel items:
   const renderCarouselItems = (imagesArray: imgProperties[]) => {
     return imagesArray.map((image: imgProperties) => {
@@ -98,15 +105,20 @@ const Details: React.FC = (props) => {
           technologies,
           install,
           devTime,
-        } = value.projectInfo![value.projectID!];
+        } = value.projectInfo![currentProject];
         return (
           <div className="details">
             <Fragment>
               {/* Project text details */}
               <Container className="homeDiv align-items-center">
-                <LinkContainer to="projects">
-                  <Button variant="outline-info">Back to Projects</Button>
-                </LinkContainer>
+                <Button
+                  variant="outline-info"
+                  onClick={() => {
+                    history.push(`/projects`);
+                  }}
+                >
+                  Back to Projects
+                </Button>
                 <h1
                   style={{ textAlign: "center", color: "var(--mutedBlue)" }}
                   className="font-weight-lighter"
@@ -200,6 +212,19 @@ const Details: React.FC = (props) => {
                     {renderInstallInstructions(install)}
                   </Tab>
                 </Tabs>
+                <p style={{ textAlign: "center", paddingTop: "3vh" }}>
+                  {true && (
+                    <Button
+                      onClick={() => {
+                        console.log(currentProject);
+                      }}
+                      variant="outline-info"
+                    >
+                      Prev
+                    </Button>
+                  )}
+                  {true && <Button variant="outline-info">Next</Button>}
+                </p>
               </Container>
             </Fragment>
           </div>
