@@ -1,11 +1,5 @@
-import React, { useContext, useState, createContext } from "react";
-import {
-  projectInfo,
-  technologies,
-  projectInfoProp,
-  projectInfoProps,
-  technologiesProps,
-} from "../libs/projectData";
+import React, { useContext, createContext } from "react";
+import { projectInfo, projectInfoProps } from "../libs/projectData";
 
 //Context for User Authentication & Permissions
 
@@ -35,7 +29,6 @@ export const useAppContext = () => {
 
 interface infoContextProps {
   projectInfo: projectInfoProps;
-  technologies: technologiesProps;
 }
 
 const infoContext = createContext<Partial<infoContextProps>>({});
@@ -45,7 +38,6 @@ export const InfoProvider: React.FC = ({ ...props }) => {
     <infoContext.Provider
       value={{
         projectInfo,
-        technologies,
       }}
     >
       {props.children}
