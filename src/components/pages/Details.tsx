@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import {
   Container,
   Carousel,
@@ -216,7 +216,7 @@ const Details: React.FC = (props) => {
                   </Tab>
                 </Tabs>
                 <p style={{ textAlign: "center", paddingTop: "3vh" }}>
-                  {currentProject != 0 && (
+                  {currentProject !== 0 && (
                     <Button
                       style={{ marginRight: "2vw" }}
                       onClick={() => {
@@ -231,7 +231,7 @@ const Details: React.FC = (props) => {
                       Prev
                     </Button>
                   )}
-                  {currentProject + 1 != value.projectInfo?.length && (
+                  {currentProject + 1 !== value.projectInfo?.length && (
                     <Button
                       style={{ paddingLeft: "1vh" }}
                       onClick={() => {

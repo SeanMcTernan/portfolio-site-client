@@ -36,22 +36,18 @@ const NavbarElement: React.FC = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Link to="projects">
-              <Nav.Link
-                className="nav-link text-white text-uppercase ml-5"
-                href="projects"
-              >
-                Projects
-              </Nav.Link>
-            </Link>
-            <Link to="contact">
-              <Nav.Link
-                className="nav-link text-white text-uppercase ml-5"
-                href="contact"
-              >
-                Contact
-              </Nav.Link>
-            </Link>
+            <Nav.Link
+              className="nav-link text-white text-uppercase ml-5"
+              href="projects"
+            >
+              Projects
+            </Nav.Link>
+            <Nav.Link
+              className="nav-link text-white text-uppercase ml-5"
+              href="contact"
+            >
+              Contact
+            </Nav.Link>
             {isAuthenticated ? (
               <>
                 {userPermissions.resume ? (
@@ -68,33 +64,31 @@ const NavbarElement: React.FC = () => {
                 ) : null}
                 {userPermissions.references ? (
                   <>
-                    <Link to="references">
-                      <Nav.Link
-                        className="nav-link text-white text-uppercase ml-5"
-                        href="references"
-                      >
-                        References
-                      </Nav.Link>
-                    </Link>
+                    <Nav.Link
+                      className="nav-link text-white text-uppercase ml-5"
+                      href="references"
+                    >
+                      References
+                    </Nav.Link>
                   </>
                 ) : null}
-                <Link to="#" onClick={() => setModalShow(true)}>
-                  <Nav.Link
-                    className="nostyle nav-link text-white text-uppercase ml-5"
-                    href="#settings"
-                  >
-                    Settings
-                  </Nav.Link>
-                </Link>
-                <Link to="home" onClick={handleLogout}>
-                  <Nav.Link
-                    data-attr="nostyle"
-                    className="nav-link text-white text-uppercase mx-5"
-                    href="home"
-                  >
-                    Logout
-                  </Nav.Link>
-                </Link>
+
+                <Nav.Link
+                  onClick={() => setModalShow(true)}
+                  className="nostyle nav-link text-white text-uppercase ml-5"
+                  href="#settings"
+                >
+                  Settings
+                </Nav.Link>
+
+                <Nav.Link
+                  onClick={handleLogout}
+                  data-attr="nostyle"
+                  className="nav-link text-white text-uppercase mx-5"
+                  href="home"
+                >
+                  Logout
+                </Nav.Link>
               </>
             ) : (
               <>

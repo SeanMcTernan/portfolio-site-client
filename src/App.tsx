@@ -13,9 +13,10 @@ const App: React.FC = () => {
   const [permissions, setPermissions] = useState([]);
   const userPermissions = permissions[0];
 
+  //Pass empty list of variable to useEffect so it will only run on first render.
   useEffect(() => {
+    // eslint-disable-next-line
     onLoad();
-    //Pass empty list of variable to useEffect so it will only run on first render.
   }, []);
 
   const onLoad = async () => {
