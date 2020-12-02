@@ -114,9 +114,13 @@ const Contact: React.FC = () => {
     );
   };
   return (
-    <Container className="homeDiv" style={{ paddingBottom: "10vh" }}>
+    <Container
+      className="homeDiv align-items-center"
+      style={{ paddingBottom: "10vh" }}
+    >
       <Row style={{ paddingBottom: "20vh" }}>
-        <Col lg={6} className="col-7">
+        <Col />
+        <Col lg={6}>
           <h4
             className="font-weight-lighter"
             style={{ color: "var(--mainWhite)" }}
@@ -127,6 +131,7 @@ const Contact: React.FC = () => {
             {!emailSent ? renderRequestCodeForm() : renderSuccessMessage()}
           </div>
         </Col>
+        <Col />
       </Row>
     </Container>
   );
