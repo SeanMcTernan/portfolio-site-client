@@ -6,9 +6,7 @@ import {
   FormGroup,
   FormControl,
   FormLabel,
-  FormText,
 } from "react-bootstrap";
-import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
 import { FcCheckmark } from "react-icons/fc";
 import LoaderButton from "../elements/LoaderButton";
@@ -17,80 +15,80 @@ import useFormFields from "../../libs/hooksLib";
 import "../../styles/ResetPassword.css";
 
 const Contact: React.FC = () => {
+  const [emailSent, setEmailSent] = useState(false);
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
+
   const { fields, handleFieldChange } = useFormFields({
-    email: "",
     name: "",
+    email: "",
     phone: "",
     message: "",
-    code: "",
-    password: "",
-    confirmPassword: "",
   });
 
-  const [codeSent, setCodeSent] = useState(false);
-  const [confirmed, setConfirmed] = useState(false);
-  const [isConfirming, setIsConfirming] = useState(false);
-  const [isSendingCode, setIsSendingCode] = useState(false);
-
   const validateCodeForm = () => {
-    return fields.email.length > 0;
-  };
-
-  const validateResetForm = () => {
     return (
-      fields.code.length > 0 &&
-      fields.password.length > 0 &&
-      fields.password === fields.confirmPassword
+      fields.name.length > 0 &&
+      fields.email.length > 0 &&
+      fields.phone.length > 0 &&
+      fields.message.length > 10
     );
   };
+
   const handleSendCodeClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSendingCode(true);
+    setIsSendingEmail(true);
     try {
-      await Auth.forgotPassword(fields.email);
-      setCodeSent(true);
+      console.log(fields.name, fields.email, fields.phone, fields.message);
+      setEmailSent(true);
     } catch (error) {
       onError(error);
-      setIsSendingCode(false);
+      setIsSendingEmail(false);
     }
   };
 
-  const handleConfirmClick = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsConfirming(true);
-    try {
-      await Auth.forgotPasswordSubmit(
-        fields.email,
-        fields.code,
-        fields.password
-      );
-      setConfirmed(true);
-    } catch (error) {
-      onError(error);
-      setIsConfirming(false);
-    }
-  };
   const renderRequestCodeForm = () => {
     return (
-      <form onSubmit={handleSendCodeClick}>
+      <form
+        style={{ color: "var(--mainWhite)" }}
+        onSubmit={handleSendCodeClick}
+      >
         <FormGroup controlId="name">
-          <FormLabel>Name</FormLabel>
+          <FormLabel className="font-weight-lighter">Name</FormLabel>
           <FormControl
-            size="lg"
             autoFocus
             type="name"
             value={fields.name}
-            style={{ marginBottom: "2vh" }}
+            style={{ marginBottom: "1vh" }}
             onChange={handleFieldChange}
           />
-          <FormLabel>Email</FormLabel>
+        </FormGroup>
+        <FormGroup controlId="email">
+          <FormLabel className="font-weight-lighter">Email</FormLabel>
           <FormControl
-            placeholder="Email"
-            size="lg"
-            autoFocus
             type="email"
             value={fields.email}
-            style={{ marginBottom: "2vh" }}
+            style={{ marginBottom: "1vh" }}
+            onChange={handleFieldChange}
+          />
+        </FormGroup>
+        <FormGroup controlId="phone">
+          <FormLabel className="font-weight-lighter">Phone</FormLabel>
+          <FormControl
+            type="phone"
+            value={fields.phone}
+            style={{ marginBottom: "1vh" }}
+            onChange={handleFieldChange}
+          />
+        </FormGroup>
+        <FormGroup controlId="message">
+          <FormLabel className="font-weight-lighter">Message</FormLabel>
+          <FormControl
+            size="lg"
+            as="textarea"
+            rows={5}
+            type="message"
+            value={fields.message}
+            style={{ marginBottom: "1vh" }}
             onChange={handleFieldChange}
           />
         </FormGroup>
@@ -98,91 +96,26 @@ const Contact: React.FC = () => {
           block
           type="submit"
           bsSize="large"
-          isLoading={isSendingCode}
+          isLoading={isSendingEmail}
           disabled={!validateCodeForm()}
         >
-          Send Confirmation
+          Send Message
         </LoaderButton>
       </form>
     );
   };
-  const renderConfirmationForm = () => {
-    return (
-      <form onSubmit={handleConfirmClick}>
-        <FormGroup controlId="code">
-          <FormLabel>Confirmation Code</FormLabel>
-          <FormControl
-            size="lg"
-            autoFocus
-            type="tel"
-            value={fields.code}
-            onChange={handleFieldChange}
-          />
-          <FormText>
-            Please check your email ({fields.email}) for the confirmation code.
-          </FormText>
-        </FormGroup>
-        <hr />
-        <FormGroup controlId="password">
-          <FormLabel>New Password</FormLabel>
-          <FormControl
-            size="lg"
-            type="password"
-            value={fields.password}
-            onChange={handleFieldChange}
-          />
-        </FormGroup>
-        <FormGroup controlId="confirmPassword">
-          <FormLabel>Confirm Password</FormLabel>
-          <FormControl
-            size="lg"
-            type="password"
-            value={fields.confirmPassword}
-            onChange={handleFieldChange}
-          />
-        </FormGroup>
-        <LoaderButton
-          block
-          type="submit"
-          bsSize="large"
-          isLoading={isConfirming}
-          disabled={!validateResetForm()}
-        >
-          Confirm
-        </LoaderButton>
-      </form>
-    );
-  };
+
   const renderSuccessMessage = () => {
     return (
-      <div className="success">
+      <div className="success" style={{ color: "var(--mainWhite)" }}>
         <FcCheckmark className="checkMark" />
-        <p>Your password has been reset.</p>
-        <p>
-          <Link to="/login">
-            Click here to login with your new credentials.
-          </Link>
-        </p>
+        <p>Your message has been sent! I'll be in touch soon.</p>
       </div>
     );
   };
   return (
-    <Container className="homeDiv">
-      <div className="well well-sm">
-        <h3
-          className="font-weight-lighter"
-          style={{ color: "var(--mainWhite)" }}
-        >
-          My Location
-        </h3>
-      </div>
-      <Row style={{ paddingBottom: "10vh" }}>
-        <Col lg={6} className="col-7">
-          <iframe
-            style={{ border: "0", width: "100%", height: "30vh" }}
-            src="https://www.google.ca/maps/d/u/1/embed?mid=1YGj0yivuv-maQ1gC-QZ3n4T2GWWj6ec5&z=12.5"
-          ></iframe>
-        </Col>
+    <Container className="homeDiv" style={{ paddingBottom: "10vh" }}>
+      <Row style={{ paddingBottom: "20vh" }}>
         <Col lg={6} className="col-7">
           <h4
             className="font-weight-lighter"
@@ -191,11 +124,7 @@ const Contact: React.FC = () => {
             Get in touch
           </h4>
           <div>
-            {!codeSent
-              ? renderRequestCodeForm()
-              : !confirmed
-              ? renderConfirmationForm()
-              : renderSuccessMessage()}
+            {!emailSent ? renderRequestCodeForm() : renderSuccessMessage()}
           </div>
         </Col>
       </Row>
