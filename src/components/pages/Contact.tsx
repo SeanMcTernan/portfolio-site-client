@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Container,
   Row,
@@ -8,20 +8,24 @@ import {
   FormLabel,
 } from "react-bootstrap";
 import { FcCheckmark } from "react-icons/fc";
+import ReCAPTCHA from "react-google-recaptcha";
 import LoaderButton from "../elements/LoaderButton";
 import onError from "../../libs/errorLib";
 import useFormFields from "../../libs/hooksLib";
+import validateHuman from "../../apis/googlereCaptcha";
 import "../../styles/Contact.css";
 
 const Contact: React.FC = () => {
+  const { REACT_APP_reCAPTCHA_SITE_KEY } = process.env;
   const [emailSent, setEmailSent] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
+  const reRef = useRef<ReCAPTCHA>(null);
 
   const { fields, handleFieldChange } = useFormFields({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: "Sean Mc Ternan",
+    email: "seanmcternan@gmail.com",
+    phone: "2509466074",
+    message: "This is a new message from the system.",
   });
 
   const validateCodeForm = () => {
@@ -33,9 +37,19 @@ const Contact: React.FC = () => {
     );
   };
 
-  const handleSendCodeClick = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSendEmailClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSendingEmail(true);
+    const token = await reRef.current?.executeAsync();
+    reRef.current?.reset();
+
+    const human = await validateHuman(token);
+
+    if (!human) {
+      console.log("We detected a bot");
+      return;
+    }
+
     try {
       console.log(fields.name, fields.email, fields.phone, fields.message);
       setEmailSent(true);
@@ -56,7 +70,7 @@ const Contact: React.FC = () => {
         </h3>
         <form
           style={{ color: "var(--mainWhite)" }}
-          onSubmit={handleSendCodeClick}
+          onSubmit={handleSendEmailClick}
         >
           <FormGroup controlId="name">
             <FormLabel className="font-weight-lighter">Name</FormLabel>
@@ -91,7 +105,7 @@ const Contact: React.FC = () => {
             <FormControl
               size="lg"
               as="textarea"
-              rows={5}
+              rows={3}
               type="message"
               value={fields.message}
               style={{ marginBottom: "1vh" }}
@@ -130,13 +144,18 @@ const Contact: React.FC = () => {
   };
   return (
     <Container
-      className="homeDiv align-items-center"
-      style={{ paddingBottom: "10vh" }}
+      className="align-items-center"
+      style={{ paddingBottom: "10vh", paddingTop: "10vh" }}
     >
       <Row style={{ paddingBottom: "20vh" }}>
         <Col />
         <Col lg={6}>
           <div>
+            <ReCAPTCHA
+              sitekey={REACT_APP_reCAPTCHA_SITE_KEY!}
+              size="invisible"
+              ref={reRef}
+            />
             {!emailSent ? renderRequestCodeForm() : renderSuccessMessage()}
           </div>
         </Col>
