@@ -6,4 +6,4 @@ module.exports = function (app) {
       target: `https://www.google.com`,
       changeOrigin: true
     }));
-};
+}

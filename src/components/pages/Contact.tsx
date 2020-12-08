@@ -22,6 +22,7 @@ const Contact: React.FC = () => {
   const reRef = useRef<ReCAPTCHA>(null);
 
   const { fields, handleFieldChange } = useFormFields({
+    type: "Contact Form Inquiry",
     name: "Sean Mc Ternan",
     email: "seanmcternan@gmail.com",
     phone: "2509466074",
@@ -46,12 +47,11 @@ const Contact: React.FC = () => {
     const human = await validateHuman(token);
 
     if (!human) {
-      console.log("We detected a bot");
+      setIsSendingEmail(false);
       return;
     }
 
     try {
-      console.log(fields.name, fields.email, fields.phone, fields.message);
       setEmailSent(true);
     } catch (error) {
       onError(error);

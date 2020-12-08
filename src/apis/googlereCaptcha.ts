@@ -10,7 +10,7 @@ const validateHuman = async (token: any): Promise<boolean> => {
     }
     );
     const data = await response.json();
-    return false
+    return data.success;
 }
 
 export default validateHuman;
