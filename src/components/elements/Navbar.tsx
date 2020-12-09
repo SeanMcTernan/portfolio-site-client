@@ -81,32 +81,29 @@ const NavbarElement: React.FC = () => {
                   Settings
                 </Link>
 
-                <Nav.Link
+                <Link
                   onClick={handleLogout}
                   data-attr="nostyle"
                   className="nav-link text-white text-uppercase mx-5"
-                  href="#"
+                  to="#"
                 >
                   Logout
-                </Nav.Link>
+                </Link>
               </>
             ) : (
               <>
-                <Link to="login">
-                  <Nav.Link
-                    className="nav-link text-white text-uppercase ml-5"
-                    href="login"
-                  >
-                    Login
-                  </Nav.Link>
+                <Link
+                  to="login"
+                  className="nav-link text-white text-uppercase ml-5"
+                  href="login"
+                >
+                  Login
                 </Link>
-                <Link to="signup">
-                  <Nav.Link
-                    className="nav-link text-white text-uppercase mx-5"
-                    href="signup"
-                  >
-                    Sign Up
-                  </Nav.Link>
+                <Link
+                  to="signup"
+                  className="nav-link text-white text-uppercase mx-5"
+                >
+                  Sign Up
                 </Link>
               </>
             )}
