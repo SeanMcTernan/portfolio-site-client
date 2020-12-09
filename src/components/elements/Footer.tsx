@@ -20,33 +20,27 @@ const FooterElement: React.FC = () => {
     <div className="fixed-bottom footer">
       <Navbar expand="sm" className="bottomNav">
         <Nav className="mx-auto">
-          <Link to="home">
-            <Nav.Link className="nav-link text-muted ml-5" href="home">
-              Home
-            </Nav.Link>
+          <Link className="nav-link text-muted ml-5" to="home">
+            Home
           </Link>
-          <Link to="projects">
-            <Nav.Link className="nav-link text-muted ml-5" href="projects">
-              Projects
-            </Nav.Link>
+          <Link className="nav-link text-muted ml-5" to="projects">
+            Projects
           </Link>
-          <Link to="contact">
-            <Nav.Link className="nav-link text-muted ml-5" href="contact">
-              Contact
-            </Nav.Link>
+          <Link className="nav-link text-muted ml-5" to="contact">
+            Contact
           </Link>
           {isAuthenticated ? (
-            <Link to="#" onClick={handleLogout}>
-              <Nav.Link className="nav-link text-muted mx-5" href="#">
-                Logout
-              </Nav.Link>
+            <Link
+              className="nav-link text-muted mx-5"
+              to="#"
+              onClick={handleLogout}
+            >
+              Logout
             </Link>
           ) : (
             <>
-              <Link to="login">
-                <Nav.Link className="nav-link text-muted mx-5" href="login">
-                  Login
-                </Nav.Link>
+              <Link className="nav-link text-muted mx-5" to="login">
+                Login
               </Link>
             </>
           )}
