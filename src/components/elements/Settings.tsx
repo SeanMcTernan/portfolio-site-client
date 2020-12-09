@@ -82,7 +82,12 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                 </Col>
                 <Col xs={12} md={8} lg={4}>
                   {permissions.referencesRequested ? (
-                    <Button size="sm" disabled variant="outline-warning">
+                    <Button
+                      size="sm"
+                      key="ReferncesRequested"
+                      disabled
+                      variant="outline-warning"
+                    >
                       Requested
                     </Button>
                   ) : (
@@ -90,6 +95,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                       !permissions.references ? (
                         <Button
                           size="sm"
+                          key="ReferncesRequest"
                           variant={referencesVarient}
                           disabled={isRequested.references}
                           onClick={() => {
@@ -99,7 +105,12 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                           {isRequested.references ? "Requested" : "Request"}
                         </Button>
                       ) : (
-                        <Button size="sm" disabled variant="success">
+                        <Button
+                          size="sm"
+                          key="ReferncesApproved"
+                          disabled
+                          variant="success"
+                        >
                           Approved
                         </Button>
                       ),
@@ -113,7 +124,12 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                 </Col>
                 <Col xs={12} md={8} lg={4}>
                   {permissions.hiddenreposRequested ? (
-                    <Button size="sm" disabled variant="outline-warning">
+                    <Button
+                      size="sm"
+                      key="ReposRequested"
+                      disabled
+                      variant="outline-warning"
+                    >
                       Requested
                     </Button>
                   ) : (
@@ -121,6 +137,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                       !permissions.hiddenrepos ? (
                         <Button
                           size="sm"
+                          key="ReposRequest"
                           variant={reposVarient}
                           disabled={isRequested.repos}
                           onClick={() => {
@@ -130,7 +147,12 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                           {isRequested.repos ? "Requested" : "Request"}
                         </Button>
                       ) : (
-                        <Button size="sm" disabled variant="success">
+                        <Button
+                          size="sm"
+                          key="ReposApproved"
+                          disabled
+                          variant="success"
+                        >
                           Approved
                         </Button>
                       ),
@@ -144,7 +166,12 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                 </Col>
                 <Col xs={12} md={8} lg={4}>
                   {permissions.resumeRequested ? (
-                    <Button size="sm" disabled variant="outline-warning">
+                    <Button
+                      size="sm"
+                      key="ResumeRequested"
+                      disabled
+                      variant="outline-warning"
+                    >
                       Requested
                     </Button>
                   ) : (
@@ -152,6 +179,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                       !permissions.resume ? (
                         <Button
                           size="sm"
+                          key="ResumeRequest"
                           variant={resumeVarient}
                           disabled={isRequested.resume}
                           onClick={() => {
@@ -161,7 +189,12 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                           {isRequested.resume ? "Requested" : "Request"}
                         </Button>
                       ) : (
-                        <Button size="sm" disabled variant="success">
+                        <Button
+                          size="sm"
+                          key="ResumeApproved"
+                          disabled
+                          variant="success"
+                        >
                           Approved
                         </Button>
                       ),

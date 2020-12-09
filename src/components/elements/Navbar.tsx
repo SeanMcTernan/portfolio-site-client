@@ -27,7 +27,7 @@ const NavbarElement: React.FC = () => {
     <>
       <Navbar collapseOnSelect expand="lg" className="fixed-top">
         <Link to="home">
-          <Navbar.Brand className="ml-5" href="#home">
+          <Navbar.Brand className="ml-5">
             <img src={logo} style={{ width: "25%" }} alt="Site Logo" />
           </Navbar.Brand>
         </Link>
@@ -36,18 +36,18 @@ const NavbarElement: React.FC = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link
+            <Link
               className="nav-link text-white text-uppercase ml-5"
-              href="projects"
+              to="projects"
             >
               Projects
-            </Nav.Link>
-            <Nav.Link
+            </Link>
+            <Link
               className="nav-link text-white text-uppercase ml-5"
-              href="contact"
+              to="contact"
             >
               Contact
-            </Nav.Link>
+            </Link>
             {isAuthenticated ? (
               <>
                 {permissions.resume ? (
@@ -64,22 +64,22 @@ const NavbarElement: React.FC = () => {
                 ) : null}
                 {permissions.references ? (
                   <>
-                    <Nav.Link
+                    <Link
                       className="nav-link text-white text-uppercase ml-5"
-                      href="references"
+                      to="references"
                     >
                       References
-                    </Nav.Link>
+                    </Link>
                   </>
                 ) : null}
 
-                <Nav.Link
+                <Link
                   onClick={() => setModalShow(true)}
                   className="nostyle nav-link text-white text-uppercase ml-5"
-                  href="#settings"
+                  to="#settings"
                 >
                   Settings
-                </Nav.Link>
+                </Link>
 
                 <Nav.Link
                   onClick={handleLogout}
