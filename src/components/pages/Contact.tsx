@@ -1,4 +1,3 @@
-import { API } from "aws-amplify";
 import React, { useState, useRef } from "react";
 import {
   Container,
@@ -9,6 +8,7 @@ import {
   FormLabel,
 } from "react-bootstrap";
 import { FcCheckmark } from "react-icons/fc";
+import communications from "../../apis/communications";
 import ReCAPTCHA from "react-google-recaptcha";
 import LoaderButton from "../elements/LoaderButton";
 import onError from "../../libs/errorLib";
@@ -17,28 +17,17 @@ import validateHuman from "../../apis/googlereCaptcha";
 import "../../styles/Contact.css";
 
 const Contact: React.FC = () => {
-  const sendEmail = () => {
-    return API.post("permissions", `/send-email`, {
-      body: {
-        to: "sean@beyondthesummitpdd.com",
-        from: "sean@beyondthesummitpdd.com",
-        subject: "This is a new email",
-        text: "This is a new test email from AWS",
-      },
-    });
-  };
-
   const { REACT_APP_reCAPTCHA_SITE_KEY } = process.env;
   const [emailSent, setEmailSent] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const reRef = useRef<ReCAPTCHA>(null);
 
   const { fields, handleFieldChange } = useFormFields({
-    type: "Contact Form Inquiry",
-    name: "Sean Mc Ternan",
-    email: "seanmcternan@gmail.com",
-    phone: "2509466074",
-    message: "This is a new message from the system.",
+    type: "contact",
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const validateCodeForm = () => {
@@ -64,7 +53,7 @@ const Contact: React.FC = () => {
     }
 
     try {
-      sendEmail();
+      await communications(fields);
       setEmailSent(true);
     } catch (error) {
       onError(error);

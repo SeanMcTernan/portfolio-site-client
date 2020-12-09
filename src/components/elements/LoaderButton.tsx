@@ -16,6 +16,7 @@ const LoaderButton: React.FC<Props> = ({
   isLoading,
   className = "",
   disabled = false,
+  bsSize,
   ...props
 }) => {
   return (
