@@ -72,11 +72,12 @@ const Signup: React.FC = () => {
 
     try {
       const values = {
+        email: fields.email,
         references: false,
         referencesRequested: false,
         hiddenrepos: false,
         hiddenreposRequested: false,
-        resume: false,
+        resume: true,
         resumeRequested: false,
         latest: false,
       };

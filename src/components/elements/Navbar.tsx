@@ -85,7 +85,7 @@ const NavbarElement: React.FC = () => {
                   onClick={handleLogout}
                   data-attr="nostyle"
                   className="nav-link text-white text-uppercase mx-5"
-                  href="home"
+                  href="#"
                 >
                   Logout
                 </Nav.Link>
