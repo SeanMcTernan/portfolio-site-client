@@ -26,7 +26,7 @@ const Signup: React.FC = () => {
 
   const history = useHistory();
   const [newUser, setNewUser] = useState<ISignUpResult | null>(null);
-  const { userHasAuthenticated } = useAppContext();
+  const { userHasAuthenticated, setPermissions } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 
   const validateForm = () => {
@@ -37,7 +37,7 @@ const Signup: React.FC = () => {
     );
   };
 
-  const setPermissions = (values: Values) => {
+  const setDBPermissions = (values: Values) => {
     return API.post("permissions", "/permissions", {
       body: values,
     });
@@ -82,7 +82,10 @@ const Signup: React.FC = () => {
       };
       await Auth.confirmSignUp(fields.email, fields.confirmationCode);
       await Auth.signIn(fields.email, fields.password);
-      await setPermissions(values);
+      await setDBPermissions(values);
+      await API.get("permissions", "/permissions").then((response) => {
+        setPermissions(response[0]);
+      });
       userHasAuthenticated(true);
       history.push("/");
     } catch (e) {
