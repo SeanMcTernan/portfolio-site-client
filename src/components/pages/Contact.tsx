@@ -12,11 +12,13 @@ import communications from "../../apis/communications";
 import ReCAPTCHA from "react-google-recaptcha";
 import LoaderButton from "../elements/LoaderButton";
 import onError from "../../libs/errorLib";
+import { useAppContext } from "../../libs/contextLib";
 import useFormFields from "../../libs/hooksLib";
 import validateHuman from "../../apis/googlereCaptcha";
 import "../../styles/Contact.css";
 
 const Contact: React.FC = () => {
+  const { permissions } = useAppContext();
   const { REACT_APP_reCAPTCHA_SITE_KEY } = process.env;
   const [emailSent, setEmailSent] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
@@ -25,7 +27,7 @@ const Contact: React.FC = () => {
   const { fields, handleFieldChange } = useFormFields({
     type: "contact",
     name: "",
-    email: "",
+    email: `${permissions.email ? permissions.email : ""}`,
     phone: "",
     message: "",
   });
