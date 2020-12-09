@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Auth } from "aws-amplify";
+import { Auth, API } from "aws-amplify";
 import { useHistory } from "react-router-dom";
 import { FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import LoaderButton from "../elements/LoaderButton";
@@ -11,7 +11,7 @@ import "../../styles/Login.css";
 
 const Login: React.FC = () => {
   const history = useHistory();
-  const { userHasAuthenticated } = useAppContext();
+  const { userHasAuthenticated, setPermissions } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
   const { fields, handleFieldChange } = useFormFields({
     email: "",
@@ -28,6 +28,9 @@ const Login: React.FC = () => {
     try {
       await Auth.signIn(fields.email, fields.password);
       userHasAuthenticated(true);
+      await API.get("permissions", "/permissions").then((response) => {
+        setPermissions(response[0]);
+      });
       history.push("/");
     } catch (e) {
       onError(e);

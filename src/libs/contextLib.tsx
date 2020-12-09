@@ -4,17 +4,18 @@ import { projectInfo, projectInfoProps } from "../libs/projectData";
 //Context for User Authentication & Permissions
 
 interface permissionsProps {
-  references: boolean;
-  referencesRequested: boolean;
-  hiddenrepos: boolean;
-  hiddenreposRequested: boolean;
-  resume: boolean;
-  resumeRequested: boolean;
-  permissionsId: number;
+  references: boolean | null;
+  referencesRequested: boolean | null;
+  hiddenrepos: boolean | null;
+  hiddenreposRequested: boolean | null;
+  resume: boolean | null;
+  resumeRequested: boolean | null;
+  permissionsId: number | null;
 }
 
 interface IContextProps {
-  userPermissions: permissionsProps;
+  setPermissions: React.Dispatch<React.SetStateAction<any>>;
+  permissions: any;
   isAuthenticated: boolean;
   userHasAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }

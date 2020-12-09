@@ -11,15 +11,11 @@ interface Props {
 }
 
 const Settings: React.FC<Props> = ({ ...props }) => {
-  const { userPermissions } = useAppContext();
+  const { permissions } = useAppContext();
   const updatePermissions = (values: any) => {
-    return API.put(
-      "permissions",
-      `/permissions/${userPermissions.permissionsId}`,
-      {
-        body: values,
-      }
-    );
+    return API.put("permissions", `/permissions/${permissions.permissionsId}`, {
+      body: values,
+    });
   };
 
   const [isRequested, setIsRequested] = useState({
@@ -58,7 +54,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
 
   return (
     <>
-      {!userPermissions ? null : (
+      {!permissions ? null : (
         <Modal
           backdrop="static"
           {...props}
@@ -85,13 +81,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   View References:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {userPermissions.referencesRequested ? (
+                  {permissions.referencesRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      !userPermissions.references ? (
+                      !permissions.references ? (
                         <Button
                           size="sm"
                           variant={referencesVarient}
@@ -116,13 +112,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   View Hidden Repositories:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {userPermissions.hiddenreposRequested ? (
+                  {permissions.hiddenreposRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      !userPermissions.hiddenrepos ? (
+                      !permissions.hiddenrepos ? (
                         <Button
                           size="sm"
                           variant={reposVarient}
@@ -147,13 +143,13 @@ const Settings: React.FC<Props> = ({ ...props }) => {
                   Access Downloadable Resume:
                 </Col>
                 <Col xs={12} md={8} lg={4}>
-                  {userPermissions.resumeRequested ? (
+                  {permissions.resumeRequested ? (
                     <Button size="sm" disabled variant="outline-warning">
                       Requested
                     </Button>
                   ) : (
                     [
-                      !userPermissions.resume ? (
+                      !permissions.resume ? (
                         <Button
                           size="sm"
                           variant={resumeVarient}

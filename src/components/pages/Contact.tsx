@@ -1,3 +1,4 @@
+import { API } from "aws-amplify";
 import React, { useState, useRef } from "react";
 import {
   Container,
@@ -16,6 +17,17 @@ import validateHuman from "../../apis/googlereCaptcha";
 import "../../styles/Contact.css";
 
 const Contact: React.FC = () => {
+  const sendEmail = () => {
+    return API.post("permissions", `/send-email`, {
+      body: {
+        to: "sean@beyondthesummitpdd.com",
+        from: "sean@beyondthesummitpdd.com",
+        subject: "This is a new email",
+        text: "This is a new test email from AWS",
+      },
+    });
+  };
+
   const { REACT_APP_reCAPTCHA_SITE_KEY } = process.env;
   const [emailSent, setEmailSent] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
@@ -52,6 +64,7 @@ const Contact: React.FC = () => {
     }
 
     try {
+      sendEmail();
       setEmailSent(true);
     } catch (error) {
       onError(error);

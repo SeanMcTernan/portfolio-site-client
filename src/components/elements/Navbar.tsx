@@ -11,7 +11,7 @@ import { Link, useHistory } from "react-router-dom";
 const NavbarElement: React.FC = () => {
   const history = useHistory();
   const {
-    userPermissions,
+    permissions,
     isAuthenticated,
     userHasAuthenticated,
   } = useAppContext();
@@ -50,7 +50,7 @@ const NavbarElement: React.FC = () => {
             </Nav.Link>
             {isAuthenticated ? (
               <>
-                {userPermissions.resume ? (
+                {permissions.resume ? (
                   <>
                     <Link
                       to={PDF}
@@ -62,7 +62,7 @@ const NavbarElement: React.FC = () => {
                     </Link>
                   </>
                 ) : null}
-                {userPermissions.references ? (
+                {permissions.references ? (
                   <>
                     <Nav.Link
                       className="nav-link text-white text-uppercase ml-5"

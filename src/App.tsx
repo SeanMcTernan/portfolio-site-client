@@ -10,12 +10,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const App: React.FC = () => {
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
-  const [permissions, setPermissions] = useState([]);
-  const userPermissions = permissions[0];
+  const [permissions, setPermissions] = useState({});
 
   //Pass empty list of variable to useEffect so it will only run on first render.
   useEffect(() => {
-    // eslint-disable-next-line
     onLoad();
   }, []);
 
@@ -23,26 +21,27 @@ const App: React.FC = () => {
     try {
       await Auth.currentSession();
       userHasAuthenticated(true);
-      const permissions = await getPermissions();
-      setPermissions(permissions);
+      await API.get("permissions", "/permissions").then((response) => {
+        setPermissions(response[0]);
+      });
     } catch (e) {
       if (e !== "No current user") {
         alert(e);
       }
     }
-
     setIsAuthenticating(false);
-  };
-
-  const getPermissions = () => {
-    return API.get("permissions", "/permissions");
   };
   return (
     <>
       {!isAuthenticating && (
         <div>
           <AppContext.Provider
-            value={{ userPermissions, isAuthenticated, userHasAuthenticated }}
+            value={{
+              setPermissions,
+              permissions,
+              isAuthenticated,
+              userHasAuthenticated,
+            }}
           >
             <NavbarElement />
             <Routes />
