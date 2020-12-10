@@ -2,6 +2,7 @@ import { API } from "aws-amplify";
 import React, { useState } from "react";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
 import { useAppContext } from "../../libs/contextLib";
+import communications from "../../apis/communications";
 import onError from "../../libs/errorLib";
 import "../../styles/Settings.css";
 
@@ -29,8 +30,10 @@ const Settings: React.FC<Props> = ({ ...props }) => {
   var resumeVarient = isRequested.resume ? "outline-warning" : "info";
 
   const handleClick = async (item: string) => {
+    const fields = { type: "permissions", email: permissions.email, item };
     const asyncRequest = async (request: any) => {
       try {
+        communications(fields);
         await updatePermissions(request);
       } catch (e) {
         onError(e);

@@ -25,7 +25,6 @@ const Contact: React.FC = () => {
   const [emailSent, setEmailSent] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
-  const [human, setHuman] = useState(false);
   const reRef = useRef<ReCAPTCHA>(null);
 
   const { fields, handleFieldChange } = useFormFields({
@@ -49,15 +48,6 @@ const Contact: React.FC = () => {
     const token = await reRef.current?.executeAsync();
     reRef.current?.reset();
     const human = await validateHuman(token);
-    setHuman(human);
-  };
-
-  const handleSendEmailClick = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSendingEmail(true);
-
-    await reCaptcha();
-
     if (!human) {
       onError({ message: "You did not pass the reCaptcha" });
       setIsSendingEmail(false);
@@ -71,6 +61,12 @@ const Contact: React.FC = () => {
       onError(error);
       setIsSendingEmail(false);
     }
+  };
+
+  const handleSendEmailClick = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSendingEmail(true);
+    await reCaptcha();
   };
 
   const handleGetPhoneClick = () => {
@@ -182,19 +178,20 @@ const Contact: React.FC = () => {
             />
             {!emailSent ? renderRequestCodeForm() : renderSuccessMessage()}
           </div>
-
-          <Button
-            className="font-weight-light"
-            style={{ marginTop: "5vh", color: "var(--mainWhite)" }}
-            variant="info"
-            type="submit"
-            size="lg"
-            onClick={handleGetPhoneClick}
-          >
-            {showPhone
-              ? "Copied to clipboard: +1 250-946-6074"
-              : "Click to Text or Call"}
-          </Button>
+          <p style={{ textAlign: "center" }}>
+            <Button
+              className="font-weight-light"
+              style={{ marginTop: "5vh", color: "var(--mainWhite)" }}
+              variant="info"
+              type="submit"
+              size="lg"
+              onClick={handleGetPhoneClick}
+            >
+              {showPhone
+                ? "Copied to clipboard: +1 250-946-6074"
+                : "Click to Text or Call"}
+            </Button>
+          </p>
         </Col>
         <Col></Col>
       </Row>
