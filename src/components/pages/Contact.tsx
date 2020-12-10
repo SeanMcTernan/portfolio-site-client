@@ -9,6 +9,7 @@ import {
   FormLabel,
 } from "react-bootstrap";
 import { FcCheckmark } from "react-icons/fc";
+import logo from "../../svgs/logo.svg";
 import communications from "../../apis/communications";
 import ReCAPTCHA from "react-google-recaptcha";
 import LoaderButton from "../elements/LoaderButton";
@@ -166,7 +167,13 @@ const Contact: React.FC = () => {
       style={{ paddingBottom: "10vh", paddingTop: "10vh" }}
     >
       <Row style={{ paddingBottom: "20vh" }}>
+        <Col></Col>
         <Col lg={6}>
+          <img
+            src={logo}
+            style={{ width: "20%", margin: "1vh" }}
+            alt="Site Logo"
+          />
           <div>
             <ReCAPTCHA
               sitekey={REACT_APP_reCAPTCHA_SITE_KEY!}
@@ -177,6 +184,7 @@ const Contact: React.FC = () => {
           </div>
 
           <Button
+            className="font-weight-light"
             style={{ marginTop: "5vh", color: "var(--mainWhite)" }}
             variant="info"
             type="submit"
@@ -184,10 +192,11 @@ const Contact: React.FC = () => {
             onClick={handleGetPhoneClick}
           >
             {showPhone
-              ? "Copied to clipboard: +1 250 946 6074"
+              ? "Copied to clipboard: +1 250-946-6074"
               : "Click to Text or Call"}
           </Button>
         </Col>
+        <Col></Col>
       </Row>
     </Container>
   );
