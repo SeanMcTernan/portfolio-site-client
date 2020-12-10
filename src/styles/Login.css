@@ -18,6 +18,6 @@
 }
 
 .btn-primary {
-  background-color: var(--mainBlue) !important;
-  border-color: var(--mainBlue) !important;
+  background-color: var(--mutedBlue) !important;
+  border-color: var(--mutedBlue) !important;
 }

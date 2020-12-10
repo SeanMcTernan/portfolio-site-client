@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import {
+  Button,
   Container,
   Row,
   Col,
@@ -22,6 +23,8 @@ const Contact: React.FC = () => {
   const { REACT_APP_reCAPTCHA_SITE_KEY } = process.env;
   const [emailSent, setEmailSent] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
+  const [showPhone, setShowPhone] = useState(false);
+  const [human, setHuman] = useState(false);
   const reRef = useRef<ReCAPTCHA>(null);
 
   const { fields, handleFieldChange } = useFormFields({
@@ -41,15 +44,21 @@ const Contact: React.FC = () => {
     );
   };
 
+  const reCaptcha = async (): Promise<void> => {
+    const token = await reRef.current?.executeAsync();
+    reRef.current?.reset();
+    const human = await validateHuman(token);
+    setHuman(human);
+  };
+
   const handleSendEmailClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSendingEmail(true);
-    const token = await reRef.current?.executeAsync();
-    reRef.current?.reset();
 
-    const human = await validateHuman(token);
+    await reCaptcha();
 
     if (!human) {
+      onError({ message: "You did not pass the reCaptcha" });
       setIsSendingEmail(false);
       return;
     }
@@ -61,6 +70,11 @@ const Contact: React.FC = () => {
       onError(error);
       setIsSendingEmail(false);
     }
+  };
+
+  const handleGetPhoneClick = () => {
+    navigator.clipboard.writeText("+1 250 946 6074");
+    showPhone ? setShowPhone(false) : setShowPhone(true);
   };
 
   const renderRequestCodeForm = () => {
@@ -152,7 +166,6 @@ const Contact: React.FC = () => {
       style={{ paddingBottom: "10vh", paddingTop: "10vh" }}
     >
       <Row style={{ paddingBottom: "20vh" }}>
-        <Col />
         <Col lg={6}>
           <div>
             <ReCAPTCHA
@@ -162,8 +175,19 @@ const Contact: React.FC = () => {
             />
             {!emailSent ? renderRequestCodeForm() : renderSuccessMessage()}
           </div>
+
+          <Button
+            style={{ marginTop: "5vh", color: "var(--mainWhite)" }}
+            variant="info"
+            type="submit"
+            size="lg"
+            onClick={handleGetPhoneClick}
+          >
+            {showPhone
+              ? "Copied to clipboard: +1 250 946 6074"
+              : "Click to Text or Call"}
+          </Button>
         </Col>
-        <Col />
       </Row>
     </Container>
   );
