@@ -48,6 +48,12 @@ const NavbarElement: React.FC = () => {
             >
               Contact
             </Link>
+            <Link
+              className="nav-link text-white text-uppercase ml-5"
+              to="about"
+            >
+              About
+            </Link>
             {isAuthenticated ? (
               <>
                 {permissions.resume ? (
