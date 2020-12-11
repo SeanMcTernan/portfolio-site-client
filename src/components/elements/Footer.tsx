@@ -29,6 +29,9 @@ const FooterElement: React.FC = () => {
           <Link className="nav-link text-muted ml-5" to="contact">
             Contact
           </Link>
+          <Link className="nav-link text-muted ml-5" to="about">
+            About
+          </Link>
           {isAuthenticated ? (
             <Link
               className="nav-link text-muted mx-5"
