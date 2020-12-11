@@ -13,7 +13,7 @@ import { ReactComponent as Github } from "../../svgs/github.svg";
 import { ReactComponent as WebPage } from "../../svgs/webPage.svg";
 import { InfoConsumer } from "../../libs/contextLib";
 import { imgProperties, technologiesType } from "../../libs/projectData";
-import "../../styles/Details.css";
+import "../../styles/Tabs.css";
 
 const Details: React.FC = (props) => {
   //Start at the top of the rendered component
