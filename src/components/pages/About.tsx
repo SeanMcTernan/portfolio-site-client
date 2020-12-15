@@ -5,6 +5,7 @@ import boonmapsLogo from "../../images/Company_Logos/boonmaps-logo-72.png";
 import profilePic from "../../images/Sean_Mc_Ternan_Image.jpeg";
 import simpleTextingLogo from "../../images/Technologies_Icons/SimpleTexting.svg";
 import BTSLogo from "../../images/Company_Logos/beyond_the_summit_logo.svg";
+import PLLogo from "../../images/Company_Logos/PringLogix_Logo.png";
 import "../../styles/Tabs.css";
 
 const About: React.FC = () => {
@@ -176,6 +177,32 @@ const About: React.FC = () => {
                 part vendors and a payment processing using Stripe.
               </p>
               {/* Beyond The Summit Information */}
+              {/* PrintLogix Corporation Information */}
+              <img
+                src={PLLogo}
+                style={{ width: "4vw", marginTop: "2vh" }}
+                alt="PrintLogix Logo"
+              />
+              <p className="font-weight-bold tabsContent">
+                Software Engineer - PrintLogix Corporation
+              </p>
+              <p
+                className="font-weight-lighter"
+                style={{ color: "var(--mutedBlue)" }}
+              >
+                October 2012 - July 2016
+              </p>
+              <p>
+                Printlogix had a low number of staff compared to its user base
+                of 20,000+. The result being, many hats were worn. Therefore,
+                along with development, database administration and testing I
+                oversaw front end design and implementing integration with third
+                party API's such as Zendesk and Olark. Finally, I took ownership
+                of the Agile process. I worked directly with the CEO to
+                communicate product direction to the rest of the development
+                team.
+              </p>
+              {/* PrintLogix Corporation Information */}
             </Tab>
             <Tab eventKey="project-technologies" title="Project Technologies">
               <h2 className="tabsContent">Technologies Used</h2>
