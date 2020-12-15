@@ -1,9 +1,10 @@
 import React, { Fragment, useEffect } from "react";
 import { Container, Tabs, Tab, Row, Col } from "react-bootstrap";
 import logo from "../../svgs/logo.svg";
-import profilePic from "../../images/Sean_Mc_Ternan_Image.jpeg";
 import boonmapsLogo from "../../images/Company_Logos/boonmaps-logo-72.png";
+import profilePic from "../../images/Sean_Mc_Ternan_Image.jpeg";
 import simpleTextingLogo from "../../images/Technologies_Icons/SimpleTexting.svg";
+import BTSLogo from "../../images/Company_Logos/beyond_the_summit_logo.svg";
 import "../../styles/Tabs.css";
 
 const About: React.FC = () => {
@@ -144,6 +145,37 @@ const About: React.FC = () => {
                 our endpoints.
               </p>
               {/* SimpleTexting Information */}
+              {/* Beyond The Summit Information  */}
+              <a
+                href="https://beyondthesummitpdd.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={BTSLogo}
+                  style={{ width: "4vw", marginTop: "2vh" }}
+                  alt="Beyond The Summit Logo"
+                />
+              </a>
+              <p className="font-weight-bold tabsContent">
+                Full Stack Developer - Beyond The Summit
+              </p>
+              <p
+                className="font-weight-lighter"
+                style={{ color: "var(--mutedBlue)" }}
+              >
+                July 2016 - FEBRUARY 2018
+              </p>
+              <p>
+                Developed an online supply store for our clients across Canada
+                and Europe using AWS. Using DynamoDB and Lambda I developed a
+                supply store which serviced some of the largest companies in Oil
+                & Gas in North America. Users and their roles were managed using
+                MongoDB. The Frontend was developed using React and React Redux.
+                I also developed a back end to fulfill print orders with third
+                part vendors and a payment processing using Stripe.
+              </p>
+              {/* Beyond The Summit Information */}
             </Tab>
             <Tab eventKey="project-technologies" title="Project Technologies">
               <h2 className="tabsContent">Technologies Used</h2>
