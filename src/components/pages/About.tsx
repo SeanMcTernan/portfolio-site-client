@@ -6,6 +6,7 @@ import profilePic from "../../images/Sean_Mc_Ternan_Image.jpeg";
 import simpleTextingLogo from "../../images/Technologies_Icons/SimpleTexting.svg";
 import BTSLogo from "../../images/Company_Logos/beyond_the_summit_logo.svg";
 import PLLogo from "../../images/Company_Logos/PringLogix_Logo.png";
+import YEPLogo from "../../images/Company_Logos/yep_logo.svg";
 import "../../styles/Tabs.css";
 
 const About: React.FC = () => {
@@ -203,6 +204,30 @@ const About: React.FC = () => {
                 team.
               </p>
               {/* PrintLogix Corporation Information */}
+              {/* YEP/ENDeavour Information */}
+              <img
+                src={YEPLogo}
+                style={{ width: "3vw", marginTop: "2vh" }}
+                alt="YEP Logo"
+              />
+              <p className="font-weight-bold tabsContent">
+                Software Consultant/Coding Coach - Young Entrepreneur Program
+              </p>
+              <p
+                className="font-weight-lighter"
+                style={{ color: "var(--mutedBlue)" }}
+              >
+                November 2010 - March 2012
+              </p>
+              <p>
+                Worked as a Software Consultant on the Endeavor program where I
+                got to work directly with 12 tech startups providing technical
+                consultation and web design. The program also had a junior level
+                for secondary school students where I organized taught coding
+                workshops and events for the students to help highlight the
+                benefits of a career in coding.
+              </p>
+              {/* YEP/ENDeavour Information */}
             </Tab>
             <Tab eventKey="project-technologies" title="Project Technologies">
               <h2 className="tabsContent">Technologies Used</h2>
