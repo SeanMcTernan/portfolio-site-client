@@ -1,7 +1,7 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Button, Col, Container, Jumbotron, Row } from "react-bootstrap";
-import { ReactComponent as FourOhFour } from "../../svgs/fourohfour.svg";
+import { ReactComponent as FourOhFour } from "../../images/svgs/fourohfour.svg";
 import "../../styles/Animations.css";
 
 class Home extends React.Component {

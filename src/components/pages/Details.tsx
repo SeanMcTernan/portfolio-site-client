@@ -9,8 +9,8 @@ import {
   Button,
 } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router-dom";
-import { ReactComponent as Github } from "../../svgs/github.svg";
-import { ReactComponent as WebPage } from "../../svgs/webPage.svg";
+import { ReactComponent as Github } from "../../images/svgs/github.svg";
+import { ReactComponent as WebPage } from "../../images/svgs/webPage.svg";
 import { InfoConsumer } from "../../libs/contextLib";
 import { imgProperties, technologiesType } from "../../libs/projectData";
 import "../../styles/Tabs.css";

@@ -9,7 +9,7 @@ import {
   FormLabel,
 } from "react-bootstrap";
 import { FcCheckmark } from "react-icons/fc";
-import logo from "../../svgs/logo.svg";
+import logo from "../../images/svgs/logo.svg";
 import communications from "../../apis/communications";
 import ReCAPTCHA from "react-google-recaptcha";
 import LoaderButton from "../elements/LoaderButton";

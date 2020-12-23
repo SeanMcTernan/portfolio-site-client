@@ -3,9 +3,9 @@ import { Link, useHistory } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import { Auth } from "aws-amplify";
 import { useAppContext } from "../../libs/contextLib";
-import { ReactComponent as Github } from "../../svgs/github.svg";
-import { ReactComponent as Instagram } from "../../svgs/instagram.svg";
-import { ReactComponent as LinkedIn } from "../../svgs/linkedin.svg";
+import { ReactComponent as Github } from "../../images/svgs/github.svg";
+import { ReactComponent as Instagram } from "../../images/svgs/instagram.svg";
+import { ReactComponent as LinkedIn } from "../../images/svgs/linkedin.svg";
 import "../../styles/Footer.css";
 
 const FooterElement: React.FC = () => {

@@ -1,6 +1,6 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { Container, Tabs, Tab, Row, Col } from "react-bootstrap";
-import logo from "../../svgs/logo.svg";
+import logo from "../../images/svgs/logo.svg";
 import boonmapsLogo from "../../images/Company_Logos/boonmaps-logo-72.png";
 import profilePic from "../../images/Sean_Mc_Ternan_Image.jpeg";
 import simpleTextingLogo from "../../images/Technologies_Icons/SimpleTexting.svg";
@@ -10,11 +10,6 @@ import YEPLogo from "../../images/Company_Logos/yep_logo.svg";
 import "../../styles/Tabs.css";
 
 const About: React.FC = () => {
-  //Start at the top of the rendered component
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
-
   return (
     <div className="details">
       <Fragment>

@@ -1,7 +1,7 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Button, Col, Container, Jumbotron, Row } from "react-bootstrap";
-import { ReactComponent as Laptop } from "../../svgs/laptop.svg";
+import { ReactComponent as Laptop } from "../../images/svgs/laptop.svg";
 import "../../styles/Animations.css";
 
 const Home: React.FC = () => {

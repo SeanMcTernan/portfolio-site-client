@@ -3,9 +3,9 @@ import { Auth } from "aws-amplify";
 import { Nav, Navbar } from "react-bootstrap";
 import { useAppContext } from "../../libs/contextLib";
 import Settings from "./Settings";
-import logo from "../../svgs/logo.svg";
+import logo from "../../images/svgs/logo.svg";
 import PDF from "../../docs/SeanMcTernan_Resume.pdf";
-import menu from "../../svgs/menu.svg";
+import menu from "../../images/svgs/menu.svg";
 import { Link, useHistory } from "react-router-dom";
 
 const NavbarElement: React.FC = () => {
