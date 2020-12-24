@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Container, Tabs, Tab, Row, Col } from "react-bootstrap";
+import { technologies, technologiesType } from "../../libs/projectData";
 import logo from "../../images/svgs/logo.svg";
 import boonmapsLogo from "../../images/Company_Logos/boonmaps-logo-72.png";
 import profilePic from "../../images/Sean_Mc_Ternan_Image.jpeg";
@@ -9,7 +10,59 @@ import PLLogo from "../../images/Company_Logos/PringLogix_Logo.png";
 import YEPLogo from "../../images/Company_Logos/yep_logo.svg";
 import "../../styles/Tabs.css";
 
+const backendTechnologies = [
+  technologies[2],
+  technologies[7],
+  technologies[32],
+  technologies[20],
+  technologies[23],
+  technologies[33],
+  technologies[34],
+];
+const frontendTechnologies = [];
+const devOpsTechnologies = [];
+
 const About: React.FC = () => {
+  const renderTechnologies = (info: technologiesType[]) => {
+    return (
+      <Row style={{ paddingTop: "5vh" }}>
+        {info.map((technoloy: technologiesType) => {
+          return (
+            <Col sm={3} className="mx-auto mb-5">
+              <p style={{ textAlign: "center" }}>
+                <a
+                  className="technologies"
+                  href={technoloy.technologiesLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    style={{ width: "40%", marginBottom: "-1vh" }}
+                    src={technoloy.imgSrc}
+                    alt={`${technoloy.name}-Logo`}
+                  />
+                </a>
+              </p>
+              <a
+                className="technologies"
+                href={technoloy.technologiesLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p
+                  style={{ textAlign: "center", color: "var(--mainWhite)" }}
+                  className="font-weight-lighter tabsContent"
+                >
+                  {technoloy.name}
+                </p>
+              </a>
+            </Col>
+          );
+        })}
+      </Row>
+    );
+  };
+
   return (
     <div className="details">
       <Fragment>
@@ -224,8 +277,12 @@ const About: React.FC = () => {
               </p>
               {/* YEP/ENDeavour Information */}
             </Tab>
-            <Tab eventKey="project-technologies" title="Project Technologies">
-              <h2 className="tabsContent">Technologies Used</h2>
+            <Tab eventKey="technologies" title="Preferred Technologies">
+              <h2 className="tabsContent">Back-end Techologies</h2>
+              {renderTechnologies(backendTechnologies)}
+              <h2 className="tabsContent">Front-end Techologies</h2>
+              <h2 className="tabsContent">DevOps Techologies</h2>
+              <h2 className="tabsContent">Tools</h2>
             </Tab>
             <Tab eventKey="install" title="Install Instructions">
               <h2 className="tabsContent">Install Instructions</h2>

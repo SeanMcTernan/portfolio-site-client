@@ -140,9 +140,9 @@ const technologies = [
   },
   {
     techID: 23,
-    name: 'Serverless-Bundle',
+    name: 'Serverless',
     imgSrc: require('../images/Technologies_Icons/severless.svg'),
-    technologiesLink: 'https://www.npmjs.com/package/serverless-dotenv-plugin'
+    technologiesLink: 'https://www.serverless.com/'
   },
   {
     techID: 24,
@@ -191,6 +191,24 @@ const technologies = [
     name: 'TS-Loader',
     imgSrc: require('../images/Technologies_Icons/ts-loader.svg'),
     technologiesLink: 'https://www.npmjs.com/package/ts-loader'
+  },
+  {
+    techID: 32,
+    name: 'MongoDB',
+    imgSrc: require('../images/Technologies_Icons/mongoDB.svg'),
+    technologiesLink: 'https://www.mongodb.com/'
+  },
+  {
+    techID: 33,
+    name: 'Firebase',
+    imgSrc: require('../images/Technologies_Icons/firebase.svg'),
+    technologiesLink: 'https://firebase.google.com/'
+  },
+  {
+    techID: 34,
+    name: 'Redis',
+    imgSrc: require('../images/Technologies_Icons/redis.svg'),
+    technologiesLink: 'https://redis.io/'
   }
 ];
 
