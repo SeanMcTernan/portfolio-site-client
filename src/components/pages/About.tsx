@@ -19,9 +19,22 @@ const backendTechnologies = [
   technologies[33],
   technologies[34],
 ];
-const frontendTechnologies = [];
-const devOpsTechnologies = [];
-
+const frontendTechnologies = [
+  technologies[0],
+  technologies[35],
+  technologies[36],
+  technologies[37],
+  technologies[38],
+  technologies[39],
+  technologies[40],
+  technologies[41],
+];
+const devOpsTechnologies = [
+  technologies[42],
+  technologies[43],
+  technologies[44],
+  technologies[45],
+];
 const About: React.FC = () => {
   const renderTechnologies = (info: technologiesType[]) => {
     return (
@@ -37,7 +50,7 @@ const About: React.FC = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    style={{ width: "40%", marginBottom: "-1vh" }}
+                    style={{ width: "30%", marginBottom: "-1vh" }}
                     src={technoloy.imgSrc}
                     alt={`${technoloy.name}-Logo`}
                   />
@@ -281,7 +294,9 @@ const About: React.FC = () => {
               <h2 className="tabsContent">Back-end Techologies</h2>
               {renderTechnologies(backendTechnologies)}
               <h2 className="tabsContent">Front-end Techologies</h2>
+              {renderTechnologies(frontendTechnologies)}
               <h2 className="tabsContent">DevOps Techologies</h2>
+              {renderTechnologies(devOpsTechnologies)}
               <h2 className="tabsContent">Tools</h2>
             </Tab>
             <Tab eventKey="install" title="Install Instructions">

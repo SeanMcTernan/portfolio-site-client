@@ -209,6 +209,72 @@ const technologies = [
     name: 'Redis',
     imgSrc: require('../images/Technologies_Icons/redis.svg'),
     technologiesLink: 'https://redis.io/'
+  },
+  {
+    techID: 35,
+    name: 'CSS',
+    imgSrc: require('../images/Technologies_Icons/css.svg'),
+    technologiesLink: 'https://www.w3schools.com/css/'
+  },
+  {
+    techID: 36,
+    name: 'SASS',
+    imgSrc: require('../images/Technologies_Icons/sass.svg'),
+    technologiesLink: 'https://sass-lang.com/'
+  },
+  {
+    techID: 37,
+    name: 'JQuery',
+    imgSrc: require('../images/Technologies_Icons/jquery.svg'),
+    technologiesLink: 'https://jquery.com/'
+  },
+  {
+    techID: 38,
+    name: 'Bootstrap',
+    imgSrc: require('../images/Technologies_Icons/bootstrap.svg'),
+    technologiesLink: 'https://getbootstrap.com/'
+  },
+  {
+    techID: 39,
+    name: 'Redux',
+    imgSrc: require('../images/Technologies_Icons/redux.svg'),
+    technologiesLink: 'https://redux.js.org/'
+  },
+  {
+    techID: 40,
+    name: 'Gatsby',
+    imgSrc: require('../images/Technologies_Icons/gatsby.svg'),
+    technologiesLink: 'https://www.gatsbyjs.com/'
+  },
+  {
+    techID: 41,
+    name: 'HTML5',
+    imgSrc: require('../images/Technologies_Icons/html5.svg'),
+    technologiesLink: 'https://www.w3schools.com/html/'
+  },
+  {
+    techID: 42,
+    name: 'Nagios',
+    imgSrc: require('../images/Technologies_Icons/nagios.svg'),
+    technologiesLink: 'https://www.nagios.com/'
+  },
+  {
+    techID: 43,
+    name: 'Git',
+    imgSrc: require('../images/Technologies_Icons/git.svg'),
+    technologiesLink: 'https://git-scm.com/'
+  },
+  {
+    techID: 44,
+    name: 'Seed',
+    imgSrc: require('../images/Technologies_Icons/SEED.svg'),
+    technologiesLink: 'https://seed.run/'
+  },
+  {
+    techID: 45,
+    name: 'AWS',
+    imgSrc: require('../images/Technologies_Icons/aws.svg'),
+    technologiesLink: 'https://aws.amazon.com/'
   }
 ];
 
