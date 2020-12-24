@@ -275,6 +275,60 @@ const technologies = [
     name: 'AWS',
     imgSrc: require('../images/Technologies_Icons/aws.svg'),
     technologiesLink: 'https://aws.amazon.com/'
+  },
+  {
+    techID: 46,
+    name: 'Yarn',
+    imgSrc: require('../images/Technologies_Icons/yarn.svg'),
+    technologiesLink: 'https://yarnpkg.com/'
+  },
+  {
+    techID: 47,
+    name: 'Jira',
+    imgSrc: require('../images/Technologies_Icons/jira.svg'),
+    technologiesLink: 'https://www.atlassian.com/'
+  },
+  {
+    techID: 48,
+    name: 'Kibana',
+    imgSrc: require('../images/Technologies_Icons/kibana.svg'),
+    technologiesLink: 'https://www.elastic.co/kibana'
+  },
+  {
+    techID: 49,
+    name: 'Postman',
+    imgSrc: require('../images/Technologies_Icons/postman.svg'),
+    technologiesLink: 'https://www.postman.com/'
+  },
+  {
+    techID: 50,
+    name: 'Jest',
+    imgSrc: require('../images/Technologies_Icons/jest.svg'),
+    technologiesLink: 'https://jestjs.io/'
+  },
+  {
+    techID: 51,
+    name: 'Prettier',
+    imgSrc: require('../images/Technologies_Icons/prettier.svg'),
+    technologiesLink: 'https://prettier.io/'
+  },
+  {
+    techID: 52,
+    name: 'ESLint',
+    imgSrc: require('../images/Technologies_Icons/eslint.svg'),
+    technologiesLink: 'https://eslint.org/'
+  },
+  {
+    techID: 53,
+    name: 'Visual Studio Code',
+    imgSrc: require('../images/Technologies_Icons/vsc.svg'),
+    technologiesLink: 'https://code.visualstudio.com/'
+  },
+  {
+    techID: 54,
+    name: 'IntelliJ IDEA',
+    imgSrc: require('../images/Technologies_Icons/intellij.svg'),
+    technologiesLink: 'https://www.jetbrains.com/idea/'
   }
 ];
 

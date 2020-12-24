@@ -1,3 +1,4 @@
+// Render About page
 import React, { Fragment } from "react";
 import { Container, Tabs, Tab, Row, Col } from "react-bootstrap";
 import { technologies, technologiesType } from "../../libs/projectData";
@@ -10,6 +11,7 @@ import PLLogo from "../../images/Company_Logos/PringLogix_Logo.png";
 import YEPLogo from "../../images/Company_Logos/yep_logo.svg";
 import "../../styles/Tabs.css";
 
+//Get logos and information on preferred Technologies
 const backendTechnologies = [
   technologies[2],
   technologies[7],
@@ -22,20 +24,39 @@ const backendTechnologies = [
 const frontendTechnologies = [
   technologies[0],
   technologies[35],
+  technologies[38],
   technologies[36],
   technologies[37],
-  technologies[38],
   technologies[39],
-  technologies[40],
   technologies[41],
+  technologies[40],
 ];
 const devOpsTechnologies = [
   technologies[42],
   technologies[43],
   technologies[44],
-  technologies[45],
 ];
+
+const tools = [
+  technologies[1],
+  technologies[43],
+  technologies[45],
+  technologies[3],
+  technologies[46],
+  technologies[47],
+  technologies[48],
+  technologies[49],
+  technologies[50],
+  technologies[51],
+  technologies[52],
+  technologies[53],
+  technologies[54],
+];
+
+//Render Component
+
 const About: React.FC = () => {
+  // Render function for preferred technologiess
   const renderTechnologies = (info: technologiesType[]) => {
     return (
       <Row style={{ paddingTop: "5vh" }}>
@@ -133,8 +154,11 @@ const About: React.FC = () => {
         ></Container>
         {/* Nav Links */}
         <Container style={{ paddingBottom: "20vh" }}>
-          <Tabs defaultActiveKey="project-breakdown" id="details-tab">
-            <Tab eventKey="project-breakdown" title="Professional Experience">
+          <Tabs defaultActiveKey="professional-experience" id="details-tab">
+            <Tab
+              eventKey="professional-experience"
+              title="Professional Experience"
+            >
               {/* BoonMaps Information  */}
               <a
                 href="https://boonmaps.com"
@@ -298,8 +322,9 @@ const About: React.FC = () => {
               <h2 className="tabsContent">DevOps Techologies</h2>
               {renderTechnologies(devOpsTechnologies)}
               <h2 className="tabsContent">Tools</h2>
+              {renderTechnologies(tools)}
             </Tab>
-            <Tab eventKey="install" title="Install Instructions">
+            <Tab eventKey="education" title="Education">
               <h2 className="tabsContent">Install Instructions</h2>
             </Tab>
           </Tabs>
