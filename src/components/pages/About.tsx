@@ -51,6 +51,7 @@ const tools = [
   technologies[52],
   technologies[53],
   technologies[54],
+  technologies[55],
 ];
 
 //Render Component
@@ -325,7 +326,106 @@ const About: React.FC = () => {
               {renderTechnologies(tools)}
             </Tab>
             <Tab eventKey="education" title="Education">
-              <h2 className="tabsContent">Install Instructions</h2>
+              <h2 className="tabsContent">University</h2>
+              <p>
+                {" "}
+                <a
+                  href="https://www.ul.ie/courses/bachelor-science-music-media-performance-technology"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Bachelor of Science in Multimedia Technology
+                </a>
+                &nbsp;-&nbsp;University of Limerick 2010
+                <br></br>
+                <br></br>Coursework included: Digital Input and Software
+                Systems, Database Design Systems, Professional Issues in
+                Software Engineering, Imperative Programming, and Advanced
+                Topics in Sensor Feedback, Representation and Modeling THESIS:
+                Production of Three Dimensional Visual Feedback Sensor System.
+              </p>
+              <h2 className="tabsContent">Certificates</h2>
+              <p>
+                <a
+                  href="https://serverless-stack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn to build full-stack Serverless apps&nbsp;
+                </a>
+                -&nbsp;Serverless<br></br>
+                <a
+                  href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Complete Node.js Developer Course&nbsp;
+                </a>
+                -&nbsp;Andrew Mead<br></br>
+                <a
+                  href="https://www.udemy.com/course/react-2nd-edition/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Complete React Developer Course&nbsp;
+                </a>
+                -&nbsp;Andrew Mead<br></br>
+                <a
+                  href="https://www.udemy.com/course/understanding-typescript/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Understanding TypeScript&nbsp;-&nbsp;2020 Edition&nbsp;
+                </a>
+                -&nbsp;Maximilian Schwarzmüller
+                <br></br>
+                <a
+                  href="https://www.udemy.com/course/modern-javascript/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Modern JavaScript Bootcamp&nbsp;
+                </a>
+                -&nbsp;Andrew Mead
+              </p>
+              <h2 className="tabsContent">Courses</h2>
+              <p>
+                <a
+                  href="https://www.learnenough.com/git-tutorial/getting_started"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn Enough Git to Be Dangerous&nbsp;
+                </a>
+                -&nbsp;Michael Hartl
+                <br></br>
+                <a
+                  href="https://mead.io/gatsby-bootcamp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Great Gatsby Bootcamp&nbsp;
+                </a>
+                -&nbsp;Andrew Mead
+                <br></br>
+                <a
+                  href="https://www.codecademy.com/learn/learn-python-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn Python 3&nbsp;
+                </a>
+                -&nbsp;Codecademy
+                <br></br>
+                <a
+                  href="https://www.codecademy.com/learn/learn-html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn HTML&nbsp;
+                </a>
+                -&nbsp;Codecademy
+              </p>
             </Tab>
           </Tabs>
         </Container>

@@ -329,6 +329,12 @@ const technologies = [
     name: 'IntelliJ IDEA',
     imgSrc: require('../images/Technologies_Icons/intellij.svg'),
     technologiesLink: 'https://www.jetbrains.com/idea/'
+  },
+  {
+    techID: 55,
+    name: 'JMeter',
+    imgSrc: require('../images/Technologies_Icons/jmeter.svg'),
+    technologiesLink: 'https://jmeter.apache.org/'
   }
 ];
 
