@@ -49,8 +49,8 @@ const Details: React.FC = (props) => {
 
   //Render Inatllation instructions:
   const renderInstallInstructions = (installArray: string[]) => {
-    return installArray.map((instruction: string) => {
-      return <p>{instruction}</p>;
+    return installArray.map((instruction: string, index) => {
+      return <p key={index}>{instruction}</p>;
     });
   };
 
@@ -58,9 +58,9 @@ const Details: React.FC = (props) => {
   const renderTechnologies = (info: technologiesType[]) => {
     return (
       <Row style={{ paddingTop: "5vh" }}>
-        {info.map((technoloy: technologiesType) => {
+        {info.map((technoloy: technologiesType, index) => {
           return (
-            <Col sm={3} className="mx-auto mb-5">
+            <Col key={index} sm={3} className="mx-auto mb-5">
               <p style={{ textAlign: "center" }}>
                 <a
                   className="technologies"
@@ -108,7 +108,9 @@ const Details: React.FC = (props) => {
           technologies,
           install,
           devTime,
-        } = value.projectInfo![currentProject];
+        } = currentProject
+          ? value.projectInfo![currentProject]
+          : value.projectInfo![0];
         return (
           <div className="details">
             <Fragment>
@@ -124,7 +126,7 @@ const Details: React.FC = (props) => {
                 </Button>
                 <h1
                   style={{ textAlign: "center", color: "var(--mutedBlue)" }}
-                  className="font-weight-lighter"
+                  className="font-weight-lighter detailsHeader"
                 >
                   {headerTitle}
                 </h1>

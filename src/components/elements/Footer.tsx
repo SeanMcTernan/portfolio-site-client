@@ -49,7 +49,7 @@ const FooterElement: React.FC = () => {
           )}
         </Nav>
       </Navbar>
-      <p style={{ textAlign: "center" }}>
+      <p className="footerContent" style={{ textAlign: "center" }}>
         <a
           href="https://github.com/SeanMcTernan"
           target="_blank"

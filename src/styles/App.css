@@ -71,13 +71,26 @@
 }
 
 /* Small screens */
-@media only screen and (max-height: 650px) {
+@media only screen and (max-height: 850px) {
   .heroImage {
     display: none;
   }
   .homeDiv {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+  }
+
+  .details {
+    padding-top: 15vh;
+    padding-bottom: 10vh;
+  }
+
+  .detailsHeader {
+    padding-top: 5vh;
+  }
+
+  .projectsDiv {
+    padding-top: 15vh;
   }
   .socialIcons {
     width: 10vmin !important;

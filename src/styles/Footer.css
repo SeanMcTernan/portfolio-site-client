@@ -5,6 +5,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .footerContent {
+    padding-top: 5vh;
+  }
   .bottomNav {
     display: none !important;
   }

@@ -105,6 +105,7 @@ const About: React.FC = () => {
           <Row>
             <Col>
               <img
+                className="profilePic"
                 src={profilePic}
                 style={{
                   width: "35%",
@@ -119,8 +120,9 @@ const About: React.FC = () => {
             <Col>
               <p style={{ textAlign: "center" }}>
                 <img
-                  src={logo}
+                  className="siteLogo"
                   style={{ width: "30%", margin: "1vh" }}
+                  src={logo}
                   alt="Site Logo"
                 />
               </p>
@@ -167,6 +169,7 @@ const About: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <img
+                  className="companyImages"
                   src={boonmapsLogo}
                   style={{ width: "3vw", marginTop: "2vh" }}
                   alt="Boonamps Logo"
@@ -206,6 +209,7 @@ const About: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <img
+                  className="companyImages"
                   src={simpleTextingLogo}
                   style={{ width: "3vw", marginTop: "2vh" }}
                   alt="SimpleTexting Logo"
@@ -240,6 +244,7 @@ const About: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <img
+                  className="companyImages"
                   src={BTSLogo}
                   style={{ width: "4vw", marginTop: "2vh" }}
                   alt="Beyond The Summit Logo"
@@ -266,6 +271,7 @@ const About: React.FC = () => {
               {/* Beyond The Summit Information */}
               {/* PrintLogix Corporation Information */}
               <img
+                className="companyImages"
                 src={PLLogo}
                 style={{ width: "4vw", marginTop: "2vh" }}
                 alt="PrintLogix Logo"
@@ -292,6 +298,7 @@ const About: React.FC = () => {
               {/* PrintLogix Corporation Information */}
               {/* YEP/ENDeavour Information */}
               <img
+                className="companyImages"
                 src={YEPLogo}
                 style={{ width: "3vw", marginTop: "2vh" }}
                 alt="YEP Logo"
