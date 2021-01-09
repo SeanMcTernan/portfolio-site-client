@@ -14,9 +14,9 @@ const Home: React.FC = () => {
 
             <p>
               Thank you for taking the time to visit my portfolio website. If
-              you have any questions, please contact me or ask them to the
-              chatbot provided. To view hidden code repositories, download my
-              resume and more, please login.
+              you have any questions, please contact me through the contact
+              page. To view hidden code repositories, download my resume and
+              more, please login.
             </p>
             <p>
               <LinkContainer to="projects">
