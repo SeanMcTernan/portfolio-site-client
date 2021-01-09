@@ -28,7 +28,7 @@ const Login: React.FC = () => {
     try {
       await Auth.signIn(fields.email, fields.password);
       userHasAuthenticated(true);
-      await API.get("permissions", "/permissions").then((response) => {
+      await API.get("permissions", "/permissions", "init").then((response) => {
         setPermissions(response[0]);
       });
       history.push("/");

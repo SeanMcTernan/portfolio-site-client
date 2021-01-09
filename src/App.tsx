@@ -21,7 +21,7 @@ const App: React.FC = () => {
     try {
       await Auth.currentSession();
       userHasAuthenticated(true);
-      await API.get("permissions", "/permissions").then((response) => {
+      await API.get("permissions", "/permissions", "init").then((response) => {
         setPermissions(response[0]);
       });
     } catch (e) {

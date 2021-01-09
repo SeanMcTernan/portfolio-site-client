@@ -84,7 +84,7 @@ const Signup: React.FC = () => {
       await Auth.confirmSignUp(fields.email, fields.confirmationCode);
       await Auth.signIn(fields.email, fields.password);
       await setDBPermissions(values);
-      await API.get("permissions", "/permissions").then((response) => {
+      await API.get("permissions", "/permissions", "init").then((response) => {
         setPermissions(response[0]);
       });
       userHasAuthenticated(true);
