@@ -25,7 +25,7 @@ const Settings: React.FC<Props> = ({ ...props }) => {
     resume: false,
   });
 
-  var referencesVarient = isRequested.references ? "outline-warning" : "info";
+  // var referencesVarient = isRequested.references ? "outline-warning" : "info";
   var reposVarient = isRequested.repos ? "outline-warning" : "info";
   var resumeVarient = isRequested.resume ? "outline-warning" : "info";
 
